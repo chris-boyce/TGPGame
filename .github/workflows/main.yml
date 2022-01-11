@@ -1,4 +1,4 @@
-name: Test project
+name: Unity Tester
 
 on: [push, pull_request]
 
@@ -9,7 +9,6 @@ jobs:
       fail-fast: false
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: game-ci/unity-test-runner@v2.0.0-alpha-7
         id: myTestStep
