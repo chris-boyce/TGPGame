@@ -1,16 +1,13 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Unity Tester
+name: Test project
 
 on: [push, pull_request]
 
 jobs:
-  # This workflow contains a single job called "build"
-  check_pr:
-    # The type of runner that the job will run on
+  testAllModes:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -26,19 +23,4 @@ jobs:
         with:
           name: Test results
           path: ${{ steps.myTestStep.outputs.artifactsPath }}
-
-
-
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-
  
