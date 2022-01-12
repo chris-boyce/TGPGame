@@ -7,20 +7,21 @@ public class Bullet : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public GameObject bullet;
-    float speed = 10.0f;
-
+    public GameObject bulletObject;
+    public int bulletDamage;
+    public float bulletSpeed = 10.0f;
+ 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-       
+        rb.velocity = transform.forward * bulletSpeed;
     }
 
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(10.0f, 0.0f,0.0f) * speed;
+        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
     }
 
     // Update is called once per frame
@@ -28,10 +29,22 @@ public class Bullet : MonoBehaviour
     {
         StartCoroutine(DestroyBullet());
     }
+
     IEnumerator DestroyBullet()
     {
         yield return new WaitForSeconds(3.0f);
-        Destroy(bullet);
+        Destroy(bulletObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Health health = other.GetComponent<Health>();
+
+        if(other.CompareTag("Enemy"))
+        {
+            health.Damage(bulletDamage);
+            Debug.Log("Object was hit");
+        }
     }
 
 }

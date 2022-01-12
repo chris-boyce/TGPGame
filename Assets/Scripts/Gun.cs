@@ -7,11 +7,13 @@ public class Gun : MonoBehaviour
 
     public GameObject bullet;
     public Transform bulletPos;
-    private bool canShoot;
+    public float fireRate = 15f;
+    public ParticleSystem muzzle;
 
+    private float nextTimeToFire = 0f;
     void Start()
     {
-        canShoot = true;
+
     }
 
     private void FixedUpdate()
@@ -22,20 +24,18 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1) && canShoot == true)
-        {       
-           StartCoroutine(FireBullet());
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        {
+            Shoot();
         }
     }
 
-    IEnumerator FireBullet()
+    void Shoot()
     {
-        canShoot = false;
+        muzzle.Play();
+        nextTimeToFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
-        yield return new WaitForSeconds(0.5f);
-        canShoot = true;
     }
-
    
 
 }
