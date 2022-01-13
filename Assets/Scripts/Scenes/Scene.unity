@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 38682976}
   - component: {fileID: 38682979}
   m_Layer: 0
-  m_Name: Minigun
+  m_Name: tempSniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,14 +231,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 38682974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82be658506261146bf74672a06a2b8e, type: 3}
+  m_Script: {fileID: 11500000, guid: ebc26d71acd6cd44683f1138458cd7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objGun: {fileID: 2705300728077372920, guid: 06abf1b0e1c124a4ea2719e37cdf5ca7, type: 3}
-  objSniper: {fileID: 0}
+  objSniper: {fileID: 38682974}
   bulletPos: {fileID: 1208086685}
-  fireRate: 30
+  fireRate: 15
   muzzle: {fileID: 2656309661710677456, guid: 6e1e90be26629bf499b7730d54ed1a90, type: 3}
 --- !u!1 &254898324
 GameObject:
@@ -759,13 +758,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3687143128745853325, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 3687143127244717176, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3687143128745853325, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687143128745853325, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
@@ -875,6 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squareGun: {fileID: 1216118437}
+  capGun: {fileID: 38682979}
 --- !u!4 &2103197670
 Transform:
   m_ObjectHideFlags: 0
@@ -966,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 38682974}
     - target: {fileID: 2705300728077372920, guid: 06abf1b0e1c124a4ea2719e37cdf5ca7, type: 3}
       propertyPath: m_Name
-      value: Gun
+      value: tempGun
       objectReference: {fileID: 0}
     - target: {fileID: 2705300728866846783, guid: 06abf1b0e1c124a4ea2719e37cdf5ca7, type: 3}
       propertyPath: m_LocalRotation.w
