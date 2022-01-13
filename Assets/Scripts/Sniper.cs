@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Sniper : MonoBehaviour
 {
 
     public GameObject bullet;
-    public GameObject objGun;
+    public GameObject objSniper;
     public Transform bulletPos;
     public float fireRate = 15f;
     public ParticleSystem muzzle;
- 
 
     private float nextTimeToFire = 0f;
     void Start()
     {
-        objGun.SetActive(true);
+        objSniper.SetActive(false);
     }
 
     private void FixedUpdate()
     {
-  
+
 
     }
 
@@ -30,7 +29,6 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
-
     }
 
     void Shoot()
