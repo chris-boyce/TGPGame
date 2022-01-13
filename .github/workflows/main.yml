@@ -24,6 +24,9 @@ jobs:
           key: Library-${{ matrix.projectPath }}
           restore-keys: |
             Library-
+      - name: Unity - Activate
+        uses: game-ci/unity-activate@v1.3
+
       - uses: game-ci/unity-test-runner@v2
         id: tests
         env:
