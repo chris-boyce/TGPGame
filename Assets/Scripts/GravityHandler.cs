@@ -8,7 +8,7 @@ public class GravityHandler : MonoBehaviour
     [SerializeField]
     private float heightOffset = 1.0f; // Height of character.
     [SerializeField]
-    private float heightDeadZone = 0.05f; // Acceptable height bounds before height is added.
+    private float heightDeadZone = 0.05f; // Acceptable height bounds before pullUpForce is added.
     [SerializeField]
     private float pullUpForce = 0.5f; // The applied force for when ground has been hit.
 
@@ -48,12 +48,8 @@ public class GravityHandler : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, heightOffset)) {
-            debugColor = Color.red;
-
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity)) {
             HandleCollision(hit);
-        } else {
-            rb.useGravity = true;
         }
 
         Debug.DrawLine(transform.position, transform.position + new Vector3(0, -heightOffset), debugColor);
@@ -65,30 +61,38 @@ public class GravityHandler : MonoBehaviour
     /// <param name="hit">RaycastHit</param>
     private void HandleCollision(RaycastHit hit)
     {
-        rb.useGravity = false; // Stop gravity from effecting this object.
+		float hitDist = Vector3.Distance(hit.point, transform.position);
 
-        float hitDist = Vector3.Distance(hit.point, transform.position);
+		if (hitDist < heightOffset + heightDeadZone) {
+			rb.useGravity = false; // Stop gravity from effecting this object.
 
-        if (hitDist <= maxHeightOffset) { // Stop because we're about to move beyond the object.
-            rb.velocity = ZeroYVector(rb.velocity);
-        }
+			if (hitDist <= maxHeightOffset && rb.velocity.y <= 0) { // Stop because we're about to move beyond the object.
+				rb.velocity = ZeroYVector(rb.velocity);
+			}
 
-        if (hitDist < heightOffset - heightDeadZone) {
-            rb.AddForce(Vector3.up * pullUpForce, ForceMode.VelocityChange);
-            forcedUp = true;
-        } else {
+			if (hitDist < heightOffset - heightDeadZone) {
+				if (rb.velocity.y < maxFallSpeed) {
+					rb.AddForce(Vector3.up * pullUpForce, ForceMode.VelocityChange);
+					forcedUp = true;
+				}
+				return;
+			}
+
 			if (forcedUp && !bounce) {
-                bounce = true;
-                forcedUp = false;
+				bounce = true;
+				forcedUp = false;
 			}
 
-            if(rb.velocity.y > 0 && bounce && forcedUp) {
-                rb.velocity = ZeroYVector(rb.velocity);
-                forcedUp = false;
-                bounce = false;
+			if (rb.velocity.y > 0 && bounce && forcedUp) {
+				rb.velocity = ZeroYVector(rb.velocity);
+				forcedUp = false;
+				bounce = false;
 			}
+			
+		} else {
+			rb.useGravity = true;
 		}
-    }
+	}
 
     /// <summary>
     /// Zeroes the Y axis on a vector
