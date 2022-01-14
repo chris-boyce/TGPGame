@@ -5,14 +5,15 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
     private int selectedWeapon;
-    private bool canSwitchWeapon;
+    public bool canSwitchWeaponToSniper;
     public Gun squareGun;
     public Sniper capGun;
+    public GameObject sniperObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        canSwitchWeapon = true;
+        canSwitchWeaponToSniper = false;
         selectedWeapon = 0;
     }
 
@@ -22,17 +23,17 @@ public class WeaponSwitcher : MonoBehaviour
         int prevSelectedWeapon = selectedWeapon;
 
         // Input for each selected weapon
-        if (Input.GetKeyDown(KeyCode.Alpha1) && canSwitchWeapon == true)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && canSwitchWeapon == true)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && canSwitchWeaponToSniper == true)
         {
             selectedWeapon = 1;
         }
 
         // If statements to turn on the weapon depending which key has been pressed
-        if (selectedWeapon == 0)
+        if (selectedWeapon == 0)      
         {
             capGun.objSniper.SetActive(false);
         }
@@ -52,12 +53,24 @@ public class WeaponSwitcher : MonoBehaviour
 
 
         // Cycles through the weapons activating them or deactivating them
-        if (prevSelectedWeapon != selectedWeapon && canSwitchWeapon == true)
+        if (prevSelectedWeapon != selectedWeapon && canSwitchWeaponToSniper == true)
         {
             SelectWeapon();
         }
 
     }
+
+    // Detect Weapon On Floor 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("SniperObject"))
+        {
+            canSwitchWeaponToSniper = true;
+            Destroy(sniperObject);
+        }
+    }
+
+
 
     void SelectWeapon()
     {

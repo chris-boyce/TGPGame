@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
 	[SerializeField]
 	private float currentHealth;
 	public Slider healthBarSlider;
+	public GameObject slider;
 	public GameObject healthbarObject;
 
 
@@ -38,6 +39,7 @@ public class Health : MonoBehaviour
 		currentHealth = health;
 		Destroy(gameObject);
 		Destroy(healthbarObject);
-		Destroy(healthBarSlider);
+		Destroy(slider);
+       
 	}
 }
