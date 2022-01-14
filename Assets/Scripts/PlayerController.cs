@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+	// Settings related to input methods and character movement.
 	[Header("Input Settings")]
 	[SerializeField]
 	private bool mouseInput = false;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private float slowSpeed = 0.9f;
 	
+	// Settings related to the player camera.
 	[Header("Camera Settings")] 
 	[SerializeField]
 	private Camera cam;
@@ -43,41 +45,39 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		ConstrainVelocity();
 		UpdatePlayerInput();
 		UpdateCameraPos();
+		ConstrainVelocity(); // Limits velocity of the player
 	}
 
-	private void ConstrainVelocity() {
-		Vector3 rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-
-		if(rbVec.magnitude > maxSpeed) {
-			rbVec = rb.velocity.normalized;
-			rb.velocity =  new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed);
-        }
-    }
-
+	/// <summary>
+	/// Handles player input and applies movement.
+	/// </summary>
 	private void UpdatePlayerInput() {
 		float xInput = Input.GetAxis("Horizontal");
 		float yInput = Input.GetAxis("Vertical");
 		
+		// Cursed but what we're doing is is rounding the direction of the camera's rotation.
+		// It rounds it to prevent the normal being 0.7 and only giving the player 70% of the speed
+		// based on the angle.
 		Vector3 camDirX = new Vector3(Mathf.Round(cam.transform.right.normalized.x), 0, Mathf.Round(cam.transform.right.normalized.z));
 		Vector3 camDirY = new Vector3(Mathf.Round(cam.transform.forward.normalized.x), 0, Mathf.Round(cam.transform.forward.normalized.z));
 
 		if (xInput > inputDeadZone.x || xInput < -inputDeadZone.x) {
-			rb.AddForce(camDirX * (xInput * moveSpeed));
+			rb.AddForce(camDirX * (xInput * moveSpeed)); // Apply motion based on the camera's direction.
 			xInputPressed = true;
 		} else {
 			xInputPressed = false;
 		}
 
 		if (yInput > inputDeadZone.y || yInput < -inputDeadZone.y) {
-			rb.AddForce(camDirY * (yInput * moveSpeed));
+			rb.AddForce(camDirY * (yInput * moveSpeed)); // Apply motion based on the camera's direction.
 			yInputPressed = true;
         } else {
 			yInputPressed = false;
 		}
 
+		// If there is no input on either button press
 		if (!xInputPressed && !yInputPressed) {
 			if (rb.velocity.magnitude > 0.05 || rb.velocity.magnitude < 0.05) {
 				rb.velocity = rb.velocity * slowSpeed; 
@@ -100,6 +100,15 @@ public class PlayerController : MonoBehaviour
 
 		cam.transform.rotation = Quaternion.Euler(angleOffset.x, angleOffset.y, angleOffset.z);
 
+	}
+
+	private void ConstrainVelocity() {
+		Vector3 rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+		if (rbVec.magnitude > maxSpeed) {
+			rbVec = rb.velocity.normalized;
+			rb.velocity = new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed);
+		}
 	}
 
 }
