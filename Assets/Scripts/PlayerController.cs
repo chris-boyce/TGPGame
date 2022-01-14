@@ -48,11 +48,12 @@ public class PlayerController : MonoBehaviour
 		UpdateCameraPos();
 	}
 
-	private void ConstrainVelocity()
-    {
-		if(rb.velocity.magnitude > maxSpeed)
-        {
-			rb.velocity = rb.velocity.normalized * maxSpeed;
+	private void ConstrainVelocity() {
+		Vector3 rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+		if(rbVec.magnitude > maxSpeed) {
+			rbVec = rb.velocity.normalized;
+			rb.velocity =  new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed);
         }
     }
 
