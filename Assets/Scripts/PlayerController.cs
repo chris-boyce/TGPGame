@@ -79,35 +79,42 @@ public class PlayerController : MonoBehaviour
 
 		// If there is no input on either button press
 		if (!xInputPressed && !yInputPressed) {
-			if (rb.velocity.magnitude > 0.05 || rb.velocity.magnitude < 0.05) {
+			if (rb.velocity.magnitude > 0.005 || rb.velocity.magnitude < 0.005) { // If the speed is so little.
 				rb.velocity = rb.velocity * slowSpeed; 
 			} else {
-				rb.velocity = Vector3.zero;
+				rb.velocity = Vector3.zero; // IT'S TIME TO STOP
 			}
 		}
 
 	}
 
+	/// <summary>
+	/// Handles camera movement and camera placement + angle.
+	/// </summary>
 	private void UpdateCameraPos() {
+		// result position of where to put the camera.
 		Vector3 endPos = new Vector3(transform.position.x,
 									transform.position.y + heightOffset,
 									transform.position.z + distanceOffset);
 
+		// If smooth cam is enabled, slerp the way to victory, if not, just set it to the endpos.
 		cam.transform.position = smoothCam ?
 			Vector3.Lerp(cam.transform.position, endPos, camSmoothSpeed * Time.deltaTime) :
 			endPos;
 		
-
 		cam.transform.rotation = Quaternion.Euler(angleOffset.x, angleOffset.y, angleOffset.z);
 
 	}
 
+	/// <summary>
+	/// Constrains the velocity onto the maxSpeed for X and Z.
+	/// </summary>
 	private void ConstrainVelocity() {
 		Vector3 rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
-		if (rbVec.magnitude > maxSpeed) {
-			rbVec = rb.velocity.normalized;
-			rb.velocity = new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed);
+		if (rbVec.magnitude > maxSpeed) { // If there is movement in the X and Z higher than the maxSpeed.
+			rbVec = rb.velocity.normalized; // reset the variable to just the normalised speed.
+			rb.velocity = new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed); // Make sure Y is always going to be at a normal of 1.
 		}
 	}
 
