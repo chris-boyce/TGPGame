@@ -38,11 +38,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Health health = other.GetComponent<Health>();
 
         if(other.CompareTag("Enemy"))
         {
-            health.Damage(bulletDamage);
+            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+
             Debug.Log("Object was hit");
         }
     }

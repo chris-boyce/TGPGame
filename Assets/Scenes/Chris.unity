@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 083707aa0ba181b42b5d90411f2e434e, type: 2}
 --- !u!1 &38682974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5911493930874493681, guid: 9144cd9fdc830344d863f10fb78ce82b, type: 3}
@@ -287,8 +287,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &427011131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+  m_PrefabInstance: {fileID: 1367105008000485395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &505405859
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +311,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &505405860
 MeshCollider:
@@ -384,77 +389,8 @@ Transform:
   m_LocalScale: {x: 3.4147, y: 3.4147, z: 3.4147}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &948524392
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9259410870161049, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9259410870161049, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072305, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072305, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.077226
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.503661
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -13.898064
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3687143126990072311, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 53b044c600683134c9ae27cdc7d96239, type: 3}
 --- !u!1 &1216118435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2705300728077372920, guid: 06abf1b0e1c124a4ea2719e37cdf5ca7, type: 3}
@@ -566,7 +502,566 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1802982510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1802982512}
+  - component: {fileID: 1802982511}
+  m_Layer: 0
+  m_Name: SpawnerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1802982511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802982510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068dfa07089faf84985e9ad340fed9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  - enemyCount: 0
+    timeBetweenSpawn: 0
+  Enemy: {fileID: -8216658815150049312, guid: 6b0ba0756c990d045bbec2b4bd197664, type: 3}
+  spawnPostion:
+  - {fileID: 427011131}
+--- !u!4 &1802982512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802982510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.130195, y: 2.3147237, z: -20.180616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824326432
 GameObject:
@@ -663,7 +1158,7 @@ Transform:
   m_LocalScale: {x: 0.50172, y: 0.50172, z: 0.50172}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &1931674216 stripped
 ParticleSystem:
@@ -715,8 +1210,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1367105008000485395
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.180616
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293800, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293801, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_Name
+      value: Spawn Area
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
 --- !u!1001 &2705300727942661142
 PrefabInstance:
   m_ObjectHideFlags: 0
