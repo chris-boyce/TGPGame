@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Enemy
   - SniperObject
+  - Crate
+  - Pickup
   layers:
   - Default
   - TransparentFX

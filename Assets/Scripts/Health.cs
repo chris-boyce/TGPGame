@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 
 	public float health = 100f;
 	[SerializeField]
-	private float currentHealth;
+	public float currentHealth;
 	public Slider healthBarSlider;
 	public GameObject slider;
 	public GameObject healthbarObject;
