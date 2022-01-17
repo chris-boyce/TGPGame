@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
 	private bool xInputPressed = false;
 	private bool yInputPressed = false;
 
-    // Start is called before the first frame update
-    void Start()
+	Vector3 rbVec; // Rigidbody velocity with a 0 on y axis.
+
+	// Start is called before the first frame update
+	void Start()
     {
 		rb = GetComponent<Rigidbody>();
     }
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+		rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
 		UpdatePlayerInput();
 		UpdateCameraPos();
 		ConstrainVelocity(); // Limits velocity of the player
@@ -64,14 +68,16 @@ public class PlayerController : MonoBehaviour
 		Vector3 camDirY = new Vector3(Mathf.Round(cam.transform.forward.normalized.x), 0, Mathf.Round(cam.transform.forward.normalized.z));
 
 		if (xInput > inputDeadZone.x || xInput < -inputDeadZone.x) {
-			rb.AddForce(camDirX * (xInput * moveSpeed)); // Apply motion based on the camera's direction.
-			xInputPressed = true;
+			if (rbVec.magnitude > maxSpeed) {
+				rb.AddForce(camDirX * (xInput * moveSpeed)); // Apply motion based on the camera's direction.
+				xInputPressed = true;
+			}
 		} else {
 			xInputPressed = false;
 		}
 
 		if (yInput > inputDeadZone.y || yInput < -inputDeadZone.y) {
-			rb.AddForce(camDirY * (yInput * moveSpeed)); // Apply motion based on the camera's direction.
+			rb.AddForce(camDirY * (yInput * moveSpeed) * Time.deltaTime); // Apply motion based on the camera's direction.
 			yInputPressed = true;
         } else {
 			yInputPressed = false;
@@ -80,7 +86,7 @@ public class PlayerController : MonoBehaviour
 		// If there is no input on either button press
 		if (!xInputPressed && !yInputPressed) {
 			if (rb.velocity.magnitude > 0.005 || rb.velocity.magnitude < 0.005) { // If the speed is so little.
-				rb.velocity = rb.velocity * slowSpeed; 
+				rb.velocity = (rb.velocity * slowSpeed) * Time.deltaTime; 
 			} else {
 				rb.velocity = Vector3.zero; // IT'S TIME TO STOP
 			}
@@ -110,7 +116,6 @@ public class PlayerController : MonoBehaviour
 	/// Constrains the velocity onto the maxSpeed for X and Z.
 	/// </summary>
 	private void ConstrainVelocity() {
-		Vector3 rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
 		if (rbVec.magnitude > maxSpeed) { // If there is movement in the X and Z higher than the maxSpeed.
 			rbVec = rb.velocity.normalized; // reset the variable to just the normalised speed.
