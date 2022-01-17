@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+	// Settings related to input methods and character movement.
 	[Header("Input Settings")]
 	[SerializeField]
-	bool mouseInput = false;
+	private bool mouseInput = false;
 	[SerializeField]
-	float moveSpeed = 3.0f;
+	private float moveSpeed = 3.0f;
 	[SerializeField]
-	Vector2 inputDeadZone = new Vector2(0.2f, 0.2f);
+	private Vector2 inputDeadZone = new Vector2(0.2f, 0.2f);
 	[SerializeField]
-	float slowSpeed = 0.9f;
-
-	[Header("Camera Settings")]
+	private float maxSpeed = 2.0f;
+	[SerializeField]
+	private float slowSpeed = 0.9f;
+	
+	// Settings related to the player camera.
+	[Header("Camera Settings")] 
 	[SerializeField]
 	private Camera cam;
+	[SerializeField]
+	private bool smoothCam = true;
 	[SerializeField]
 	private float camSmoothSpeed = 1.0f;
 	[SerializeField]
@@ -27,6 +33,8 @@ public class PlayerController : MonoBehaviour
 	private Vector3 angleOffset;
 	
 	private Rigidbody rb;
+	private bool xInputPressed = false;
+	private bool yInputPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,48 +47,75 @@ public class PlayerController : MonoBehaviour
     {
 		UpdatePlayerInput();
 		UpdateCameraPos();
+		ConstrainVelocity(); // Limits velocity of the player
 	}
 
+	/// <summary>
+	/// Handles player input and applies movement.
+	/// </summary>
 	private void UpdatePlayerInput() {
-		Debug.Log("forward: " + cam.transform.forward.normalized);
-		Debug.Log("right: " + cam.transform.right.normalized);
-		Debug.Log("up: " + cam.transform.up.normalized);
 		float xInput = Input.GetAxis("Horizontal");
 		float yInput = Input.GetAxis("Vertical");
 		
-		Vector3 camDirX = new Vector3(cam.transform.right.normalized.x, 0, cam.transform.right.normalized.z);
-		Vector3 camDirY = new Vector3(cam.transform.right.normalized.x, 0, cam.transform.right.normalized.z);
+		// Cursed but what we're doing is is rounding the direction of the camera's rotation.
+		// It rounds it to prevent the normal being 0.7 and only giving the player 70% of the speed
+		// based on the angle.
+		Vector3 camDirX = new Vector3(Mathf.Round(cam.transform.right.normalized.x), 0, Mathf.Round(cam.transform.right.normalized.z));
+		Vector3 camDirY = new Vector3(Mathf.Round(cam.transform.forward.normalized.x), 0, Mathf.Round(cam.transform.forward.normalized.z));
 
 		if (xInput > inputDeadZone.x || xInput < -inputDeadZone.x) {
-			rb.AddForce(camDirX * (xInput * moveSpeed));
-
+			rb.AddForce(camDirX * (xInput * moveSpeed)); // Apply motion based on the camera's direction.
+			xInputPressed = true;
 		} else {
-			if (rb.velocity.x > 0.05 || rb.velocity.x < 0.05) {
-				rb.velocity = rb.velocity * slowSpeed;
-			} else {
-				rb.velocity = Vector3.zero;
-			}
+			xInputPressed = false;
 		}
 
 		if (yInput > inputDeadZone.y || yInput < -inputDeadZone.y) {
-			rb.AddForce(cam.transform.forward.normalized * (yInput * moveSpeed));
+			rb.AddForce(camDirY * (yInput * moveSpeed)); // Apply motion based on the camera's direction.
+			yInputPressed = true;
+        } else {
+			yInputPressed = false;
+		}
 
-		} // else {
-			//if (rb.velocity.z > 0.05 || rb.velocity.z < 0.05) {
-			//	rb.velocity = cam.transform.forward.normalized * slowSpeed;
-			//} else {
-			//	rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
-			//}
-		// }
+		// If there is no input on either button press
+		if (!xInputPressed && !yInputPressed) {
+			if (rb.velocity.magnitude > 0.005 || rb.velocity.magnitude < 0.005) { // If the speed is so little.
+				rb.velocity = rb.velocity * slowSpeed; 
+			} else {
+				rb.velocity = Vector3.zero; // IT'S TIME TO STOP
+			}
+		}
+
 	}
 
+	/// <summary>
+	/// Handles camera movement and camera placement + angle.
+	/// </summary>
 	private void UpdateCameraPos() {
+		// result position of where to put the camera.
 		Vector3 endPos = new Vector3(transform.position.x,
 									transform.position.y + heightOffset,
 									transform.position.z + distanceOffset);
 
-		cam.transform.position = Vector3.Lerp(cam.transform.position, endPos, camSmoothSpeed * Time.deltaTime);
+		// If smooth cam is enabled, slerp the way to victory, if not, just set it to the endpos.
+		cam.transform.position = smoothCam ?
+			Vector3.Lerp(cam.transform.position, endPos, camSmoothSpeed * Time.deltaTime) :
+			endPos;
+		
 		cam.transform.rotation = Quaternion.Euler(angleOffset.x, angleOffset.y, angleOffset.z);
+
+	}
+
+	/// <summary>
+	/// Constrains the velocity onto the maxSpeed for X and Z.
+	/// </summary>
+	private void ConstrainVelocity() {
+		Vector3 rbVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+		if (rbVec.magnitude > maxSpeed) { // If there is movement in the X and Z higher than the maxSpeed.
+			rbVec = rb.velocity.normalized; // reset the variable to just the normalised speed.
+			rb.velocity = new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed); // Make sure Y is always going to be at a normal of 1.
+		}
 	}
 
 }
