@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class CrateDestroy : MonoBehaviour
 {
 
-    public GameObject pickUp;
+    public GameObject pickUpCrate;
+    public GameObject pickup;
     public GameObject pickUpPos;
-
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pickup.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,8 +27,9 @@ public class CrateDestroy : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            Instantiate(pickUp, pickUpPos.transform.position, pickUpPos.transform.rotation);
-            Destroy(pickUp);
+            pickup.SetActive(true);
+            Instantiate(pickup.gameObject, pickUpPos.transform.position, pickUpPos.transform.rotation);
+            Destroy(pickUpCrate);
         }
     }
 }

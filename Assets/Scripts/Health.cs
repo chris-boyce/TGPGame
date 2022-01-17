@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 	public float currentHealth;
 	public Slider healthBarSlider;
 	public GameObject slider;
-	public GameObject healthbarObject;
+	public GameObject healthbarLocation;
 
 
 	void Start()
@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
 		Debug.Log("Dead");
 		currentHealth = health;
 		Destroy(gameObject);
-		Destroy(healthbarObject);
+		Destroy(healthbarLocation);
 		Destroy(slider);
        
 	}
