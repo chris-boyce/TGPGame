@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponSwitcher : MonoBehaviour
 {
@@ -50,7 +51,10 @@ public class WeaponSwitcher : MonoBehaviour
         {
             squareGun.objGun.SetActive(true);
         }
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
         // Cycles through the weapons activating them or deactivating them
         if (prevSelectedWeapon != selectedWeapon && canSwitchWeaponToSniper == true)
