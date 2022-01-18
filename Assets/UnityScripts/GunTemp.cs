@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class GunTemp : MonoBehaviour
 {
 
     public GameObject bullet;
@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
     public Transform bulletPos;
     public float fireRate = 15f;
     public ParticleSystem muzzle;
-
+ 
 
     private float nextTimeToFire = 0f;
     void Start()
@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+  
 
     }
 

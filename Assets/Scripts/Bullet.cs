@@ -48,6 +48,7 @@ public class Bullet : MonoBehaviour
         }
         if(other.CompareTag("Crate"))
         {
+            Health health = GetComponent<Health>();
             health.Damage(bulletDamage);
             Debug.Log("Object was hit");
             Destroy(bulletObject);
