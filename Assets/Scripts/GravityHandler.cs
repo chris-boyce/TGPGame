@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GravityHandler : MonoBehaviour
 {
-    [Header("Gravity Handling", order = 0)]
+	[Header("Gravity Handling", order = 0)]
+	[SerializeField]
+	private Vector3 originOffset;
     [SerializeField]
     private float heightOffset = 1.0f; // Height of character.
     [SerializeField]
@@ -12,8 +14,13 @@ public class GravityHandler : MonoBehaviour
     [SerializeField]
     private float pullUpForce = 0.5f; // The applied force for when ground has been hit.
 
+	[SerializeField]
+	private bool grounded = true;
+
+	[SerializeField]
     private bool forcedUp = false; // Helper to know when the player is still being pushed upwards after landing
-    private bool bounce; // used to discover if there is a bounce happening
+	[SerializeField]
+	private bool bounce; // used to discover if there is a bounce happening
 
     [SerializeField]
     private float maxHeightOffset = 0.2f; // Max distance before velocity must be stopped.
@@ -22,6 +29,7 @@ public class GravityHandler : MonoBehaviour
     [SerializeField]
     private float maxFallSpeed = 2.0f; // Maximum speed when character has bounced from the floor.
 
+	Vector3 pos;
     private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -31,28 +39,36 @@ public class GravityHandler : MonoBehaviour
     }
 
 	private void FixedUpdate() {
-        HandleGravity();
+		pos = transform.position + originOffset;
+		HandleGravity();
 	}
 
     /// <summary>
     /// Handles when to toggle gravity on and off for the player.
     /// </summary>
-    private void HandleGravity()
-    {
+    private void HandleGravity() {
+
         if (bounce && forcedUp) { // If player has bounced.
             // Clamp Y velocity
             rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, minFallSpeed, maxFallSpeed), rb.velocity.z);
         }
 
         Color debugColor = Color.green;
-
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity)) {
-            HandleCollision(hit);
-        }
 
-        Debug.DrawLine(transform.position, transform.position + new Vector3(0, -heightOffset), debugColor);
+        if (Physics.Raycast(pos, transform.TransformDirection(Vector3.down), out hit, (heightOffset + maxHeightOffset) * 2)) {
+            debugColor = Color.red;
+            HandleCollision(hit);
+
+            Debug.Log("Collision with layer:" + hit.transform.gameObject.layer);
+        } else {
+            grounded = false;
+            rb.useGravity = true;
+        }
+        Vector3 vec = new Vector3(pos.x, pos.y + ((-heightOffset + -maxHeightOffset) * 2), pos.z);
+        Debug.DrawLine(pos, vec, debugColor);
+
     }
 
     /// <summary>
@@ -61,10 +77,12 @@ public class GravityHandler : MonoBehaviour
     /// <param name="hit">RaycastHit</param>
     private void HandleCollision(RaycastHit hit)
     {
-		float hitDist = Vector3.Distance(hit.point, transform.position);
+		float hitDist = Vector3.Distance(hit.point, pos);
 
 		if (hitDist < heightOffset + heightDeadZone) {
 			rb.useGravity = false; // Stop gravity from effecting this object.
+			grounded = true;
+
 
 			if (hitDist <= maxHeightOffset && rb.velocity.y <= 0) { // Stop because we're about to move beyond the object.
 				rb.velocity = ZeroYVector(rb.velocity);
@@ -90,6 +108,7 @@ public class GravityHandler : MonoBehaviour
 			}
 			
 		} else {
+			grounded = false;
 			rb.useGravity = true;
 		}
 	}
