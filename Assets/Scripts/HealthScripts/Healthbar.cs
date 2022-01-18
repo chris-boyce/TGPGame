@@ -13,6 +13,8 @@ public class Healthbar : MonoBehaviour
     public GameObject SliderPos;
     private Health health;
     public GameObject thisObject;
+
+
     void Start()
     {
         Slider = Instantiate(Slider, SliderPos.transform.position, SliderPos.transform.rotation);
@@ -23,7 +25,7 @@ public class Healthbar : MonoBehaviour
     void Update()
     {
         Vector3 healthPos = Camera.main.WorldToScreenPoint(SliderPos.transform.position);
-        Slider.transform.position = healthPos;
+        Slider.transform.position = healthPos;  
     }
 
 }

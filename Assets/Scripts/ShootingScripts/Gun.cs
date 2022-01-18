@@ -15,12 +15,14 @@ public class Gun : MonoBehaviour
     // Ammo
     public TextMeshProUGUI Text;
     public int ammoCount = 100;
+    public int currentAmmoCount;
     public bool canShoot;
 
     private float nextTimeToFire = 0f;
     void Start()
     {
         objGun.SetActive(true);
+        currentAmmoCount = ammoCount;
         canShoot = true;
     }
 
@@ -32,14 +34,14 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        Text.text = "Ammo:" + ammoCount;
+        Text.text = "Ammo:" + currentAmmoCount;
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
             Shoot();
         }
 
-        if(ammoCount == 0)
+        if(currentAmmoCount == 0)
         {
             canShoot = false;
         }
@@ -47,7 +49,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        ammoCount -= 1;
+        currentAmmoCount -= 1;
         muzzle.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
