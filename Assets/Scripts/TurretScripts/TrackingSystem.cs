@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrackingSystem : MonoBehaviour
 {
     public float speed = 5.0f;
-    public GameObject target = null;
+    public Transform target = null;
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
 
@@ -13,8 +13,9 @@ public class TrackingSystem : MonoBehaviour
     public GameObject gun;
     public Transform bulletPosition;
     public ParticleSystem muzzle;
-    public float fireRate = 15.0f;
-    private float nextFire = 0.0f;
+    public float fireRate = 5.0f;
+    public float maxDistance = 10.0f;
+    private float nextFire = 2.0f;    
 
 
     void Start()
@@ -25,8 +26,8 @@ public class TrackingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 a = (target.transform.position - transform.position).normalized;
-        float dot = Vector3.Dot(a, transform.forward);
+        //Vector3 a = (target.transform.position - transform.position).normalized;
+        //float dot = Vector3.Dot(a, transform.forward);
 
         if(target)
         {
@@ -39,17 +40,17 @@ public class TrackingSystem : MonoBehaviour
             if(transform.rotation != lookRotation)
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, speed * Time.deltaTime);
-            }
+            }            
+        }
+    }
 
-            if(dot != 0)
-            {
-                Shoot();
-                //return;
-            }
-            else
-            {
-                Shoot();
-            }
+    void FixedUpdate()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+        {
+            Shoot();
         }
     }
 
@@ -60,7 +61,7 @@ public class TrackingSystem : MonoBehaviour
             return false;
         }
 
-        target = _target;
+        //target = _target;
 
         return true;
     }
