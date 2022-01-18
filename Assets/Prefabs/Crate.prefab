@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1009734901478788942}
   - component: {fileID: 1009734901478788941}
   - component: {fileID: 1009734901478788940}
@@ -112,6 +113,9 @@ GameObject:
 =======
   - component: {fileID: 204720235359568649}
 >>>>>>> parent of 7d79b81... PickupFix
+=======
+  - component: {fileID: 204720235359568649}
+>>>>>>> parent of 7d79b81... PickupFix
   m_Layer: 0
   m_Name: Position
   m_TagString: Untagged
@@ -142,14 +146,20 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1009734901883919677}
 =======
+=======
+>>>>>>> parent of 7d79b81... PickupFix
   - component: {fileID: 204720235777810634}
   - component: {fileID: 204720235777810633}
   - component: {fileID: 204720235777810632}
   - component: {fileID: 204720235777810631}
   - component: {fileID: 204720235777810630}
   - component: {fileID: 7366804227608488339}
+<<<<<<< HEAD
+>>>>>>> parent of 7d79b81... PickupFix
+=======
 >>>>>>> parent of 7d79b81... PickupFix
   m_Layer: 0
   m_Name: Crate
@@ -166,6 +176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204720235777810629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -207,12 +218,17 @@ Transform:
   m_Father: {fileID: 1009734901478788942}
   m_RootOrder: 1
 =======
+=======
+>>>>>>> parent of 7d79b81... PickupFix
   m_LocalPosition: {x: 13.27, y: 4.08, z: -24.36}
   m_LocalScale: {x: 1.591252, y: 1.591252, z: 1.591252}
   m_Children:
   - {fileID: 204720235359568649}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD
+>>>>>>> parent of 7d79b81... PickupFix
+=======
 >>>>>>> parent of 7d79b81... PickupFix
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &204720235777810633
@@ -285,6 +301,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1009734902825431014}
   serializedVersion: 2
   m_Mass: 1
@@ -296,6 +313,8 @@ MonoBehaviour:
   m_Constraints: 0
   m_CollisionDetection: 0
 =======
+=======
+>>>>>>> parent of 7d79b81... PickupFix
   m_GameObject: {fileID: 204720235777810629}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -322,4 +341,7 @@ MonoBehaviour:
   pickUp: {fileID: 6258160066059174530, guid: 24f1d21b16a2cb44480e74af03a86c81, type: 3}
   crate: {fileID: 204720235777810629}
   pickUpPos: {fileID: 204720235359568648}
+<<<<<<< HEAD
+>>>>>>> parent of 7d79b81... PickupFix
+=======
 >>>>>>> parent of 7d79b81... PickupFix
