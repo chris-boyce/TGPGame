@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4196171042505646753}
   - component: {fileID: 4196171042505646752}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: PlayerSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

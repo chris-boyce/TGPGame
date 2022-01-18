@@ -5252,9 +5252,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d6d314c4b917542ba51e0c8497e804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originOffset: {x: 0, y: 0, z: 0}
   heightOffset: 1
   heightDeadZone: 0.05
   pullUpForce: 0.5
+  grounded: 1
+  forcedUp: 0
+  bounce: 0
   maxHeightOffset: 0.2
   minFallSpeed: -0.8
   maxFallSpeed: 2
@@ -5358,7 +5362,7 @@ MonoBehaviour:
   canSwitchWeaponToSniper: 0
   squareGun: {fileID: 6409904791507779895}
   capGun: {fileID: 6409904790685355412}
-  sniperObject: {fileID: 0}
+  sniperObject: {fileID: 6409904790685355414}
 --- !u!114 &6409904791331379013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5385,9 +5389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159de4a3c51590c4e8654ab02b5da4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slider: {fileID: 4196171042505646752, guid: 39a778a8a64b99f45bb70b33191ada5b, type: 3}
+  Slider: {fileID: 4196171042505646752, guid: 32d03296b6a62c1469e4a84d89b86164, type: 3}
   canvas: {fileID: 0}
   SliderPos: {fileID: 6409904790045258025}
+  thisObject: {fileID: 6409904791331379015}
 --- !u!1 &6409904791507779849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,6 +5508,10 @@ MonoBehaviour:
   bulletPos: {fileID: 6409904791045838952}
   fireRate: 5
   muzzle: {fileID: 6409904790023051237}
+  Text: {fileID: 0}
+  ammoCount: 100
+  currentAmmoCount: 0
+  canShoot: 0
 --- !u!1 &6409904791531929285
 GameObject:
   m_ObjectHideFlags: 0
