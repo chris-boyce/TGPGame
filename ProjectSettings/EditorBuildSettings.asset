@@ -11,6 +11,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 2169148f82b3a0b43a2aa57197af7ef7
+  - enabled: 1
+    path: Assets/Scenes/GameLevels(Hayden)/Level1.unity
+    guid: d53dff7555459244c921bdb3d93982e7
+  - enabled: 1
+    path: Assets/Scenes/GameLevels(Hayden)/Level2.unity
+    guid: 9f42a3e2951f4cb4e841d79b004b63e4
+  - enabled: 1
+    path: Assets/Scenes/UI/GameMenu.unity
+    guid: 1737bad68182df04384ae418bd9ec769
+  - enabled: 1
+    path: Assets/Scenes/GameLevels(Hayden)/Level3.unity
+    guid: d1030bc51cd9fa24281b311ab2ad5150
+  - enabled: 1
+    path: Assets/Scenes/GameLevels(Hayden)/Level4.unity
+    guid: d53b51db4289d0f4ea2d4293ce7b61b6
+  - enabled: 1
+    path: Assets/Scenes/GameLevels(Hayden)/Level5.unity
+    guid: ff82d6c9ca9cfef46b8b91a2886c75c0
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
