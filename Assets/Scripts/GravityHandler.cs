@@ -60,8 +60,6 @@ public class GravityHandler : MonoBehaviour
         if (Physics.Raycast(pos, transform.TransformDirection(Vector3.down), out hit, (heightOffset + maxHeightOffset) * 2)) {
             debugColor = Color.red;
             HandleCollision(hit);
-
-            Debug.Log("Collision with layer:" + hit.transform.gameObject.layer);
         } else {
             grounded = false;
             rb.useGravity = true;
