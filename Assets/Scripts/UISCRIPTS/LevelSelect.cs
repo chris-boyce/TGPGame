@@ -17,12 +17,10 @@ public class LevelSelect : MonoBehaviour
     public GameObject _LevelSelect;
     private int _LevelSelected = 0;
     private int _LevelNum = 0;
-   
     //OnClick Reference , When clicked with show next "Sprite" Level Identifying Image
     public void NextLevel()
     {
         //Element Access stops at 4 (0 - 4 / 5 Levels)
-
         if (_LevelNum >= 4)
         {
             _LevelNum = 4;

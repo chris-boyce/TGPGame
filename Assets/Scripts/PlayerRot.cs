@@ -7,7 +7,7 @@ public class PlayerRot : MonoBehaviour
 
     public Camera mainCamera;
 
-    void Update()
+    void FixedUpdate()
     {
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);

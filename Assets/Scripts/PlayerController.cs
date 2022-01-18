@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 	private bool smoothCam = true;
 	[SerializeField]
 	private float camSmoothSpeed = 1.0f;
+
 	[SerializeField]
 	private float heightOffset = 8.0f;
 	[SerializeField]
@@ -39,8 +40,19 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
 		rb = GetComponent<Rigidbody>();
-    }
+		/*
+		heightOffset = 8.0f;
+		distanceOffset = 6.0f;
+		inputDeadZone = new Vector2(0.2f, 0.2f);
+		mouseInput = false;
+		maxSpeed = 2.0f;
+		slowSpeed = 0.9f;
+		xInputPressed = false;
+		yInputPressed = false;
+		*/
+	}
 
     // Update is called once per frame
     void FixedUpdate()

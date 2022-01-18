@@ -6,15 +6,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
-    //Enacts as a reference for the game object (expected to be a pausemenu) to execute function upon the entity
-    public GameObject _PauseMenu;
+
+    public SceneSwitcher _SceneSwitcher;
     public bool _Paused;
     // Start is called before the first frame update
     void Start()
-    {
-        //Set False By Default (doesnt show) - As intended
-        _PauseMenu.SetActive(false);
-        
+    { 
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -26,6 +24,7 @@ public class PauseMenu : MonoBehaviour
             if(_Paused == true)
             { 
                   Pause();
+
             }
             else
             {
@@ -42,14 +41,15 @@ public class PauseMenu : MonoBehaviour
     
     public void Pause()
     {
-        //Make GameObject "PauseMenu" visible to player
-        _PauseMenu.SetActive(true);
+  
 
         //Holts In-Game Timer from executing , Holting any Timer Bound Actions
         Time.timeScale = 0f;
+    //Set False By Default (doesnt show) - As intended
+    _SceneSwitcher.LoadSceneAdditive("Pause");
 
-        //Referenced in Update
-        _Paused = true;
+    //Referenced in Update
+    _Paused = true;
     }
 
 
@@ -57,7 +57,8 @@ public class PauseMenu : MonoBehaviour
     {
         //Make GameObject "PauseMenu" invisible to player
 
-        _PauseMenu.SetActive(false);
+        //Set False By Default (doesnt show) - As intended
+        _SceneSwitcher.UnloadScene("Pause");
 
         //Continues Regular Operation 
         Time.timeScale = 1f;
