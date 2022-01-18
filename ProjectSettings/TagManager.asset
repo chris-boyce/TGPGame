@@ -11,6 +11,7 @@ TagManager:
   - Crate
   - Pickup
   - PickupHealthbar
+  - Canvas
   layers:
   - Default
   - TransparentFX

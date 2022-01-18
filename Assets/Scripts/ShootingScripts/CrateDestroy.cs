@@ -15,7 +15,7 @@ public class CrateDestroy : MonoBehaviour
    public void Start()
    {
         pickUp.SetActive(false);
-        healthbar = GameObject.FindWithTag("PickupHealthbar") as GameObject;
+        healthbar = GameObject.FindWithTag("PickupHealthbar");
    }
 
     // Update is called once per frame
