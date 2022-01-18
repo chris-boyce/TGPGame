@@ -44,6 +44,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 0}
+--- !u!136 &4364191547866949880
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572979669280122351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.607996
+  m_Height: 2.6514375
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.09737146, z: 0.007009506}
+--- !u!114 &1092669358234619955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572979669280122351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  currentHealth: 0
+  healthBarSlider: {fileID: 0}
+  slider: {fileID: 0}
+  healthbarObject: {fileID: 0}
 --- !u!114 &1478949803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,23 +91,6 @@ MonoBehaviour:
   squareGun: {fileID: 5284133024259412159}
   capGun: {fileID: 5284133024422844463}
   sniperObject: {fileID: 0}
---- !u!114 &7586355501141293713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2874483414415753091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  currentHealth: 0
-  healthBarSlider: {fileID: 0}
-  slider: {fileID: 0}
-  healthbarLocation: {fileID: 1862969755}
 --- !u!1001 &1971691074040922851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7976215319349140262, guid: 670700fe8d4a461478a42f5b573273f6, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7976215319349140264, guid: 670700fe8d4a461478a42f5b573273f6, type: 3}
       propertyPath: m_TagString
@@ -244,6 +258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670700fe8d4a461478a42f5b573273f6, type: 3}
+--- !u!1 &3572979669280122351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8701170985588965700, guid: 670700fe8d4a461478a42f5b573273f6, type: 3}
+  m_PrefabInstance: {fileID: 5284133024325510315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2874483414415753091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7976215319349140264, guid: 670700fe8d4a461478a42f5b573273f6, type: 3}
