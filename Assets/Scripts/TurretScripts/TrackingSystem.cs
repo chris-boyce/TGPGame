@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrackingSystem : MonoBehaviour
 {
     public float speed = 5.0f;
-    public Transform target = null;
+    public GameObject target;
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
 
@@ -26,21 +26,19 @@ public class TrackingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 a = (target.transform.position - transform.position).normalized;
-        //float dot = Vector3.Dot(a, transform.forward);
-
-        if(target)
-        {
-            if(lastPosition != target.transform.position)
+        if(target.gameObject.CompareTag("Enemy"))
+        {            
+            if (lastPosition != target.transform.position)
             {
                 lastPosition = target.transform.position;
                 lookRotation = Quaternion.LookRotation(lastPosition - transform.position);
             }
 
-            if(transform.rotation != lookRotation)
+            if (transform.rotation != lookRotation)
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, speed * Time.deltaTime);
-            }            
+            }
+                           
         }
     }
 
@@ -67,9 +65,9 @@ public class TrackingSystem : MonoBehaviour
     }
 
     void Shoot()
-    {
-        muzzle.Play();
+    {        
         nextFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPosition.transform.position, bulletPosition.transform.rotation);
+        muzzle.Play();
     }
 }
