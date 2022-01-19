@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour
 		Vector3 camDirY = new Vector3(Mathf.Round(cam.transform.forward.normalized.x), 0, Mathf.Round(cam.transform.forward.normalized.z));
 
 		if (xInput > inputDeadZone.x || xInput < -inputDeadZone.x) {
-			if (rbVec.magnitude > maxSpeed) {
-				rb.AddForce(camDirX * (xInput * moveSpeed)); // Apply motion based on the camera's direction.
+			if (rbVec.x > -maxSpeed || rbVec.x < maxSpeed) {
+				rb.AddForce(camDirX * (xInput * moveSpeed), ForceMode.VelocityChange); // Apply motion based on the camera's direction.
 				xInputPressed = true;
 			}
 		} else {
@@ -77,16 +77,18 @@ public class PlayerController : MonoBehaviour
 		}
 
 		if (yInput > inputDeadZone.y || yInput < -inputDeadZone.y) {
-			rb.AddForce(camDirY * (yInput * moveSpeed) * Time.deltaTime); // Apply motion based on the camera's direction.
-			yInputPressed = true;
+			if (rbVec.y > -maxSpeed || rbVec.y < maxSpeed) {
+				rb.AddForce(camDirY * (yInput * moveSpeed), ForceMode.VelocityChange); // Apply motion based on the camera's direction.
+				yInputPressed = true;
+			}
         } else {
 			yInputPressed = false;
 		}
 
 		// If there is no input on either button press
 		if (!xInputPressed && !yInputPressed) {
-			if (rb.velocity.magnitude > 0.005 || rb.velocity.magnitude < 0.005) { // If the speed is so little.
-				rb.velocity = (rb.velocity * slowSpeed) * Time.deltaTime; 
+			if (rbVec.magnitude > 0.005 || rbVec.magnitude < 0.005) { // If the speed is so little.
+				rb.velocity = new Vector3(rb.velocity.x * slowSpeed, rb.velocity.y, rb.velocity.z * slowSpeed);
 			} else {
 				rb.velocity = Vector3.zero; // IT'S TIME TO STOP
 			}

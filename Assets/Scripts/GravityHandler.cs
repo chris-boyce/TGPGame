@@ -50,19 +50,23 @@ public class GravityHandler : MonoBehaviour
 
         if (bounce && forcedUp) { // If player has bounced.
             // Clamp Y velocity
-			Debug.Log("bounce && forcedUp");
             rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, minFallSpeed, maxFallSpeed), rb.velocity.z);
         }
 
         Color debugColor = Color.green;
-
         RaycastHit hit;
 
-        if (Physics.Raycast(pos, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity)) {
-            HandleCollision(hit);
-        }
 
-        Debug.DrawLine(pos, pos + new Vector3(0, -heightOffset), debugColor);
+        if (Physics.Raycast(pos, transform.TransformDirection(Vector3.down), out hit, (heightOffset + maxHeightOffset) * 2)) {
+            debugColor = Color.red;
+            HandleCollision(hit);
+        } else {
+            grounded = false;
+            rb.useGravity = true;
+        }
+        Vector3 vec = new Vector3(pos.x, pos.y + ((-heightOffset + -maxHeightOffset) * 2), pos.z);
+        Debug.DrawLine(pos, vec, debugColor);
+
     }
 
     /// <summary>
@@ -73,21 +77,17 @@ public class GravityHandler : MonoBehaviour
     {
 		float hitDist = Vector3.Distance(hit.point, pos);
 
-		if (hitDist < heightOffset && !grounded) {
-			Debug.Log("hitDist < heightOffset + heightDeadZone");
-
+		if (hitDist < heightOffset + heightDeadZone) {
 			rb.useGravity = false; // Stop gravity from effecting this object.
 			grounded = true;
 
 
 			if (hitDist <= maxHeightOffset && rb.velocity.y <= 0) { // Stop because we're about to move beyond the object.
-				Debug.Log("hitDist <= maxHeightOffset && rb.velocity.y <= 0");
 				rb.velocity = ZeroYVector(rb.velocity);
 			}
 
 			if (hitDist < heightOffset - heightDeadZone) {
 				if (rb.velocity.y < maxFallSpeed) {
-					Debug.Log("rb.velocity.y < maxFallSpeed");
 					rb.AddForce(Vector3.up * pullUpForce, ForceMode.VelocityChange);
 					forcedUp = true;
 				}
@@ -95,14 +95,11 @@ public class GravityHandler : MonoBehaviour
 			}
 
 			if (forcedUp && !bounce) {
-				Debug.Log("forcedUp && !bounce");
-
 				bounce = true;
 				forcedUp = false;
 			}
 
 			if (rb.velocity.y > 0 && bounce && forcedUp) {
-				Debug.Log("rb.velocity.y > 0 && bounce && forcedUp");
 				rb.velocity = ZeroYVector(rb.velocity);
 				forcedUp = false;
 				bounce = false;

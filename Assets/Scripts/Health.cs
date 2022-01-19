@@ -8,10 +8,10 @@ public class Health : MonoBehaviour
 
 	public float health = 100f;
 	[SerializeField]
-	private float currentHealth;
-	public Slider healthBarSlider;
-	public GameObject slider;
-	public GameObject healthbarObject;
+	public float currentHealth;
+	//public Slider healthBarSlider;
+	//public GameObject slider;
+	//public GameObject healthbarObject;
 
 
 	void Start()
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
 	private void Update()
 	{
-		healthBarSlider.value = currentHealth;
+		//healthBarSlider.value = currentHealth;
 	}
 
 	public void Damage(float damage)
@@ -38,8 +38,8 @@ public class Health : MonoBehaviour
 		Debug.Log("Dead");
 		currentHealth = health;
 		Destroy(gameObject);
-		Destroy(healthbarObject);
-		Destroy(slider);
+		//Destroy(healthbarObject);
+		//Destroy(slider);
        
 	}
 }
