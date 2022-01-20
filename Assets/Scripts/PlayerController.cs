@@ -18,9 +18,11 @@ public class PlayerController : MonoBehaviour
 	private float slowSpeed = 0.9f;
 	
 	// Settings related to the player camera.
-	[Header("Camera Settings")] 
+	[Header("Camera Settings")]
 	[SerializeField]
 	private Camera cam;
+	[SerializeField]
+	private GameObject failSafePrefab; // spawn camera prefab just incase a cam does not exist.
 	[SerializeField]
 	private bool smoothCam = true;
 	[SerializeField]
@@ -42,7 +44,11 @@ public class PlayerController : MonoBehaviour
 	void Start()
     {
 		rb = GetComponent<Rigidbody>();
-    }
+		if (!cam) {
+			var cameraSpawn = Instantiate(failSafePrefab);
+			cam = cameraSpawn.GetComponent<Camera>();
+		}
+	}
 
     // Update is called once per frame
     void FixedUpdate()
