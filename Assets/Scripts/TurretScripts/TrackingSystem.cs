@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrackingSystem : MonoBehaviour
 {
     public float speed = 5.0f;
-    public GameObject target;
+    public Transform target;
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
 
@@ -21,12 +21,16 @@ public class TrackingSystem : MonoBehaviour
     void Start()
     {
         gun.SetActive(true);
+        InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(target.gameObject.CompareTag("Enemy"))
+        if (target == null)
+            return;
+
+        if(target)
         {            
             if (lastPosition != target.transform.position)
             {
@@ -39,7 +43,35 @@ public class TrackingSystem : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, speed * Time.deltaTime);
             }
                            
+        }        
+    }
+
+    void UpdateTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if(shortestDistance > distanceToEnemy)
+            {
+                shortestDistance = distanceToEnemy;
+                closestEnemy = enemy; 
+            }
+
+            if(closestEnemy != null && shortestDistance <= maxDistance)
+            {
+                target = closestEnemy.transform;
+            }
+            else
+            {
+                target = null;
+            }
         }
+
     }
 
     void FixedUpdate()
