@@ -127,5 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 3551342326360303430}
+  pickUp: {fileID: 5021744897983459601, guid: 24f1d21b16a2cb44480e74af03a86c81, type: 3}
+  pickUpPosition: {fileID: 0}
   bulletDamage: 25
   bulletSpeed: 50
