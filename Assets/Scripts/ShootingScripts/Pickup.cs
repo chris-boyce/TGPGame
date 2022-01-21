@@ -26,13 +26,13 @@ public class Pickup : MonoBehaviour
         if (other.CompareTag("Pickup"))
         {
 
-            int randomNumber = Random.Range(0, 2);
+            int randomNumber = Random.Range(0, 101);
 
-            if (randomNumber == 0)
+            if (randomNumber <= 50)
             {
                 HealthUP();
             }
-            if (randomNumber == 1)
+            if (randomNumber >50)
             {
                 AmmoUP();
             }
@@ -48,7 +48,8 @@ public class Pickup : MonoBehaviour
 
     private void AmmoUP()
     {
-        Player.transform.Find("tempGun").GetComponent<Gun>().currentAmmoCount += 20;
+        Player.transform.Find("PlayerSniper").GetComponent<Sniper>().currentAmmoCount += 20;
+        Player.transform.Find("PlayerMachinePistol").GetComponent<MachinePistol>().currentAmmoCount += 20;
         Destroy(pickupObject);
     }
 }
