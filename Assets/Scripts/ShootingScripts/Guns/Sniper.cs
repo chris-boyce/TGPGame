@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
-public class Gun : MonoBehaviour
+public class Sniper : MonoBehaviour
 {
-    // Gun
+
     public GameObject bullet;
-    public GameObject objGun;
+    public GameObject objSniper;
     public Transform bulletPos;
     public float fireRate = 15f;
     public ParticleSystem muzzle;
@@ -21,14 +20,14 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire = 0f;
     void Start()
     {
-        objGun.SetActive(true);
+        objSniper.SetActive(false);
         currentAmmoCount = ammoCount;
         canShoot = true;
     }
 
     private void FixedUpdate()
     {
-  
+
 
     }
 
@@ -41,7 +40,7 @@ public class Gun : MonoBehaviour
             Shoot();
         }
 
-        if(currentAmmoCount == 0)
+        if (currentAmmoCount == 0)
         {
             canShoot = false;
         }
@@ -54,5 +53,6 @@ public class Gun : MonoBehaviour
         nextTimeToFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
     }
+
 
 }

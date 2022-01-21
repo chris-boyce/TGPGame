@@ -208,6 +208,7 @@ MonoBehaviour:
   Slider: {fileID: 4196171042505646752, guid: 39a778a8a64b99f45bb70b33191ada5b, type: 3}
   canvas: {fileID: 1062151360321296704, guid: 2fe6da3182dcc4c4baefd123534f0042, type: 3}
   SliderPos: {fileID: 1510626287021960524}
+  newSlider: {fileID: 4196171042505646752, guid: 39a778a8a64b99f45bb70b33191ada5b, type: 3}
   thisObject: {fileID: 8898835156756329067}
 --- !u!54 &9035437044715156236
 Rigidbody:

@@ -12,6 +12,7 @@ TagManager:
   - Pickup
   - PickupHealthbar
   - Canvas
+  - MachinePistol
   layers:
   - Default
   - TransparentFX

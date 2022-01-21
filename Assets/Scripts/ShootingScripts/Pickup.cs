@@ -43,7 +43,7 @@ public class Pickup : MonoBehaviour
 
     private void HealthUP()
     {
-        Player.GetComponent<Health>().currentHealth += 25;
+        Player.transform.Find("PlayerObject").GetComponent<Health>().currentHealth += 25;
     }
 
     private void AmmoUP()

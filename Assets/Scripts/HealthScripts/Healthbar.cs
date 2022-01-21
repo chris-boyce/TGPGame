@@ -11,7 +11,6 @@ public class Healthbar : MonoBehaviour
     public Slider Slider;
     public GameObject canvas;
     public GameObject SliderPos;
-    private Slider newSlider;
     public GameObject thisObject;
 
 

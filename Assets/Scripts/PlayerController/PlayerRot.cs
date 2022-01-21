@@ -6,7 +6,8 @@ public class PlayerRot : MonoBehaviour
 {
 
     public Camera mainCamera;
-
+    public Transform gunPos;
+    public float speed = 1.0f;
     void Update()
     {
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -18,7 +19,7 @@ public class PlayerRot : MonoBehaviour
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
 
-            transform.LookAt(new Vector3(pointToLook.x , transform.position.y , pointToLook.z));
+            transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
 
     }

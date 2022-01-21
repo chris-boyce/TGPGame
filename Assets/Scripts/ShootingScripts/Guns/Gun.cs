@@ -1,33 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
-public class Sniper : MonoBehaviour
+public class Gun : MonoBehaviour
 {
-
+    // Gun
     public GameObject bullet;
-    public GameObject objSniper;
+    public GameObject objPistol;
     public Transform bulletPos;
     public float fireRate = 15f;
     public ParticleSystem muzzle;
+    // Ammo
+    public TextMeshProUGUI Text;
+    public int ammoCount = 1;
+    public int currentAmmoCount;
+    public bool canShoot;
 
     private float nextTimeToFire = 0f;
     void Start()
     {
-        objSniper.SetActive(false);
+        objPistol.SetActive(true);
+        currentAmmoCount = ammoCount;
+        canShoot = true;
     }
 
     private void FixedUpdate()
     {
-
+  
 
     }
 
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        Text.text = "Ammo:\u221E";
+
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
             Shoot();
+        }
+
+        if(currentAmmoCount == 0)
+        {
+            canShoot = false;
         }
     }
 
