@@ -8,14 +8,16 @@ public class TrackingSystem : MonoBehaviour
     public Transform target;
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
-
+    RaycastHit hit;
+    private float turretHealth = 100.0f;
     public GameObject bullet;
     public GameObject gun;
     public Transform bulletPosition;
     public ParticleSystem muzzle;
-    public float fireRate = 5.0f;
-    public float maxDistance = 10.0f;
-    private float nextFire = 2.0f;    
+    public ParticleSystem fire;
+    public float fireRate = 10.0f;
+    public float maxDistance = 1.0f;
+    private float nextFire = 0.0f;    
 
 
     void Start()
@@ -32,18 +34,16 @@ public class TrackingSystem : MonoBehaviour
 
         if(target)
         {            
-            if (lastPosition != target.transform.position)
+            if (lastPosition != target.transform.position) // last known position doesn't equal the position of the target
             {
-                lastPosition = target.transform.position;
-                lookRotation = Quaternion.LookRotation(lastPosition - transform.position);
+                lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
             }
 
-            if (transform.rotation != lookRotation)
+            if (transform.rotation != lookRotation) // rotation doesn't equal the rotation needed to get the target ??
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, speed * Time.deltaTime);
             }
-                           
-        }        
+        }
     }
 
     void UpdateTarget()
@@ -59,7 +59,7 @@ public class TrackingSystem : MonoBehaviour
             if(shortestDistance > distanceToEnemy)
             {
                 shortestDistance = distanceToEnemy;
-                closestEnemy = enemy; 
+                closestEnemy = enemy;
             }
 
             if(closestEnemy != null && shortestDistance <= maxDistance)
@@ -70,20 +70,21 @@ public class TrackingSystem : MonoBehaviour
             {
                 target = null;
             }
+
+            if (enemy != closestEnemy)
+            {
+                return;
+            }
+            else
+            {
+                if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+                {
+                    Shoot();
+                }
+            }
         }
-
     }
-
-    void FixedUpdate()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
-        {
-            Shoot();
-        }
-    }
-
+    
     bool SetTarget(GameObject _target)
     {
         if(!target)
@@ -102,4 +103,17 @@ public class TrackingSystem : MonoBehaviour
         Instantiate(bullet, bulletPosition.transform.position, bulletPosition.transform.rotation);
         muzzle.Play();
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, maxDistance);
+    }
 }
+
+
+
+//if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+//{
+//    Shoot();
+//}
