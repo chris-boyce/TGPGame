@@ -2,32 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Code is mostly credited from unity's prototype project for teaching character rigging with proceedural animation
+// however I had to modify a lot of it to get it to function.
+
+// 1: To setup. Click on the model and click animation rigging in the top left, click "setup rig".
+// 2: Create 4 new game objects, 2 for the feet, 2 for the knees.
+// 3: Assign this script to the feet and make sure that this is not a parent of the player object.
+// 4: In the rig, create two new game objects and in each one add a "Two Bone IK constraint"
+// 5: for the root, add the thigh bone for which side you want, mid is the shin bone, tip is the foot.
+// 6: add the foot game object we created in step 2 into the "target" option
+// 7: Add the knee into the "hint" function.
+// 8: make sure all weights in the rig settings are set to 1. And you're good to go!
+
 public class IKFeet : MonoBehaviour {
+	
 	[SerializeField]
-	private float footDistance = 0.0f;
+	private float footDistance = 0.0f; // distance of the feet sideways, lets you do the splits or something idk.
 	[SerializeField]
-	private float forwardOffset = 0.3f;
+	private float forwardOffset = 0.3f; // how far the foot will extend out, gets inverted after every step.
 	[SerializeField]
 	[Range(0.0f, 10.0f)]
-	private float stepDistance = 1.0f;
+	private float stepDistance = 1.0f; // the max distance allowed between making steps.
 	[SerializeField]
 	[Range(0.0f, 2.0f)]
-	private float stepHeight = 0.4f;
+	private float stepHeight = 0.4f; // how high should the feet go while making a step.
 	[SerializeField]
-	private float speed = 1.0f;
+	private float forwardDistanceDivider = 8.5f; // the distance added by velocity for judging when to put the next foot is divided by this.
+	[SerializeField]
+	private float speed = 1.0f; // Speed of how fast the footstep is 
 
-	Transform root;
-	Vector3 currentPos;
-	Vector3 oldPos;
-	Vector3 newPos;
-	float lerp;
+	[SerializeField]
+	private Vector3 rotationOffset; // Applies a permanent offset to the rotation of the foot.
 
+
+	private Transform root; // player position
+	private Rigidbody rb; // rigidbody of the player.
+
+	private Vector3 currentPos; // Current position of the foot.
+	private Vector3 oldPos; // old position before the new position will overwrite it.
+	private Vector3 newPos; // new position after the distance is greater between the currentpos and where the desired spot.
+	private float lerp; // lerp value for smoothness.
+
+	[SerializeField]
+	private IKFeet oppositeFoot; // as the name implies. Opposite foot.
+
+	// helpers for checking other feet.
 	private bool invertFoot = true;
-	private bool movingFoot = true;
+	public bool movingFoot = false;
+	public bool finishedMoving = true;
 
-	[SerializeField]
-	IKFeet oppositeFoot;
-	Rigidbody rb;
 
 	// Start is called before the first frame update
     void Start()
@@ -40,18 +63,20 @@ public class IKFeet : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
 		transform.position = currentPos;
-		transform.rotation = root.rotation;
-		Debug.DrawRay(currentPos, Vector3.up, Color.green);
 
+		Quaternion rot = root.rotation;
+		rot *= Quaternion.Euler(rotationOffset);
+		transform.rotation = rot;
 
-		Vector3 rootTrans = root.position + (root.right * footDistance) + (root.forward * (invertFoot ? forwardOffset : -forwardOffset));
 
 		// root position is the player.
 		// player gets given an offset for the feet on the right and left.
-		// gets an offset based on the location of the foot.
+		// gets an offset based on the location of the foot and velocity of the player.
 
-		Debug.DrawRay(rootTrans, Vector3.down, Color.cyan);
+		Vector3 pointSpeed = rb.GetRelativePointVelocity(root.transform.position);
+		Vector3 rootTrans = root.position + (root.right * footDistance) + (root.forward * (invertFoot ? forwardOffset : -forwardOffset)) + (new Vector3(pointSpeed.x, 0, pointSpeed.z) / forwardDistanceDivider);
 
 		// fire a ray down to the floor.
 		// if the distance of newPos and the ray is larger than 0.3
@@ -61,9 +86,16 @@ public class IKFeet : MonoBehaviour {
 
 		if (Physics.Raycast(rootTrans, Vector3.down, out RaycastHit hit)) {
 			if (Vector3.Distance(newPos, hit.point) > stepDistance) {
-				newPos = hit.point;
-				movingFoot = true;
-				lerp = 0;
+				if (!oppositeFoot.movingFoot && !movingFoot) {
+					newPos = hit.point;
+					movingFoot = true;
+					lerp = 0;
+				} else {
+					oldPos = hit.point;
+					movingFoot = false;
+				}
+			} else {
+				movingFoot = false;
 			}
 		}
 
@@ -83,19 +115,20 @@ public class IKFeet : MonoBehaviour {
 			}
 
 			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp + magnitude);
-			footPos.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
+			footPos.y += Mathf.Sin((lerp + magnitude) * Mathf.PI) * stepHeight;
 
 			Debug.DrawRay(footPos, Vector3.up, Color.yellow);
 			
 			currentPos = footPos;
-
-			invertFoot = !invertFoot;
+			movingFoot = true;
 			lerp += speed * Time.deltaTime;
 			
 		} else {
 			Debug.DrawRay(newPos, Vector3.up, Color.magenta);
 			Debug.DrawRay(oldPos, Vector3.up, Color.black);
 			oldPos = newPos;
+			invertFoot = !invertFoot;
+			finishedMoving = true;
 			movingFoot = false;
 		}
 	}
