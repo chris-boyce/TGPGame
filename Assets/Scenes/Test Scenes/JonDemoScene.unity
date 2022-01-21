@@ -1815,6 +1815,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Layer
       objectReference: {fileID: 0}
+    - target: {fileID: 1629956658092360520, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: angleOffset.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629956658092360520, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: angleOffset.y
+      value: -180
+      objectReference: {fileID: 0}
     - target: {fileID: 4872462645917674710, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: rotationOffset.x
       value: 115

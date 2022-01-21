@@ -584,20 +584,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629956658092360524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d6d314c4b917542ba51e0c8497e804, type: 3}
+  m_Script: {fileID: 11500000, guid: ea49d8fd3e43fa04d839810ce327e5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originOffset: {x: 0, y: 0, z: 0}
-  heightOffset: 1
-  heightDeadZone: 0.05
-  pullUpForce: 0.5
-  transformDirFlip: 0
-  grounded: 1
-  forcedUp: 0
-  bounce: 0
-  maxHeightOffset: 0.2
-  minFallSpeed: -0.8
-  maxFallSpeed: 2
+  mouseInput: 0
+  moveSpeed: 1.5
+  inputDeadZone: {x: 0.2, y: 0.2}
+  maxSpeed: 2
+  slowSpeed: 0.9
+  cam: {fileID: 67331388036336326}
+  failSafePrefab: {fileID: 0}
+  smoothCam: 1
+  camSmoothSpeed: 1
+  heightOffset: 8
+  distanceOffset: 6
+  angleOffset: {x: 50, y: -180, z: 0}
 --- !u!114 &1629956658092360521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,21 +608,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629956658092360524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356b5807ad1454441bb00e952130bdda, type: 3}
+  m_Script: {fileID: 11500000, guid: a99477640758f3c40ac9b72994cd66d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseInput: 0
-  moveSpeed: 3
-  inputDeadZone: {x: 0.2, y: 0.2}
-  maxSpeed: 2
-  slowSpeed: 0.5
-  cam: {fileID: 67331388036336326}
-  failSafePrefab: {fileID: 5118021446621855751, guid: 6842da0abfded74429bb33f858fcda08, type: 3}
-  smoothCam: 1
-  camSmoothSpeed: 3
-  heightOffset: 8
-  distanceOffset: 6
-  angleOffset: {x: 50, y: 180, z: 0}
+  originOffset: {x: 0, y: 0, z: 0}
+  heightOffset: 1.1
+  heightDeadZone: 0.05
+  pullUpForce: 0.5
+  transformDirFlip: 0
+  grounded: 1
+  forcedUp: 0
+  bounce: 0
+  maxHeightOffset: 0.2
+  minFallSpeed: -0.8
+  maxFallSpeed: 2
 --- !u!54 &1629956658092360522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -649,9 +649,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.19719687
-  m_Height: 1.0858347
+  m_Height: 0.86621773
   m_Direction: 1
-  m_Center: {x: 0, y: 0.2938094, z: -0.049999997}
+  m_Center: {x: 0, y: 0.40361792, z: -0.049999997}
 --- !u!114 &7247269051609596253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,10 +1014,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footDistance: -0.15
   forwardOffset: 0.2
-  stepDistance: 0.45
+  stepDistance: 0.6
   stepHeight: 0.4
   forwardDistanceDivider: 8
   speed: 8
+  rotationOffset: {x: 115, y: 0, z: 0}
   oppositeFoot: {fileID: 8536953323269182728}
   movingFoot: 0
   finishedMoving: 1
@@ -1576,10 +1577,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footDistance: 0.15
   forwardOffset: -0.2
-  stepDistance: 0.45
+  stepDistance: 0.6
   stepHeight: 0.4
   forwardDistanceDivider: 8
   speed: 8
+  rotationOffset: {x: 115, y: 0, z: 0}
   oppositeFoot: {fileID: 4872462645917674710}
   movingFoot: 0
   finishedMoving: 1
