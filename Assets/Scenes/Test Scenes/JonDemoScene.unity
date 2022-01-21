@@ -307,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234370933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: -0.25}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 150320124}
@@ -1835,7 +1835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712718820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0, z: 0.25}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 150320124}
@@ -2105,11 +2105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef43de5b0991cd84d8d142959e5f9596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footDistance: -0.1
-  forwardOffset: 0.2
-  stepDistance: 0.5
+  footDistance: -0.175
+  forwardOffset: 0.15
+  stepDistance: 0.35
   stepHeight: 0.4
   speed: 3
+  oppositeFoot: {fileID: 8536953323269182728}
 --- !u!4 &4878730380838929522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4853630135895183189, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
@@ -2167,8 +2168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef43de5b0991cd84d8d142959e5f9596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footDistance: 0.1
-  forwardOffset: -0.2
-  stepDistance: 0.5
+  footDistance: 0.175
+  forwardOffset: -0.15
+  stepDistance: 0.35
   stepHeight: 0.4
   speed: 3
+  oppositeFoot: {fileID: 4872462645917674710}

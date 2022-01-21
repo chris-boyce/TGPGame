@@ -22,8 +22,11 @@ public class IKFeet : MonoBehaviour {
 	Vector3 newPos;
 	float lerp;
 
-	bool invertFoot = true;
+	private bool invertFoot = true;
+	private bool movingFoot = true;
 
+	[SerializeField]
+	IKFeet oppositeFoot;
 	Rigidbody rb;
 
 	// Start is called before the first frame update
@@ -38,7 +41,9 @@ public class IKFeet : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 		transform.position = currentPos;
+		transform.rotation = root.rotation;
 		Debug.DrawRay(currentPos, Vector3.up, Color.green);
+
 
 		Vector3 rootTrans = root.position + (root.right * footDistance) + (root.forward * (invertFoot ? forwardOffset : -forwardOffset));
 
@@ -56,8 +61,8 @@ public class IKFeet : MonoBehaviour {
 
 		if (Physics.Raycast(rootTrans, Vector3.down, out RaycastHit hit)) {
 			if (Vector3.Distance(newPos, hit.point) > stepDistance) {
-				invertFoot = !invertFoot;
 				newPos = hit.point;
+				movingFoot = true;
 				lerp = 0;
 			}
 		}
@@ -71,20 +76,27 @@ public class IKFeet : MonoBehaviour {
 		// add speed + magnitude times by the deltatime to lerp (could this be going over 1 if the magnitude gets so high causing the missing steps?
 		//
 		// if lerp is more than 1, set the oldPos to newPos.
-
-		if (lerp < 10) {
-			Vector3 footPos = Vector3.Lerp(newPos, newPos, lerp);
-			footPos.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
-
-			currentPos = footPos;
-
+		if (lerp < 1) {
 			float magnitude = rb.velocity.magnitude;
-			if(magnitude < 0) { // if the magnitude is ever negative, set it to positive.
+			if (magnitude < 0) { // if the magnitude is ever negative, set it to positive.
 				magnitude = -magnitude;
 			}
-			lerp += (speed + rb.velocity.magnitude) * Time.deltaTime;
+
+			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp + magnitude);
+			footPos.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
+
+			Debug.DrawRay(footPos, Vector3.up, Color.yellow);
+			
+			currentPos = footPos;
+
+			invertFoot = !invertFoot;
+			lerp += speed * Time.deltaTime;
+			
 		} else {
+			Debug.DrawRay(newPos, Vector3.up, Color.magenta);
+			Debug.DrawRay(oldPos, Vector3.up, Color.black);
 			oldPos = newPos;
+			movingFoot = false;
 		}
 	}
 }
