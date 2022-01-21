@@ -5,55 +5,86 @@ using UnityEngine;
 public class TrackingSystem : MonoBehaviour
 {
     public float speed = 5.0f;
-    public Transform target = null;
+    public Transform target;
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
-
+    RaycastHit hit;
+    private float turretHealth = 100.0f;
     public GameObject bullet;
     public GameObject gun;
     public Transform bulletPosition;
     public ParticleSystem muzzle;
-    public float fireRate = 5.0f;
-    public float maxDistance = 10.0f;
-    private float nextFire = 2.0f;    
+    public ParticleSystem fire;
+    public float fireRate = 10.0f;
+    public float maxDistance = 1.0f;
+    private float nextFire = 0.0f;    
 
 
     void Start()
     {
         gun.SetActive(true);
+        InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Vector3 a = (target.transform.position - transform.position).normalized;
-        //float dot = Vector3.Dot(a, transform.forward);
+        if (target == null)
+            return;
 
         if(target)
-        {
-            if(lastPosition != target.transform.position)
+        {            
+            if (lastPosition != target.transform.position) // last known position doesn't equal the position of the target
             {
-                lastPosition = target.transform.position;
-                lookRotation = Quaternion.LookRotation(lastPosition - transform.position);
+                lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
             }
 
-            if(transform.rotation != lookRotation)
+            if (transform.rotation != lookRotation) // rotation doesn't equal the rotation needed to get the target ??
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, speed * Time.deltaTime);
-            }            
+            }
         }
     }
 
-    void FixedUpdate()
+    void UpdateTarget()
     {
-        RaycastHit hit;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
+        float shortestDistance = Mathf.Infinity;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+        foreach (GameObject enemy in enemies)
         {
-            Shoot();
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if(shortestDistance > distanceToEnemy)
+            {
+                shortestDistance = distanceToEnemy;
+                closestEnemy = enemy;
+            }
+
+            if(closestEnemy != null && shortestDistance <= maxDistance)
+            {
+                target = closestEnemy.transform;
+            }
+            else
+            {
+                target = null;
+            }
+
+            if (enemy != closestEnemy)
+            {
+                return;
+            }
+            else
+            {
+                if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+                {
+                    Shoot();
+                }
+            }
         }
     }
-
+    
     bool SetTarget(GameObject _target)
     {
         if(!target)
@@ -67,9 +98,22 @@ public class TrackingSystem : MonoBehaviour
     }
 
     void Shoot()
-    {
-        muzzle.Play();
+    {        
         nextFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPosition.transform.position, bulletPosition.transform.rotation);
+        muzzle.Play();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, maxDistance);
     }
 }
+
+
+
+//if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+//{
+//    Shoot();
+//}
