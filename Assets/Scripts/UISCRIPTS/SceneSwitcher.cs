@@ -51,7 +51,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         _Animator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("GameMenu");
+        SceneManager.LoadScene(scene_name);
 
     }
 

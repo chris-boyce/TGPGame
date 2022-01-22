@@ -12,6 +12,10 @@ public class LevelSelect : MonoBehaviour
     //Store Scene Reference
     public string[] _Scene_Array;
 
+
+    //
+    public Animator _Animator;
+
     //IMG Used To Identify Scene Change Option
 
     public GameObject _LevelSelect;
@@ -63,8 +67,17 @@ public class LevelSelect : MonoBehaviour
     //OnClick Reference , When clicked will Load chosen scene
     public void StartLevel()
     {
+
+
+        StartCoroutine(LoadLevel());
+
+    }
+    IEnumerator LoadLevel()
+    {
+        _Animator.SetTrigger("StartTransition");
+        yield return new WaitForSeconds(1);
         //Elements 0 - 4 in both arrays are ordered the same , e.g level 1 = 0 (for both arrays) ect...
         SceneManager.LoadScene(_Scene_Array[_LevelSelected]);
-        
+
     }
 }
