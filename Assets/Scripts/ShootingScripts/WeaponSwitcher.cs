@@ -75,7 +75,6 @@ public class WeaponSwitcher : MonoBehaviour
             selectedWeapon = 6;
         }
 
-
         // "if" statements to turn on the weapon depending which key has been pressed
         //Sniper
         if (selectedWeapon == 0)      
@@ -145,16 +144,13 @@ public class WeaponSwitcher : MonoBehaviour
             shotgun.objShotgun.SetActive(false);
         }
 
-
-
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         // Cycles through the weapons activating them or deactivating them
-        if (prevSelectedWeapon != selectedWeapon && canSwitchWeaponToSniper == true && canSwitchWeaponToMachinePistol == true)
+        if (prevSelectedWeapon != selectedWeapon)
         {
            SelectWeapon();
         }
@@ -195,8 +191,6 @@ public class WeaponSwitcher : MonoBehaviour
             Destroy(shotgunObject);
         }
     }
-
-
 
     void SelectWeapon()
     {

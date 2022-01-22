@@ -1188,6 +1188,10 @@ PrefabInstance:
       propertyPath: Text
       value: 
       objectReference: {fileID: 1174765481}
+    - target: {fileID: 6211661824367406070, guid: d84c1522a6661364f807d895501a8878, type: 3}
+      propertyPath: spreadAngle
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6212577451375384429, guid: d84c1522a6661364f807d895501a8878, type: 3}
       propertyPath: akObject
       value: 
