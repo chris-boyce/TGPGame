@@ -1103,7 +1103,7 @@ Transform:
   - {fileID: 1507399507}
   - {fileID: 756917447}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876187549
 GameObject:
@@ -1826,6 +1826,10 @@ PrefabInstance:
     - target: {fileID: 4872462645917674710, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: rotationOffset.x
       value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865603820988410671, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.155
       objectReference: {fileID: 0}
     - target: {fileID: 8536953323269182728, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: rotationOffset.x

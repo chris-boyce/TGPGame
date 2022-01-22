@@ -6,7 +6,6 @@ public class PlayerRot : MonoBehaviour
 {
 
     public Camera mainCamera;
-    public Transform gunPos;
     public float speed = 1.0f;
     void Update()
     {
