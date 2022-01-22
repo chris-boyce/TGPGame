@@ -18,11 +18,9 @@ public class PlayerController : MonoBehaviour
 	private float slowSpeed = 0.9f;
 	
 	// Settings related to the player camera.
-	[Header("Camera Settings")]
+	[Header("Camera Settings")] 
 	[SerializeField]
 	private Camera cam;
-	[SerializeField]
-	private GameObject failSafePrefab; // spawn camera prefab just incase a cam does not exist.
 	[SerializeField]
 	private bool smoothCam = true;
 	[SerializeField]
@@ -38,19 +36,13 @@ public class PlayerController : MonoBehaviour
 	private bool xInputPressed = false;
 	private bool yInputPressed = false;
 
-	public Animator animator;
-
 	Vector3 rbVec; // Rigidbody velocity with a 0 on y axis.
 
 	// Start is called before the first frame update
 	void Start()
     {
 		rb = GetComponent<Rigidbody>();
-		if (!cam) {
-			var cameraSpawn = Instantiate(failSafePrefab);
-			cam = cameraSpawn.GetComponent<Camera>();
-		}
-	}
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -78,12 +70,10 @@ public class PlayerController : MonoBehaviour
 		if (xInput > inputDeadZone.x || xInput < -inputDeadZone.x) {
 			if (rbVec.x > -maxSpeed || rbVec.x < maxSpeed) {
 				rb.AddForce(camDirX * (xInput * moveSpeed), ForceMode.VelocityChange); // Apply motion based on the camera's direction.
-				animator.SetBool("isRunning", true);
 				xInputPressed = true;
 			}
 		} else {
 			xInputPressed = false;
-			animator.SetBool("isRunning", false);
 		}
 
 		if (yInput > inputDeadZone.y || yInput < -inputDeadZone.y) {
