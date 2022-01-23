@@ -1,61 +1,91 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 
 public class SceneSwitcher : MonoBehaviour
 {
 
-    //
-    public Animator _Animator;
+    
+    public Animator _Animator; //Interface to access / control animator within coded script
 
+
+    //
     public float _Timer = 25.0f;
     public bool _TimerStart = false;
-    //Loads Scene with passed in string "scene_name"
+
+
+
+    //Each Frame - Statement Executed
+    void Update()
+    {
+        TimerStart();
+    }
+    /// <summary>
+    /// Loads Scene with interface passed Scene Name
+    /// 
+    /// LoadSceneMode = Additive - Loads scene without unloading current active scene / scenes
+    /// </summary>
+    public void LoadSceneAdditive(string scene_name)
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene(scene_name, LoadSceneMode.Additive);
+
+    }
+
+    /// <summary>
+    /// Loads Scene with interface passed Scene Name
+    /// 
+    /// LoadSceneMode = Single - Unloads previous scene to load referenced scene
+    /// </summary>
     public void LoadSingleScene(string scene_name)
     {
         SceneManager.LoadScene(scene_name, LoadSceneMode.Single);
     }
 
-    void Update()
-    {
-        TimerStart();
-    }
-    public void LoadSceneAdditive(string scene_name)
-    {
-        SceneManager.LoadScene(scene_name, LoadSceneMode.Additive);
-    }
-
+    /// <summary>
+    /// Loads Scene with interface passed Scene Name
+    /// 
+    /// LoadSceneMode = Single - Unloads previous scene to load referenced scene
+    /// </summary>
     public void UnloadScene(string scene_name)
     {
-
         SceneManager.UnloadSceneAsync(scene_name);
-
-
-
     }
 
-    public void LoadTransition(string scene_name)
+    /// <summary>
+    /// Loads Scene With the addition of a Transition 
+    /// </summary>
+    public void LoadTransitionSingle(string scene_name)
     {
-
-
-
-        StartCoroutine(LoadLevel(scene_name));
-
-
+        StartCoroutine(LoadLevelSingle(scene_name));
     }
-
-    IEnumerator LoadLevel(string scene_name)
+    IEnumerator LoadLevelSingle(string scene_name)
     {
         _Animator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(scene_name);
+        SceneManager.LoadScene(scene_name, LoadSceneMode.Single);
+
+    }
+
+    public void LoadTransitionAdditive(string scene_name )
+    {
+        StartCoroutine(LoadLevelAdditive(scene_name));
+    }
+    IEnumerator LoadLevelAdditive(string scene_name)
+    {
+        _Animator.SetTrigger("StartTransition");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(scene_name, LoadSceneMode.Additive);
 
     }
 
 
+
+    /// <summary>
+    /// Loads Scene Delayed - TimerStart() Referenced in Update, so timer updates each frame , to eventually invoke if statement to load new scene.
+    /// </summary>
     public void LoadDelaySingleScene(string scene_name)
     {
         _TimerStart = true;   
