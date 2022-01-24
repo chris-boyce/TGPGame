@@ -56,10 +56,6 @@ public class Spawn : MonoBehaviour
     private void NextWave()
     {
         currentWaveNumber++;
-
-        
-        Debug.Log("New Wave");
-        Debug.Log(currentWaveNumber);
         waves[currentWaveNumber - 1].enemyCount = currentWaveNumber * waveMultiplier;
         waves[currentWaveNumber -1 ].timeBetweenSpawn = 5 / currentWaveNumber;
             
@@ -71,7 +67,7 @@ public class Spawn : MonoBehaviour
     }
 
 
-    IEnumerator BetweenWaveTimer() //Waits 20 Seconds to start next wave
+    IEnumerator BetweenWaveTimer() //Waits 10 Seconds to start next wave
     {
         yield return new WaitForSeconds(10);
         NextWave();
