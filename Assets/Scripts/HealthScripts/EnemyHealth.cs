@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    
     private float EnemiesHealth = 100f;
-    public event System.Action OnDeath;
+    public event System.Action OnDeath; // Wave Call depends on this script being run due to the Events System *Chris*
     public void TakeDamage(float damage)
     {
         EnemiesHealth -= damage;
