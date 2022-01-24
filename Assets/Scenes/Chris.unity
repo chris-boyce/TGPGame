@@ -5171,7 +5171,7 @@ GameObject:
   - component: {fileID: 722795649}
   - component: {fileID: 722795648}
   - component: {fileID: 722795647}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10879,7 +10879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67331387076397571, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.47
+      value: 5.91
       objectReference: {fileID: 0}
     - target: {fileID: 67331387076397571, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10916,6 +10916,18 @@ PrefabInstance:
     - target: {fileID: 67331387076397572, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 67331387076397572, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 67331387076397572, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 67331388036336327, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
@@ -15130,6 +15142,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09fe9cce9bc547f46a74060f49bfe78b, type: 3}
+--- !u!1 &2014313066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1629956658092360524, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+  m_PrefabInstance: {fileID: 1450852054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2014313073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014313066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  currentHealth: 0
 --- !u!1001 &2021555034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16644,6 +16675,10 @@ PrefabInstance:
     - target: {fileID: 1367105007890293801, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
       propertyPath: m_Name
       value: Spawn Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367105007890293801, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b5cebbc86c96964b881c9897934204c, type: 3}
