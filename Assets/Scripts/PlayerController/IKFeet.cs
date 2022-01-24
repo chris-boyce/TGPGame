@@ -114,7 +114,7 @@ public class IKFeet : MonoBehaviour {
 				magnitude = -magnitude;
 			}
 
-			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp + magnitude);
+			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp);
 			footPos.y += Mathf.Sin((lerp + magnitude) * Mathf.PI) * stepHeight;
 
 			Debug.DrawRay(footPos, Vector3.up, Color.yellow);
