@@ -5060,10 +5060,11 @@ GameObject:
   - component: {fileID: 6059078160857225641}
   - component: {fileID: 6084099052280919847}
   - component: {fileID: 6073840360754862153}
-  - component: {fileID: 6061124499909492516}
+  - component: {fileID: 6098873093942151156}
+  - component: {fileID: 3520571350009772667}
   m_Layer: 0
   m_Name: ak_machine_gun
-  m_TagString: Untagged
+  m_TagString: AK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5075,7 +5076,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6061124499909492519}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.508, y: 0.033, z: 0.358}
   m_LocalScale: {x: 0.6634899, y: 0.6634899, z: 0.6634899}
   m_Children:
@@ -5135,7 +5136,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6061124499909492516
+--- !u!65 &6098873093942151156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6061124499909492519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19965002, y: 0.8922628, z: 2.7282488}
+  m_Center: {x: 0.0057452098, y: -0.028599262, z: 0.4431703}
+--- !u!114 &3520571350009772667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5144,15 +5158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6061124499909492519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f256477b6adc604d8d28e1cf3dcef7e, type: 3}
+  m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objAK: {fileID: 6061124499909492519}
-  bulletPos: {fileID: 6059827089311311738}
-  fireRate: 10
-  muzzle: {fileID: 6059827090696482447}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
+  objectToRotate: {fileID: 6061124499909492519}
+  amplitude: 0.2
+  frequency: 1

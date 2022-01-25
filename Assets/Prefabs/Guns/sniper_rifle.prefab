@@ -71,10 +71,11 @@ GameObject:
   - component: {fileID: 5510497111317024554}
   - component: {fileID: 5477314578571787968}
   - component: {fileID: 5486889521749788500}
-  - component: {fileID: 5508511373485984227}
+  - component: {fileID: 2117973586782038466}
+  - component: {fileID: 1582841543888589699}
   m_Layer: 0
   m_Name: sniper_rifle
-  m_TagString: Untagged
+  m_TagString: SniperObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +87,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5508511373485984226}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.607, y: 0.172, z: 0.632}
   m_LocalScale: {x: 0.72764, y: 0.72764, z: 0.72764}
   m_Children:
@@ -147,7 +148,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5508511373485984227
+--- !u!65 &2117973586782038466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508511373485984226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21696305, y: 0.5535967, z: 4.319199}
+  m_Center: {x: -0.024777059, y: -0.10490146, z: 0.9808965}
+--- !u!114 &1582841543888589699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,18 +170,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5508511373485984226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc26d71acd6cd44683f1138458cd7c8, type: 3}
+  m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objSniper: {fileID: 5508511373485984226}
-  bulletPos: {fileID: 5509751050800047693}
-  fireRate: 1
-  muzzle: {fileID: 5509751052102180904}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
+  objectToRotate: {fileID: 5508511373485984226}
+  amplitude: 0.2
+  frequency: 1
 --- !u!1 &5509751050800047692
 GameObject:
   m_ObjectHideFlags: 0

@@ -5060,10 +5060,11 @@ GameObject:
   - component: {fileID: 5925060443741153928}
   - component: {fileID: 5927621114374894610}
   - component: {fileID: 5935960267826747644}
-  - component: {fileID: 5924386643253470803}
+  - component: {fileID: 5570890542593534634}
+  - component: {fileID: 1324290776138432483}
   m_Layer: 0
   m_Name: pump_action_shotgun
-  m_TagString: Untagged
+  m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5075,7 +5076,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5924386643253470802}
-  m_LocalRotation: {x: -0.00000003774895, y: -1.11022296e-16, z: 1.11022296e-16, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.519, y: 0.097, z: 0.624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5135,7 +5136,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5924386643253470803
+--- !u!65 &5570890542593534634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5924386643253470802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19022103, y: 0.6757505, z: 3.414384}
+  m_Center: {x: -0.0015351996, y: -0.12166572, z: 0.46072704}
+--- !u!114 &1324290776138432483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5144,19 +5158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5924386643253470802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f52439eb621b04e853df0ca2229605, type: 3}
+  m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objShotgun: {fileID: 5924386643253470802}
-  fireRate: 1
-  muzzle: {fileID: 5923471016467094276}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
-  pelletCount: 10
-  spreadAngle: 10
-  pellet: {fileID: 7548059501283463851, guid: 347cd88c033812d479d5fa26bc1317a8, type: 3}
-  barrelPos: {fileID: 5923471014809794377}
+  objectToRotate: {fileID: 5924386643253470802}
+  amplitude: 0.2
+  frequency: 1
