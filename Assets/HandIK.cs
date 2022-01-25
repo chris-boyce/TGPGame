@@ -29,7 +29,6 @@ public class HandIK : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdateHeldItem();
         transform.position = target.transform.position;
         transform.rotation = target.transform.rotation;
     }
