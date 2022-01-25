@@ -6,7 +6,6 @@ using TMPro;
 public class Shotgun : MonoBehaviour
 {
     public GameObject player;
-    public GameObject bullet;
     public GameObject objShotgun;
     public float fireRate = 15f;
     public ParticleSystem muzzle;

@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         }
         if(other.CompareTag("Crate"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            other.gameObject.GetComponent<Health>().Damage(bulletDamage);
             Debug.Log("Object was hit");
             Destroy(bulletObject);
         }
