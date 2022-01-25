@@ -74,7 +74,7 @@ public class IKFeet : MonoBehaviour {
 		if(calcVelocity)	velocity = (root.position - oldRootPos);
 
 		float magnitude;
-		magnitude = calcVelocity ? velocity.sqrMagnitude : rb.velocity.sqrMagnitude;
+		magnitude = calcVelocity ? velocity.sqrMagnitude : rb.velocity.magnitude;
 
 
 		transform.position = currentPos;

@@ -1255,9 +1255,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footDistance: -0.15
   forwardOffset: 0.2
-  stepDistance: 0.6
+  stepDistance: 0.45
   stepHeight: 0.4
-  forwardDistanceDivider: 8
+  forwardDistanceDivider: 4
   speed: 8
   rotationOffset: {x: 115, y: 0, z: 0}
   root: {fileID: 7865603820988410671}
@@ -1864,9 +1864,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footDistance: 0.15
   forwardOffset: -0.2
-  stepDistance: 0.6
+  stepDistance: 0.45
   stepHeight: 0.4
-  forwardDistanceDivider: 8
+  forwardDistanceDivider: 4
   speed: 8
   rotationOffset: {x: 115, y: 0, z: 0}
   root: {fileID: 7865603820988410671}

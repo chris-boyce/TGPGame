@@ -1829,19 +1829,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4872462645917674710, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: calcVelocity
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872462645917674710, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: stepDistance
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4872462645917674710, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: rotationOffset.x
       value: 115
       objectReference: {fileID: 0}
+    - target: {fileID: 4872462645917674710, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: forwardDistanceDivider
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8536953323269182728, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: calcVelocity
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536953323269182728, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: stepDistance
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8536953323269182728, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: rotationOffset.x
       value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536953323269182728, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: forwardDistanceDivider
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
