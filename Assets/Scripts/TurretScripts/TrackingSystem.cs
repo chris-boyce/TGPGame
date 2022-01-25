@@ -101,7 +101,7 @@ public class TrackingSystem : MonoBehaviour
     {        
         nextFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPosition.transform.position, bulletPosition.transform.rotation);
-        muzzle.Play();
+        //muzzle.Play();
     }
 
     private void OnDrawGizmosSelected()
