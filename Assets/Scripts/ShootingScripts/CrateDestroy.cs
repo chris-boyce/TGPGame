@@ -9,14 +9,11 @@ public class CrateDestroy : MonoBehaviour
     public GameObject pickUp;
     public GameObject pickUpPos;
     public GameObject pickUpCrate;
-    public GameObject healthbar;
-
     // Start is called before the first frame update
    public void Start()
-   {
-        pickUp.SetActive(false);
-        healthbar = GameObject.FindWithTag("PickupHealthbar");
-   }
+    {
+        pickUp.SetActive(false);        
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,7 +28,6 @@ public class CrateDestroy : MonoBehaviour
             pickUp.SetActive(true);
             Instantiate(pickUp, pickUpPos.transform.position, pickUpPos.transform.rotation);
             Destroy(pickUpCrate);
-            Destroy(healthbar);
         }
     }
 }
