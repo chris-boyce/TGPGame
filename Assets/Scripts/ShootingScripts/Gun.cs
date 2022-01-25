@@ -8,20 +8,20 @@ public class Gun : MonoBehaviour
 {
     // Gun
     public GameObject bullet;
-    public GameObject objGun;
+    public GameObject objPistol;
     public Transform bulletPos;
     public float fireRate = 15f;
     public ParticleSystem muzzle;
     // Ammo
     public TextMeshProUGUI Text;
-    public int ammoCount = 100;
+    public int ammoCount = 1;
     public int currentAmmoCount;
     public bool canShoot;
 
     private float nextTimeToFire = 0f;
     void Start()
     {
-        objGun.SetActive(true);
+        objPistol.SetActive(true);
         currentAmmoCount = ammoCount;
         canShoot = true;
     }
@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        Text.text = "Ammo:" + currentAmmoCount;
+        Text.text = "Ammo:\u221E"; // Infinite Symbol
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
@@ -49,7 +49,6 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        currentAmmoCount -= 1;
         muzzle.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
