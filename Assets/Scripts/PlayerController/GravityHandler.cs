@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityHandler : MonoBehaviour {
+public class GravityHandler : MonoBehaviour
+{
 	[Header("Gravity Handling", order = 0)]
 	[SerializeField]
 	private Vector3 originOffset;
@@ -12,8 +13,6 @@ public class GravityHandler : MonoBehaviour {
     private float heightDeadZone = 0.05f; // Acceptable height bounds before pullUpForce is added.
     [SerializeField]
     private float pullUpForce = 0.5f; // The applied force for when ground has been hit.
-	[SerializeField]
-	bool transformDirFlip = false; // If your model is technically 90 degrees facing down, this solves the problem by setting it to true.
 
 	[SerializeField]
 	private bool grounded = true;
@@ -33,15 +32,8 @@ public class GravityHandler : MonoBehaviour {
 	Vector3 pos;
     private Rigidbody rb;
 
-
-	void OnDrawGizmosSelected() {
-		Gizmos.color = Color.blue;
-		Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + originOffset.x, transform.position.y + originOffset.y - heightOffset, transform.position.z + originOffset.z));
-	}
-
-
-	// Start is called before the first frame update
-	void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         rb = this.GetComponent<Rigidbody>();
     }
@@ -63,14 +55,14 @@ public class GravityHandler : MonoBehaviour {
 
         Color debugColor = Color.green;
         RaycastHit hit;
-		LayerMask layerMask = 1 << 6; // Layer mask for floor.
-		layerMask = ~layerMask; // invert it so it's everything but the floor.
 
-        if (Physics.Raycast(pos, transformDirFlip ? -transform.forward : -transform.up, out hit, (heightOffset + maxHeightOffset) * 2, layerMask)) {
+
+        if (Physics.Raycast(pos, transform.TransformDirection(Vector3.down), out hit, (heightOffset + maxHeightOffset) * 2)) {
             debugColor = Color.red;
             HandleCollision(hit);
+
+            Debug.Log("Collision with layer:" + hit.transform.gameObject.layer);
         } else {
-			Debug.Log("Did not hit ground.");
             grounded = false;
             rb.useGravity = true;
         }
