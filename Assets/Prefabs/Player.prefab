@@ -665,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 67331388036336326}
+  speed: 1
 --- !u!1 &2181260630355116918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1020,7 @@ MonoBehaviour:
   forwardDistanceDivider: 8
   speed: 8
   rotationOffset: {x: 115, y: 0, z: 0}
+  root: {fileID: 7865603820988410671}
   oppositeFoot: {fileID: 8536953323269182728}
   movingFoot: 0
   finishedMoving: 1
@@ -1582,6 +1584,7 @@ MonoBehaviour:
   forwardDistanceDivider: 8
   speed: 8
   rotationOffset: {x: 115, y: 0, z: 0}
+  root: {fileID: 7865603820988410671}
   oppositeFoot: {fileID: 4872462645917674710}
   movingFoot: 0
   finishedMoving: 1
