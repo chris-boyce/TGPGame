@@ -128,4 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 6027053385324360213}
   bulletDamage: 25
-  bulletSpeed: 10
+  bulletSpeed: 50
