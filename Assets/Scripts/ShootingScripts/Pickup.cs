@@ -9,8 +9,6 @@ public class Pickup : MonoBehaviour
     public GameObject pickupObject;
     public GameObject Player;
     
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +26,13 @@ public class Pickup : MonoBehaviour
         if (other.CompareTag("Pickup"))
         {
 
-            int randomNumber = Random.Range(0, 2);
+            int randomNumber = Random.Range(0, 101);
 
-            if (randomNumber == 0)
+            if (randomNumber <= 50)
             {
                 HealthUP();
             }
-            if (randomNumber == 1)
+            if (randomNumber >50)
             {
                 AmmoUP();
             }
@@ -45,12 +43,13 @@ public class Pickup : MonoBehaviour
 
     private void HealthUP()
     {
-        Player.GetComponent<Health>().currentHealth += 25;
+        Player.transform.Find("PlayerObject").GetComponent<Health>().currentHealth += 25;
     }
 
     private void AmmoUP()
     {
-        Player.transform.Find("tempGun").GetComponent<Gun>().currentAmmoCount += 20;
+        Player.transform.Find("PlayerSniper").GetComponent<Sniper>().currentAmmoCount += 20;
+        Player.transform.Find("PlayerMachinePistol").GetComponent<MachinePistol>().currentAmmoCount += 20;
         Destroy(pickupObject);
     }
 }
