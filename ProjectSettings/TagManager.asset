@@ -10,13 +10,6 @@ TagManager:
   - SniperObject
   - Crate
   - Pickup
-  - PickupHealthbar
-  - Canvas
-  - MachinePistol
-  - Sub
-  - AK
-  - M16
-  - Shotgun
   layers:
   - Default
   - TransparentFX
