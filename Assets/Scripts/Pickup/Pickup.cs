@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Pickup : MonoBehaviour
 {
-    public GameObject pickupObject;
+    public GameObject thisObject;
     public GameObject Player;
     
     // Start is called before the first frame update
@@ -23,33 +23,14 @@ public class Pickup : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pickup"))
-        {
-
-            int randomNumber = Random.Range(0, 101);
-
-            if (randomNumber <= 50)
-            {
-                HealthUP();
-            }
-            if (randomNumber >50)
-            {
-                AmmoUP();
-            }
-            Destroy(other.gameObject);
-            Console.WriteLine(randomNumber);
+        if (other.CompareTag("Player"))
+        { 
+            AmmoUP();
+            
         }
     }
-
-    private void HealthUP()
-    {
-        Player.transform.Find("PlayerObject").GetComponent<Health>().currentHealth += 25;
-    }
-
     private void AmmoUP()
     {
-        Player.transform.Find("PlayerSniper").GetComponent<Sniper>().currentAmmoCount += 20;
-        Player.transform.Find("PlayerMachinePistol").GetComponent<MachinePistol>().currentAmmoCount += 20;
-        Destroy(pickupObject);
+        Destroy(thisObject);
     }
 }
