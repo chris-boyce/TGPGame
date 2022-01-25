@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class WeaponSwitcher : MonoBehaviour
 {
     private int selectedWeapon;
+
     public bool canSwitchWeaponToSniper;
     public bool canSwitchWeaponToMachinePistol;
     public bool canSwitchWeaponToSub;
@@ -28,6 +29,10 @@ public class WeaponSwitcher : MonoBehaviour
     public GameObject m16Object;
     public GameObject shotgunObject;
 
+    [SerializeField]
+    HandIK handL;
+    [SerializeField]
+    HandIK handR;
 
     // Start is called before the first frame update
     void Start()
@@ -149,7 +154,7 @@ public class WeaponSwitcher : MonoBehaviour
         //{
         //   SelectWeapon();
         //}
-
+        UpdateHands();
     }
 
     // Detect Weapon On Floor 
@@ -207,4 +212,37 @@ public class WeaponSwitcher : MonoBehaviour
 
     //}
 
+    public GameObject GetCurrentWeapon() {
+        GameObject weaponHeld = pistol.objPistol;
+        switch (selectedWeapon) {
+            case 0:
+                weaponHeld = pistol.objPistol;
+                break;
+            case 1:
+                weaponHeld = sniper.objSniper;
+                break;
+            case 2:
+                weaponHeld = machinePistol.objMachinePistol;
+                break;
+            case 3:
+                weaponHeld = sub.objSub;
+                break;
+            case 4:
+                weaponHeld = ak.objAK;
+                break;
+            case 5:
+                weaponHeld = m16.objM16;
+                break;
+            case 6:
+                weaponHeld = shotgun.objShotgun;
+                break;
+
+		}
+        return weaponHeld;
+	}
+
+    private void UpdateHands() {
+        handL.UpdateHeldItem();
+        handR.UpdateHeldItem();
+	}
 }
