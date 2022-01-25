@@ -62,8 +62,10 @@ public class M16 : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.1f);
+        muzzle.Play();
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
         yield return new WaitForSeconds(0.1f);
+        muzzle.Play();
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
         yield return new WaitForSeconds(0.8f);
         canBurst = true;
