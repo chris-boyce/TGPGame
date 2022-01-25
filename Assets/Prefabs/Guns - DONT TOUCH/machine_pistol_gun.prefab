@@ -5060,7 +5060,8 @@ GameObject:
   - component: {fileID: 8985289802269455908}
   - component: {fileID: 137693795406498834}
   - component: {fileID: 5968860140125892843}
-  - component: {fileID: 5397969465099093046}
+  - component: {fileID: 5903375401335719312}
+  - component: {fileID: 3843818796992557569}
   m_Layer: 0
   m_Name: machine_pistol_gun
   m_TagString: MachinePistol
@@ -5075,7 +5076,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397969465099093047}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49342513, y: -0.007999897, z: 0.21989822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5135,7 +5136,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5397969465099093046
+--- !u!65 &5903375401335719312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397969465099093047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1518612, y: 0.4850014, z: 0.815945}
+  m_Center: {x: -0.0002098009, y: 0.058237404, z: 0.3179621}
+--- !u!114 &3843818796992557569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5144,15 +5158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5397969465099093047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d751718be2d5294685e95ca81c0f2cb, type: 3}
+  m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objMachinePistol: {fileID: 5397969465099093047}
-  bulletPos: {fileID: 2309747108522526782}
-  fireRate: 15
-  muzzle: {fileID: 2309747108453308266}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
+  objectToRotate: {fileID: 5397969465099093047}
+  amplitude: 0.2
+  frequency: 1

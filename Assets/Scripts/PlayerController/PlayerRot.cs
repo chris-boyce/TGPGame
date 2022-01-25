@@ -43,7 +43,7 @@ public class PlayerRot : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E) && isPreview == false)
         {
             //Makes a holoturret 
-            preview = Instantiate(holoRedTurret, pointToLook , Quaternion.identity); 
+            preview = Instantiate(holoGreenTurret, pointToLook , Quaternion.identity); 
             isPreview = true;
 
         }
