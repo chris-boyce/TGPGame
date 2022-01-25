@@ -6,31 +6,23 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
-    //Enacts as a reference for the game object (expected to be a pausemenu) to execute function upon the entity
-    public GameObject _PauseMenu;
-    public bool _Paused;
+    public SceneSwitcher _SceneSwitcher;
+    public bool _Paused = true;
     // Start is called before the first frame update
     void Start()
     {
-        //Set False By Default (doesnt show) - As intended
-        _PauseMenu.SetActive(false);
-        
+        Time.timeScale = 1;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(_Paused == true)
-            { 
-                  Pause();
-            }
-            else
-            {
-                  Resume();
-            }
+            SceneManager.LoadScene(7, LoadSceneMode.Additive);
+
+           
         }
 
     }
