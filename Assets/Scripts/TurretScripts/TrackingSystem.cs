@@ -19,14 +19,12 @@ public class TrackingSystem : MonoBehaviour
     public float maxDistance = 1.0f;
     private float nextFire = 0.0f;    
 
-
     void Start()
     {
         gun.SetActive(true);
         InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target == null)
@@ -39,7 +37,7 @@ public class TrackingSystem : MonoBehaviour
                 lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
             }
 
-            if (transform.rotation != lookRotation) // rotation doesn't equal the rotation needed to get the target ??
+            if (transform.rotation != lookRotation) // rotation doesn't equal the rotation needed to get the target
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, speed * Time.deltaTime);
             }
@@ -54,7 +52,7 @@ public class TrackingSystem : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position); // distance between turret and target
 
             if(shortestDistance > distanceToEnemy)
             {
@@ -92,8 +90,6 @@ public class TrackingSystem : MonoBehaviour
             return false;
         }
 
-        //target = _target;
-
         return true;
     }
 
@@ -101,19 +97,12 @@ public class TrackingSystem : MonoBehaviour
     {        
         nextFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPosition.transform.position, bulletPosition.transform.rotation);
-        //muzzle.Play();
+        muzzle.Play();
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected() // visualise turret radius
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, maxDistance);
     }
 }
-
-
-
-//if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
-//{
-//    Shoot();
-//}
