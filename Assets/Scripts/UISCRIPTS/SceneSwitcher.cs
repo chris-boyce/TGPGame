@@ -27,11 +27,9 @@ public class SceneSwitcher : MonoBehaviour
     /// 
     /// LoadSceneMode = Additive - Loads scene without unloading current active scene / scenes
     /// </summary>
-    public void LoadSceneAdditive(string scene_name)
+    public void LoadSceneAdditive(int scene_name)
     {
-        Time.timeScale = 0;
         SceneManager.LoadScene(scene_name, LoadSceneMode.Additive);
-
     }
 
     /// <summary>
@@ -39,7 +37,7 @@ public class SceneSwitcher : MonoBehaviour
     /// 
     /// LoadSceneMode = Single - Unloads previous scene to load referenced scene
     /// </summary>
-    public void LoadSingleScene(string scene_name)
+    public void LoadSingleScene(int scene_name)
     {
         SceneManager.LoadScene(scene_name, LoadSceneMode.Single);
     }
@@ -49,19 +47,30 @@ public class SceneSwitcher : MonoBehaviour
     /// 
     /// LoadSceneMode = Single - Unloads previous scene to load referenced scene
     /// </summary>
-    public void UnloadScene(string scene_name)
+    public void UnloadScene(int scene_name)
     {
         SceneManager.UnloadSceneAsync(scene_name);
+        
+    }
+   public void UnloadSceneToPause(int scene_name)
+    {
+        SceneManager.UnloadSceneAsync(scene_name);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(7));
     }
 
+    public void GameObjectActive(GameObject canvas)
+    {
+
+       
+    }
     /// <summary>
     /// Loads Scene With the addition of a Transition 
     /// </summary>
-    public void LoadTransitionSingle(string scene_name)
+    public void LoadTransitionSingle(int scene_name)
     {
         StartCoroutine(LoadLevelSingle(scene_name));
     }
-    IEnumerator LoadLevelSingle(string scene_name)
+    IEnumerator LoadLevelSingle(int scene_name)
     {
         _Animator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1);
