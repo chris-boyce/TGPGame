@@ -16,12 +16,15 @@ public class PlayerRot : MonoBehaviour
     private bool isPreview;
     private bool isSwapped = false;
     private Vector3 offSet;
+    private Vector3 fallHeight;
+
     private float maxDistenceFromPlayer = 7.5f;
 
 
     private void Start()
     {
         offSet = new Vector3(0, 0.5f, 0);
+        fallHeight = new Vector3(0, 10f, 0);
     }
     void Update()
     {
@@ -46,6 +49,7 @@ public class PlayerRot : MonoBehaviour
         }
         if(isPreview)
         {
+            
             float distenceFromPlayer = Vector3.Distance(pointToLook, player.transform.position);
             preview.transform.position = pointToLook + offSet; // Makes HoloTurret Follow the mouse Pos ever frame
 
@@ -53,10 +57,11 @@ public class PlayerRot : MonoBehaviour
             {
                 TurnGreenTurret(); //Function To change color of Turret just once :)
                 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(1))
                 {
+                    
                     Destroy(preview); //When Click Destroys HoloTurret
-                    Instantiate(turret, pointToLook + offSet, Quaternion.identity); // Makes Real Turret
+                    Instantiate(turret, pointToLook + fallHeight, Quaternion.identity); // Makes Real Turret
                     isPreview = false; //Disables The preview mode
                 }
             }
@@ -66,6 +71,7 @@ public class PlayerRot : MonoBehaviour
             }
             
         }
+
         void TurnGreenTurret() 
         {
             if (!isSwapped)
@@ -86,5 +92,11 @@ public class PlayerRot : MonoBehaviour
 
 
         }
+
+        
+
     }
+
 }
+
+
