@@ -34,9 +34,10 @@ public class IKFeet : MonoBehaviour {
 	[SerializeField]
 	private Vector3 rotationOffset; // Applies a permanent offset to the rotation of the foot.
 
-
+	[SerializeField]
 	private Transform root; // player position
 	private Rigidbody rb; // rigidbody of the player.
+	bool calcVelocity = false; // Used if no rigidbody is present to create a velocity.
 
 	private Vector3 currentPos; // Current position of the foot.
 	private Vector3 oldPos; // old position before the new position will overwrite it.
@@ -51,18 +52,23 @@ public class IKFeet : MonoBehaviour {
 	public bool movingFoot = false;
 	public bool finishedMoving = true;
 
+	Vector3 oldRootPos; // position of the root on the last frame.
 
 	// Start is called before the first frame update
-    void Start()
+	void Start()
     {
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		root = player.transform;
-		rb = player.GetComponent<Rigidbody>();
+		rb = root.GetComponent<Rigidbody>();
+		if (rb == null) calcVelocity = true;
 		currentPos = root.position + (-root.up * 0.8f);
     }
 
     // Update is called once per frame
     void Update() {
+		float magnitude;
+		magnitude = calcVelocity ? Vector3.Magnitude(root.transform.position) : rb.velocity.magnitude;
+		if (magnitude < 0) { // if the magnitude is ever negative, set it to positive.
+			magnitude = -magnitude;
+		}
 
 		transform.position = currentPos;
 
@@ -109,11 +115,6 @@ public class IKFeet : MonoBehaviour {
 		//
 		// if lerp is more than 1, set the oldPos to newPos.
 		if (lerp < 1) {
-			float magnitude = rb.velocity.magnitude;
-			if (magnitude < 0) { // if the magnitude is ever negative, set it to positive.
-				magnitude = -magnitude;
-			}
-
 			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp);
 			footPos.y += Mathf.Sin((lerp + magnitude) * Mathf.PI) * stepHeight;
 
@@ -131,5 +132,7 @@ public class IKFeet : MonoBehaviour {
 			finishedMoving = true;
 			movingFoot = false;
 		}
+
+		oldRootPos = root.transform.position;
 	}
 }
