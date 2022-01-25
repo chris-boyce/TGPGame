@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Standard Assets/2D/UI_Assets/3.png.meta
+guid: 43cfc20d2e9886c41a1d5d3ea6605302
+========
 guid: e92c1df0f9da6094290cd4d9bb2ac6a4
+>>>>>>>> cbab2ef76f6136a7beaea040ba3a8c622b1a4f9b:Assets/Imported Assests/Low_Poly_Survival/Texture/2.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -40,7 +44,11 @@ TextureImporter:
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
+<<<<<<<< HEAD:Assets/Standard Assets/2D/UI_Assets/3.png.meta
+  spriteMode: 1
+========
   spriteMode: 0
+>>>>>>>> cbab2ef76f6136a7beaea040ba3a8c622b1a4f9b:Assets/Imported Assests/Low_Poly_Survival/Texture/2.png.meta
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -80,6 +88,10 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<<< HEAD:Assets/Standard Assets/2D/UI_Assets/3.png.meta
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+========
+>>>>>>>> cbab2ef76f6136a7beaea040ba3a8c622b1a4f9b:Assets/Imported Assests/Low_Poly_Survival/Texture/2.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []

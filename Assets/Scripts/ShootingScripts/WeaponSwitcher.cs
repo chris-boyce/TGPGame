@@ -20,6 +20,7 @@ public class WeaponSwitcher : MonoBehaviour
     public AK ak;
     public M16 m16;
     public Shotgun shotgun;
+
     public GameObject sniperObject;
     public GameObject machinePistolObject;
     public GameObject subObject;
@@ -143,17 +144,11 @@ public class WeaponSwitcher : MonoBehaviour
         {
             shotgun.objShotgun.SetActive(false);
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
         // Cycles through the weapons activating them or deactivating them
-        if (prevSelectedWeapon != selectedWeapon)
-        {
-           SelectWeapon();
-        }
+        //if (prevSelectedWeapon != selectedWeapon)
+        //{
+        //   SelectWeapon();
+        //}
 
     }
 
@@ -192,24 +187,24 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
-    void SelectWeapon()
-    {
-        int i = 0;
-        // Turns on the object that is selected
-        foreach (Transform weapon in transform)
-        {
-            if (i == selectedWeapon)
-            {
-                weapon.gameObject.SetActive(true);
-            }
-            else
-            {
-                weapon.gameObject.SetActive(false);
-            }
-            i++;
-        }
+    //void SelectWeapon()
+    //{
+    //    int i = 0;
+    //    // Turns on the object that is selected
+    //    foreach (Transform weapon in transform)
+    //    {
+    //        if (i == selectedWeapon)
+    //        {
+    //            weapon.gameObject.SetActive(true);
+    //        }
+    //        else
+    //        {
+    //            weapon.gameObject.SetActive(false);
+    //        }
+    //        i++;
+    //    }
 
 
-    }
+    //}
 
 }

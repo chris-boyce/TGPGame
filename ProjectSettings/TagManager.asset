@@ -10,6 +10,15 @@ TagManager:
   - SniperObject
   - Crate
   - Pickup
+  - Canvas
+  - MachinePistol
+  - Shotgun
+  - AK
+  - Sub
+  - M16
+  - LeftHand
+  - RightHand
+  - Floor
   layers:
   - Default
   - TransparentFX
