@@ -116,8 +116,9 @@ MonoBehaviour:
   gun: {fileID: 3085376283186083013}
   bulletPosition: {fileID: 3085376283186083012}
   muzzle: {fileID: 2656309661710677456, guid: 6e1e90be26629bf499b7730d54ed1a90, type: 3}
+  fire: {fileID: 0}
   fireRate: 5
-  maxDistance: 5
+  maxDistance: 4
 --- !u!1 &3085376283186083013
 GameObject:
   m_ObjectHideFlags: 0
