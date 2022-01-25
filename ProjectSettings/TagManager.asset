@@ -8,16 +8,26 @@ TagManager:
   - Bullet
   - Enemy
   - SniperObject
+  - Crate
+  - Pickup
+  - Canvas
+  - MachinePistol
+  - Shotgun
+  - AK
+  - Sub
+  - M16
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Floor
+  - Obstacle
+  - Terrain
   - 
   - 
   - 
