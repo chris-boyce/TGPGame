@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+
 public class Sniper : MonoBehaviour
 {
 
@@ -18,6 +20,8 @@ public class Sniper : MonoBehaviour
     public bool canShoot;
 
     private float nextTimeToFire = 0f;
+
+    public AudioSource gunsound;
     void Start()
     {
         objSniper.SetActive(false);
@@ -50,6 +54,7 @@ public class Sniper : MonoBehaviour
     {
         currentAmmoCount -= 1;
         muzzle.Play();
+        gunsound.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
     }

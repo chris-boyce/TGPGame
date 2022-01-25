@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 public class AK : MonoBehaviour
 {
     public GameObject bullet;
@@ -16,6 +17,9 @@ public class AK : MonoBehaviour
     public bool canShoot;
 
     private float nextTimeToFire = 0f;
+
+    public AudioSource gunsound;
+
     void Start()
     {
         objAK.SetActive(false);
@@ -35,6 +39,7 @@ public class AK : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
+            gunsound.Play();
             Shoot();
         }
 
