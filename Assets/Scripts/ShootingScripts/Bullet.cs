@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
 
         if(other.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            other.gameObject.GetComponent<Health>().Damage(bulletDamage); // Jon EDIT: Changed EnemyHealth to Health.
 
             Debug.Log("Object was hit");
             Destroy(bulletObject);

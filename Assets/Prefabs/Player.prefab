@@ -1127,6 +1127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdollPrefab: {fileID: 6741220757848011711, guid: 927c95699a4f593489649756cfea1685, type: 3}
+  rootPart: {fileID: 9124301486093477050}
+  disableList:
+  - {fileID: 1629956658092360524}
+  usePlayerController: 0
   health: 100
   currentHealth: 50
 --- !u!1 &1656034462045260265
