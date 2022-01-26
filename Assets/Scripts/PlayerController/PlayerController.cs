@@ -124,11 +124,14 @@ public class PlayerController : MonoBehaviour
 	/// Constrains the velocity onto the maxSpeed for X and Z.
 	/// </summary>
 	private void ConstrainVelocity() {
-
 		if (rbVec.magnitude > maxSpeed) { // If there is movement in the X and Z higher than the maxSpeed.
 			rbVec = rb.velocity.normalized; // reset the variable to just the normalised speed.
 			rb.velocity = new Vector3(rbVec.x * maxSpeed, rb.velocity.y * 1, rbVec.z * maxSpeed); // Make sure Y is always going to be at a normal of 1.
 		}
+	}
+
+	public Vector3 GetVelocity() {
+		return rb.velocity;
 	}
 
 }
