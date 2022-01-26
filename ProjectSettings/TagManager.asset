@@ -8,7 +8,6 @@ TagManager:
   - Bullet
   - Enemy
   - SniperObject
-  - Crate
   - Pickup
   - Canvas
   - MachinePistol
@@ -19,6 +18,9 @@ TagManager:
   - LeftHand
   - RightHand
   - Floor
+  - AmmoBox
+  - HealthBox
+  - Crate
   layers:
   - Default
   - TransparentFX
