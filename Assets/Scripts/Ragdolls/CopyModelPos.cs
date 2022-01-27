@@ -31,4 +31,24 @@ public class CopyModelPos : MonoBehaviour
 		}
 	}
 
+	public void StartTimer(int timer, bool player) {
+		Debug.Log("startTimer called");
+		StartCoroutine(DeleteBody(timer, player));
+	}
+
+	public IEnumerator DeleteBody(int timer, bool player) {
+		if (!player) {
+			Debug.Log("!player, " + timer + ". Calling wait");
+			yield return new WaitForSeconds(timer);
+			Debug.Log("Calling wait finished");
+			Destroy(transform.parent.gameObject);
+		} else {
+			Debug.Log("player, " + timer + ". Calling wait");
+			yield return new WaitForSeconds(timer);
+			GameObject.FindGameObjectWithTag("SceneSwitch").GetComponent<SceneSwitcher>().LoadSingleScene(10);
+			Debug.Log("Calling wait finished");
+
+		}
+	}
+
 }
