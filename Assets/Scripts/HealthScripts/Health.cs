@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
 	// Droppable items on death.
 	[SerializeField]
-	GameObject spawnDropablePrefab;
+	GameObject[] spawnDropablePrefab;
 	[SerializeField]
 	float spawnDropablePercentage = 0.05f;
 
@@ -75,9 +75,12 @@ public class Health : MonoBehaviour
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
 		if (OnDeath != null) {
-			if(gameObject.CompareTag("Enemy"))	OnDeath();
-			if(Random.value < spawnDropablePercentage) {
-				Instantiate(spawnDropablePrefab, transform.position, transform.rotation, transform.parent.parent);
+			if (gameObject.CompareTag("Enemy")) {
+				if (Random.value < spawnDropablePercentage) {
+					Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length - 1)], transform.position, transform.rotation, transform.parent.parent);
+				}
+
+				OnDeath();
 			}
 		}
 
