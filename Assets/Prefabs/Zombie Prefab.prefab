@@ -608,6 +608,10 @@ MonoBehaviour:
   - {fileID: 1999160041036258775}
   - {fileID: 6141372238492618395}
   usePlayerController: 0
+  spawnDropablePrefab:
+  - {fileID: 7910625479097318137, guid: 426fc8c405f0704448d52af348e33b1e, type: 3}
+  - {fileID: 135129308646156222, guid: 31da7d5b2c74239449a9024417bbd249, type: 3}
+  spawnDropablePercentage: 0.05
   health: 100
   currentHealth: 0
 --- !u!114 &3846023826408514410
