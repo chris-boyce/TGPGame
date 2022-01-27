@@ -26,6 +26,11 @@ public class M16 : MonoBehaviour
         canBurst = true;
     }
 
+    private void OnEnable()
+    {
+        canBurst = true;
+    }
+
     private void FixedUpdate()
     {
 
@@ -54,11 +59,10 @@ public class M16 : MonoBehaviour
     void Shoot()
     {
 
-       
+            canBurst = false;
             currentAmmoCount -= 1;
             muzzle.Play();
             nextTimeToFire = Time.time + 1f / fireRate;
-            canBurst = false;
             Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
             StartCoroutine(BurstFire());
     }
@@ -68,11 +72,13 @@ public class M16 : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
         muzzle.Play();
+        currentAmmoCount -= 1;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
         yield return new WaitForSeconds(0.1f);
         muzzle.Play();
+        currentAmmoCount -= 1;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         canBurst = true;
     }
 }
