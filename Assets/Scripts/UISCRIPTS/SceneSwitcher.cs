@@ -11,105 +11,80 @@ public class SceneSwitcher : MonoBehaviour
     public Animator _Animator; //Interface to access / control animator within coded script
 
 
-    //
-    public float _Timer = 25.0f;
-    public bool _TimerStart = false;
-
-
-
     //Each Frame - Statement Executed
     void Update()
     {
-        TimerStart();
+        
     }
     /// <summary>
-    /// Loads Scene with interface passed Scene Name
+    /// Loads Scene with interface passed Scene Build Index
     /// 
     /// LoadSceneMode = Additive - Loads scene without unloading current active scene / scenes
     /// </summary>
-    public void LoadSceneAdditive(int scene_name)
+    public void LoadSceneAdditive(int scene_index)
     {
-        SceneManager.LoadScene(scene_name, LoadSceneMode.Additive);
+        SceneManager.LoadScene(scene_index, LoadSceneMode.Additive);
     }
 
     /// <summary>
-    /// Loads Scene with interface passed Scene Name
+    /// Loads Scene with interface passed Scene Build Index
     /// 
     /// LoadSceneMode = Single - Unloads previous scene to load referenced scene
     /// </summary>
-    public void LoadSingleScene(int scene_name)
+    public void LoadSingleScene(int scene_index)
     {
-        SceneManager.LoadScene(scene_name, LoadSceneMode.Single);
+        SceneManager.LoadScene(scene_index, LoadSceneMode.Single);
     }
 
     /// <summary>
-    /// Loads Scene with interface passed Scene Name
+    /// Loads Scene with interface passed Scene Build Index
     /// 
     /// LoadSceneMode = Single - Unloads previous scene to load referenced scene
     /// </summary>
-    public void UnloadScene(int scene_name)
+    public void UnloadScene(int scene_index)
     {
-        SceneManager.UnloadSceneAsync(scene_name);
+        SceneManager.UnloadSceneAsync(scene_index);
         
     }
-   public void UnloadSceneToPause(int scene_name)
-    {
-        SceneManager.UnloadSceneAsync(scene_name);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(7));
-    }
 
-    public void GameObjectActive(GameObject canvas)
-    {
-
-       
-    }
     /// <summary>
     /// Loads Scene With the addition of a Transition 
+    /// SceneLoadMode - Single
     /// </summary>
-    public void LoadTransitionSingle(int scene_name)
+    public void LoadTransitionSingle(int scene_index)
     {
-        StartCoroutine(LoadLevelSingle(scene_name));
+        StartCoroutine(LoadLevelSingle(scene_index));
     }
-    IEnumerator LoadLevelSingle(int scene_name)
-    {
-        _Animator.SetTrigger("StartTransition");
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(scene_name, LoadSceneMode.Single);
-
-    }
-
-    public void LoadTransitionAdditive(string scene_name )
-    {
-        StartCoroutine(LoadLevelAdditive(scene_name));
-    }
-    IEnumerator LoadLevelAdditive(string scene_name)
+    IEnumerator LoadLevelSingle(int scene_index)
     {
         _Animator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(scene_name, LoadSceneMode.Additive);
+        SceneManager.LoadScene(scene_index, LoadSceneMode.Single);
 
     }
-
-
 
     /// <summary>
-    /// Loads Scene Delayed - TimerStart() Referenced in Update, so timer updates each frame , to eventually invoke if statement to load new scene.
+    /// Loads Scene With the addition of a Transition 
+    /// SceneLoadMode - Additive
     /// </summary>
-    public void LoadDelaySingleScene(string scene_name)
+    public void LoadTransitionAdditive(int scene_index)
     {
-        _TimerStart = true;   
+        StartCoroutine(LoadLevelAdditive(scene_index));
     }
-    public void TimerStart()
+    IEnumerator LoadLevelAdditive(int scene_index)
     {
+        _Animator.SetTrigger("StartTransition");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(scene_index, LoadSceneMode.Additive);
 
-        if (_TimerStart == true)
-        {
-            _Timer -= 1.0f * Time.deltaTime;
-            if (_Timer <= 0.0f)
-            {
-                SceneManager.LoadScene("GameMenu", LoadSceneMode.Single);
-            }
-        }
     }
 
+    /// <summary>
+    /// Same as function "LoadSingleScene"
+    /// Added for function name
+    /// </summary>
+    public void RestartScene(int scene_index)
+    {
+        SceneManager.LoadScene(scene_index, LoadSceneMode.Single);
+    }
 }

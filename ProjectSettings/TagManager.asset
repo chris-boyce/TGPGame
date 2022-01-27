@@ -19,6 +19,7 @@ TagManager:
   - LeftHand
   - RightHand
   - Floor
+  - PlayerCamera
   layers:
   - Default
   - TransparentFX
