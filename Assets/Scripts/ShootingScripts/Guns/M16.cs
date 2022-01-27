@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 public class M16 : MonoBehaviour
 {
     public GameObject bullet;
@@ -43,6 +44,10 @@ public class M16 : MonoBehaviour
         if (currentAmmoCount == 0)
         {
             canShoot = false;
+        }
+        if(currentAmmoCount >= 0)
+        {
+            canShoot = true;
         }
     }
 

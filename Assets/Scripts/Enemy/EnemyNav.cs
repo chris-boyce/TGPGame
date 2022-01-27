@@ -20,7 +20,7 @@ public class EnemyNav : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         enemyState = EnemyState.ChasingPlayer;
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player"); // Jon EDIT: Fixes player tracking.
     }
 
     void Update()

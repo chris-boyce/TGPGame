@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class WeaponSwitcher : MonoBehaviour
 {
     private int selectedWeapon;
+
     public bool canSwitchWeaponToSniper;
     public bool canSwitchWeaponToMachinePistol;
     public bool canSwitchWeaponToSub;
@@ -21,17 +22,30 @@ public class WeaponSwitcher : MonoBehaviour
     public M16 m16;
     public Shotgun shotgun;
 
-    public GameObject sniperObject;
-    public GameObject machinePistolObject;
-    public GameObject subObject;
-    public GameObject akObject;
-    public GameObject m16Object;
-    public GameObject shotgunObject;
+    private GameObject sniperObject;
+    private GameObject machinePistolObject;
+    private GameObject subObject;
+    private GameObject akObject;
+    private GameObject m16Object;
+    private GameObject shotgunObject;
 
+    [SerializeField]
+    HandIK handL;
+    [SerializeField]
+    HandIK handR;
 
     // Start is called before the first frame update
     void Start()
     {
+        sniperObject = GameObject.FindGameObjectWithTag("SniperObject");
+        machinePistolObject = GameObject.FindGameObjectWithTag("MachinePistol");
+        subObject = GameObject.FindGameObjectWithTag("Sub");
+        akObject = GameObject.FindGameObjectWithTag("AK");
+        m16Object = GameObject.FindGameObjectWithTag("M16");
+        shotgunObject = GameObject.FindGameObjectWithTag("Shotgun");
+
+
+
         canSwitchWeaponToSniper = false;
         canSwitchWeaponToMachinePistol = false;
         canSwitchWeaponToSub = false;
@@ -127,7 +141,7 @@ public class WeaponSwitcher : MonoBehaviour
             ak.objAK.SetActive(false);
         }
         // M16
-        if (selectedWeapon == 5)
+        if (selectedWeapon == 5 && canSwitchWeaponToM16 == true)
         {
             m16.objM16.SetActive(true);
         }
@@ -144,12 +158,8 @@ public class WeaponSwitcher : MonoBehaviour
         {
             shotgun.objShotgun.SetActive(false);
         }
-        // Cycles through the weapons activating them or deactivating them
-        //if (prevSelectedWeapon != selectedWeapon)
-        //{
-        //   SelectWeapon();
-        //}
 
+        UpdateHands();
     }
 
     // Detect Weapon On Floor 
@@ -187,24 +197,37 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
-    //void SelectWeapon()
-    //{
-    //    int i = 0;
-    //    // Turns on the object that is selected
-    //    foreach (Transform weapon in transform)
-    //    {
-    //        if (i == selectedWeapon)
-    //        {
-    //            weapon.gameObject.SetActive(true);
-    //        }
-    //        else
-    //        {
-    //            weapon.gameObject.SetActive(false);
-    //        }
-    //        i++;
-    //    }
+    public GameObject GetCurrentWeapon() {
+        GameObject weaponHeld = pistol.objPistol;
+        switch (selectedWeapon) {
+            case 0:
+                weaponHeld = pistol.objPistol;
+                break;
+            case 1:
+                weaponHeld = sniper.objSniper;
+                break;
+            case 2:
+                weaponHeld = machinePistol.objMachinePistol;
+                break;
+            case 3:
+                weaponHeld = sub.objSub;
+                break;
+            case 4:
+                weaponHeld = ak.objAK;
+                break;
+            case 5:
+                weaponHeld = m16.objM16;
+                break;
+            case 6:
+                weaponHeld = shotgun.objShotgun;
+                break;
 
+		}
+        return weaponHeld;
+	}
 
-    //}
-
+    private void UpdateHands() {
+        handL.UpdateHeldItem();
+        handR.UpdateHeldItem();
+	}
 }

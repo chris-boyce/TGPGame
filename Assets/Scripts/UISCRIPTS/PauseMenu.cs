@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject _PauseMenu;
+    int _PauseScreen = 8;
+    public GameObject _PlayerCamera;
     public SceneSwitcher _SceneSwitcher;
-    public bool _Paused = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,42 +18,21 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(8)))
         {
-            SceneManager.LoadScene(7, LoadSceneMode.Additive);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
 
-           
+                        _PlayerCamera.GetComponent<Camera>().enabled = false;
+                SceneManager.LoadScene(_PauseScreen, LoadSceneMode.Additive);
+
+            }
         }
-
-    }
-
-    
-    public void Pause()
-    {
-        //Make GameObject "PauseMenu" visible to player
-        _PauseMenu.SetActive(true);
-
-        //Holts In-Game Timer from executing , Holting any Timer Bound Actions
-        Time.timeScale = 0f;
-
-        //Referenced in Update
-        _Paused = true;
     }
 
 
-    public void Resume()
-    {
-        //Make GameObject "PauseMenu" invisible to player
 
-        _PauseMenu.SetActive(false);
-
-        //Continues Regular Operation 
-        Time.timeScale = 1f;
-
-        //Referenced in Update
-        _Paused = false;
-
-    }
 
 
 }

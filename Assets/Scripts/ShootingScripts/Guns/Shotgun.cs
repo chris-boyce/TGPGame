@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 
 public class Shotgun : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Shotgun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    public AudioSource gunsound;
+
     void Awake()
     {
         pellets = new List<Quaternion>(new Quaternion[pelletCount]);
@@ -45,6 +48,7 @@ public class Shotgun : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true && canShotgun == true)
         {
+            gunsound.Play();
             Shoot();
         }
 
@@ -52,6 +56,10 @@ public class Shotgun : MonoBehaviour
         {
             canShoot = false;
             currentAmmoCount = 0;
+        }
+        if (currentAmmoCount > 0)
+        {
+            canShoot = true;
         }
     }
 

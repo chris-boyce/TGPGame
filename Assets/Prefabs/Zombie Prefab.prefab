@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 3900645283043410733}
   - component: {fileID: 7579542536388236452}
   - component: {fileID: 6293603348537652625}
-  - component: {fileID: 1122676563580774052}
   - component: {fileID: 3846023826408514410}
   m_Layer: 0
   m_Name: Zombie
@@ -574,10 +573,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.19719687
-  m_Height: 0.86621773
+  m_Radius: 0.42260176
+  m_Height: 1.6950581
   m_Direction: 1
-  m_Center: {x: 0, y: 0.40361792, z: -0.049999997}
+  m_Center: {x: 0, y: -0.010802269, z: 0.054948747}
 --- !u!114 &7579542536388236452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,20 +602,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdollPrefab: {fileID: 6741220757848011711, guid: 8c038f5c80b6d284e96d978bdf148947, type: 3}
+  rootPart: {fileID: 1835331305618651846}
+  disableList:
+  - {fileID: 1999160041036258775}
+  - {fileID: 6141372238492618395}
+  usePlayerController: 0
   health: 100
   currentHealth: 0
---- !u!114 &1122676563580774052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999160041036258775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34dc38fa2f9579842a49b009aa818b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3846023826408514410
 MonoBehaviour:
   m_ObjectHideFlags: 0
