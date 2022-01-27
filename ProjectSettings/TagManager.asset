@@ -21,6 +21,8 @@ TagManager:
   - PlayerCamera
   - AmmoBox
   - HealthBox
+  - GUI
+  - GUITEXT
   layers:
   - Default
   - TransparentFX

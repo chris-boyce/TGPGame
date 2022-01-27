@@ -25,6 +25,8 @@ public class PauseSceneInvoke : MonoBehaviour
             {
                 SceneManager.UnloadScene(8);
                 GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
+         
+
                 Time.timeScale = 1;
             }
         

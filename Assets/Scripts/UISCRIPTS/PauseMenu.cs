@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     int _PauseScreen = 8;
     public GameObject _PlayerCamera;
     public SceneSwitcher _SceneSwitcher;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,13 @@ public class PauseMenu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-
+                
                         _PlayerCamera.GetComponent<Camera>().enabled = false;
                 SceneManager.LoadScene(_PauseScreen, LoadSceneMode.Additive);
 
             }
         }
+
     }
 
 
