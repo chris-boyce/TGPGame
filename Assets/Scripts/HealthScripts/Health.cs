@@ -17,7 +17,9 @@ public class Health : MonoBehaviour
 	Vector3 oldPos; // Used only if player controller is not used.
 	Vector3 velManual; // Manually calculated velocity.
 
-	
+	public SceneSwitcher _SceneSwitcherReference;
+
+
 	public float health = 100f;
 	[SerializeField]
 	public float currentHealth;
@@ -73,7 +75,7 @@ public class Health : MonoBehaviour
 		ragdollScript.ApplyRagdoll(rootPart.transform, ragdollScript.root);
 		ragdollScript.vel = usePlayerController ? playerController.GetVelocity() : velManual;
 
-		ragdoll.SetActive(true);
+	ragdoll.SetActive(true);
 
 		if (OnDeath != null) {
 			OnDeath();
@@ -92,6 +94,8 @@ public class Health : MonoBehaviour
 		yield return new WaitForSeconds(timer);
 		if (!usePlayerController) {
 			Destroy(transform.parent.gameObject);
+		} else {
+			_SceneSwitcherReference.LoadSingleScene(10);
 		}
 	}
 }
