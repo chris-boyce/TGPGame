@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
 	Vector3 oldPos; // Used only if player controller is not used.
 	Vector3 velManual; // Manually calculated velocity.
 
+	
 	public float health = 100f;
 	[SerializeField]
 	public float currentHealth;
@@ -65,7 +66,7 @@ public class Health : MonoBehaviour
 		//Destroy(healthbarObject);
 		//Destroy(slider);
 
-		if (!ragdollPrefab) { Destroy(gameObject); }
+		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
 		CopyModelPos ragdollScript = ragdoll.GetComponent<CopyModelPos>();
