@@ -17,6 +17,13 @@ public class Health : MonoBehaviour
 	Vector3 oldPos; // Used only if player controller is not used.
 	Vector3 velManual; // Manually calculated velocity.
 
+
+	// Droppable items on death.
+	[SerializeField]
+	GameObject[] spawnDropablePrefab;
+	[SerializeField]
+	float spawnDropablePercentage = 0.05f;
+
 	public float health = 100f;
 	[SerializeField]
 	public float currentHealth;
@@ -68,7 +75,13 @@ public class Health : MonoBehaviour
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
 		if (OnDeath != null) {
-			if(gameObject.CompareTag("Enemy"))	OnDeath();
+			if (gameObject.CompareTag("Enemy")) {
+				if (Random.value < spawnDropablePercentage) {
+					Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length - 1)], transform.position, transform.rotation, transform.parent.parent);
+				}
+
+				OnDeath();
+			}
 		}
 
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
@@ -78,8 +91,6 @@ public class Health : MonoBehaviour
 
 		ragdoll.SetActive(true);
 		ragdollScript.StartTimer(5, usePlayerController);
-
-		
 
 		foreach (var obj in disableList) {
 			obj.SetActive(false); // Disable the model.
