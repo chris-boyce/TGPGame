@@ -5,59 +5,62 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-public class Sniper : MonoBehaviour
+public class Gun : MonoBehaviour
 {
-
+    // Gun
     public GameObject bullet;
-    public GameObject objSniper;
+    public GameObject objPistol;
     public Transform bulletPos;
     public float fireRate = 15f;
     public ParticleSystem muzzle;
     // Ammo
     public TextMeshProUGUI Text;
-    public int ammoCount = 100;
+    public int ammoCount = 1;
     public int currentAmmoCount;
     public bool canShoot;
 
     private float nextTimeToFire = 0f;
 
     public AudioSource gunsound;
+
     void Start()
     {
-        objSniper.SetActive(false);
+        objPistol.SetActive(true);
         currentAmmoCount = ammoCount;
         canShoot = true;
     }
 
     private void FixedUpdate()
     {
-
+  
 
     }
 
     void Update()
     {
-        Text.text = "Ammo:" + currentAmmoCount;
+        Text.text = "Ammo:\u221E"; // Infinite Symbol
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
+            gunsound.Play();
             Shoot();
         }
 
-        if (currentAmmoCount == 0)
+        if(currentAmmoCount == 0)
         {
             canShoot = false;
+        }
+        if (currentAmmoCount > 0)
+        {
+            canShoot = true;
         }
     }
 
     void Shoot()
     {
-        currentAmmoCount -= 1;
         muzzle.Play();
-        gunsound.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
     }
-
 
 }

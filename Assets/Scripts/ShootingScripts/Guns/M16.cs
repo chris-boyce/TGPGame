@@ -45,6 +45,10 @@ public class M16 : MonoBehaviour
         {
             canShoot = false;
         }
+        if(currentAmmoCount >= 0)
+        {
+            canShoot = true;
+        }
     }
 
     void Shoot()
