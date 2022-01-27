@@ -18,6 +18,9 @@ TagManager:
   - LeftHand
   - RightHand
   - Floor
+  - PlayerCamera
+  - AmmoBox
+  - HealthBox
   layers:
   - Default
   - TransparentFX
