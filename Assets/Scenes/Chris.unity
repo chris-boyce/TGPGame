@@ -294,11 +294,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6476529798019570804, guid: 0fe65fec31a96cc49a3146a03f035c48, type: 3}
   m_PrefabInstance: {fileID: 2039597232}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &48988167 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3192862580529570907, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &50161090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,11 +432,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 494376, guid: 76be61eeff2e7164cb99e1cf8cf0c22b, type: 3}
   m_PrefabInstance: {fileID: 1048197018}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &60204036 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8372178116749823673, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &66945460 stripped
 GameObject:
@@ -1501,32 +1491,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3204218202950055891, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
   m_PrefabInstance: {fileID: 415543502}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &218273902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3191903225998167028, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &218273904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218273902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc26d71acd6cd44683f1138458cd7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objSniper: {fileID: 218273902}
-  bulletPos: {fileID: 48988167}
-  fireRate: 15
-  muzzle: {fileID: 1413107407}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
 --- !u!4 &219292797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4608521674081010, guid: 09fe9cce9bc547f46a74060f49bfe78b, type: 3}
@@ -2055,37 +2019,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48333a5aa700be24c963813c82ef05d9, type: 3}
---- !u!198 &281245476 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 461246071292954548, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &300919741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1668435277636707779, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &300919743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300919741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac8bbee385fdf740ab76a2e082c0b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objSub: {fileID: 300919741}
-  bulletPos: {fileID: 406748973}
-  fireRate: 15
-  muzzle: {fileID: 1736346985}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
 --- !u!1001 &302956753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3339,11 +3272,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3599666ad7adbe14d964d5a8c7b8d845, type: 3}
---- !u!4 &406748973 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1666798088917486292, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &407399552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4, type: 3}
@@ -4415,32 +4343,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5b099e6487383d4f8661e894b5d3f64, type: 3}
---- !u!1 &628866778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8370599188520050449, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &628866780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628866778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f256477b6adc604d8d28e1cf3dcef7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objAK: {fileID: 628866778}
-  bulletPos: {fileID: 1271118895}
-  fireRate: 15
-  muzzle: {fileID: 60204036}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
 --- !u!1001 &632271845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4662,11 +4564,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4, type: 3}
   m_PrefabInstance: {fileID: 1152005824}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &677857830 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7747064784741514975, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &681640742
 PrefabInstance:
@@ -5490,11 +5387,6 @@ Transform:
   m_Father: {fileID: 892146669}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &762897260 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 461246071934200825, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &766496236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4092299817195578, guid: 46d37219be33dcf438a2829ab911cfd2, type: 3}
@@ -6276,32 +6168,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4800159001590020, guid: d7b3dac977b02034c9a2c16f9985fd87, type: 3}
   m_PrefabInstance: {fileID: 1846940387}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &861912393 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 101247434330419926, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &861912395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861912393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d751718be2d5294685e95ca81c0f2cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objMachinePistol: {fileID: 861912393}
-  bulletPos: {fileID: 677857830}
-  fireRate: 15
-  muzzle: {fileID: 1625785685}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
 --- !u!1001 &865349564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9418,11 +9284,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f6c597498257ae843adeb6a76dd3013e, type: 3}
---- !u!4 &1271118895 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8372178117516330828, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1282838518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6476529798019570804, guid: 0fe65fec31a96cc49a3146a03f035c48, type: 3}
@@ -10441,11 +10302,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 424140, guid: 491333d4c0bd88148813a9dde7fe955b, type: 3}
   m_PrefabInstance: {fileID: 1411959619}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1413107407 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3192862581379113534, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1417802293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7233355286381660974, guid: 3318a0dcc90627d4394e56a36f632ee6, type: 3}
@@ -10658,11 +10514,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3204218202950055891, guid: 17ae22a8c221d254f84fbe0e68ed0705, type: 3}
   m_PrefabInstance: {fileID: 1443957107}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1444073716 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1856153055251684843, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1448670323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 444600, guid: 105b83a46d287294bbe7892a1e1f2ea3, type: 3}
@@ -10796,122 +10647,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 67331387076397572, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 67331387076397572, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 67331388036336327, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 101247434330419926, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: ak
-      value: 
-      objectReference: {fileID: 628866780}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: m16
-      value: 
-      objectReference: {fileID: 1877938195}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: sub
-      value: 
-      objectReference: {fileID: 300919743}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: sniper
-      value: 
-      objectReference: {fileID: 218273904}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: shotgun
-      value: 
-      objectReference: {fileID: 1451726981}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: akObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: m16Object
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: subObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: sniperObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: machinePistol
-      value: 
-      objectReference: {fileID: 861912395}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: shotgunObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: machinePistolObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6976260642801079421, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2014313067}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: turret
-      value: 
-      objectReference: {fileID: 1502388803592624018, guid: 3fed1a103ffbe20418a59a48ab51b567, type: 3}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: holoRedTurret
-      value: 
-      objectReference: {fileID: 7188341475293843308, guid: ac525707c8a0c204881f9c0ec4b16285, type: 3}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: holoGreenTurret
-      value: 
-      objectReference: {fileID: 3234051326921762053, guid: d7303ebf0882ab44b84f9b216e235567, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
---- !u!1 &1451726979 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 460896692784397026, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1451726981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451726979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f52439eb621b04e853df0ca2229605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2014313066}
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objShotgun: {fileID: 1451726979}
-  fireRate: 15
-  muzzle: {fileID: 281245476}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
-  pelletCount: 0
-  spreadAngle: 0
-  pellet: {fileID: 6027053385324360213, guid: 6ac7e62ca0d00a24781d90c02a01f671, type: 3}
-  barrelPos: {fileID: 762897260}
 --- !u!1001 &1462100564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11805,11 +11542,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6476529798019570804, guid: 0fe65fec31a96cc49a3146a03f035c48, type: 3}
   m_PrefabInstance: {fileID: 662557236}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1625785685 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7747064784806502795, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1628661978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12175,11 +11907,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70c48be8697ff6140812ee8d2eccd1ef, type: 3}
---- !u!198 &1667004744 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1856153055087663223, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1669359670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12661,11 +12388,6 @@ CapsuleCollider:
   m_Height: 9.910889
   m_Direction: 1
   m_Center: {x: 0.023826718, y: 4.946876, z: 0}
---- !u!198 &1736346985 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1666798088484254217, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1745156977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13667,7 +13389,7 @@ MonoBehaviour:
     timeBetweenSpawn: 0
   - enemyCount: 0
     timeBetweenSpawn: 0
-  Enemy: {fileID: 8292316855872970805, guid: 6b0ba0756c990d045bbec2b4bd197664, type: 3}
+  Enemy: {fileID: 6613735231533307613, guid: e78787410430a254e937ac2729823f39, type: 3}
   spawnPostion:
   - {fileID: 427011131}
 --- !u!4 &1802982512
@@ -14157,33 +13879,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09fe9cce9bc547f46a74060f49bfe78b, type: 3}
---- !u!1 &1877938193 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5984529799088202113, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1877938195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877938193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91e83af57186fb34ebf27b3b8b3b3aec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objM16: {fileID: 1877938193}
-  bulletPos: {fileID: 1444073716}
-  fireRate: 5
-  muzzle: {fileID: 1667004744}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
-  canBurst: 0
 --- !u!1001 &1882047481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15165,30 +14860,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09fe9cce9bc547f46a74060f49bfe78b, type: 3}
---- !u!1 &2014313066 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1629956658092360524, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2014313067 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7865603820988410671, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-  m_PrefabInstance: {fileID: 1450852054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2014313073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014313066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  currentHealth: 0
 --- !u!1001 &2021555034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16294,12 +15965,8 @@ MonoBehaviour:
   ak: {fileID: 0}
   m16: {fileID: 0}
   shotgun: {fileID: 0}
-  sniperObject: {fileID: 0}
-  machinePistolObject: {fileID: 0}
-  subObject: {fileID: 0}
-  akObject: {fileID: 0}
-  m16Object: {fileID: 0}
-  shotgunObject: {fileID: 0}
+  handL: {fileID: 0}
+  handR: {fileID: 0}
 --- !u!4 &2103197670
 Transform:
   m_ObjectHideFlags: 0
