@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour
 {
     public GameObject thisObject;
     public GameObject Player;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +31,12 @@ public class Pickup : MonoBehaviour
     }
     private void AmmoUP()
     {
-        Player.transform.Find("sniper_rifle").GetComponent<Sniper>().currentAmmoCount += 10;
-        Player.transform.Find("machine_pistol_gun").GetComponent<MachinePistol>().currentAmmoCount += 200;
-        Player.transform.Find("submachine_gun").GetComponent<Submachinegun>().currentAmmoCount += 200;
-        Player.transform.Find("ak_machine_gun").GetComponent<AK>().currentAmmoCount += 150;
-        Player.transform.Find("m16_machine_gun").GetComponent<M16>().currentAmmoCount += 150;
-        Player.transform.Find("pump_action_shotgun").GetComponent<Shotgun>().currentAmmoCount += 20;
+        Player.transform.Find("sniper_rifle").GetComponent<Sniper>().currentAmmoCount += 5;
+        Player.transform.Find("machine_pistol_gun").GetComponent<MachinePistol>().currentAmmoCount += 50;
+        Player.transform.Find("submachine_gun").GetComponent<Submachinegun>().currentAmmoCount += 150;
+        Player.transform.Find("ak_machine_gun").GetComponent<AK>().currentAmmoCount += 100;
+        Player.transform.Find("m16_machine_gun").GetComponent<M16>().currentAmmoCount += 75;
+        Player.transform.Find("pump_action_shotgun").GetComponent<Shotgun>().currentAmmoCount += 5;
         Destroy(thisObject);
     }
 
