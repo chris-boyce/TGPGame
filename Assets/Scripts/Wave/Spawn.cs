@@ -12,10 +12,10 @@ public class Spawn : MonoBehaviour
     private int waveMultiplier = 3;
 
     Wave currentWave;
-    int currentWaveNumber;
+    public int currentWaveNumber;
 
     private int enemyLeftToSpawn;
-    private int enemyLeftAlive;
+    public int enemyLeftAlive;
     private float nextSpawnTime;
 
     [System.Serializable]
