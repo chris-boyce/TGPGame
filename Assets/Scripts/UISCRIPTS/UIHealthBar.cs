@@ -13,7 +13,7 @@ public class UIHealthBar : MonoBehaviour
     void Update()
     {
         _HealthSlider.value = _HealthScriptReference.currentHealth;
-        if(_HealthScriptReference.currentHealth <= 70)
+        if(_HealthScriptReference.currentHealth <= 0)
         {
             _SceneSwitcherReference.LoadSingleScene(10);
 
