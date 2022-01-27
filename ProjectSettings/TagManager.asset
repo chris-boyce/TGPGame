@@ -23,6 +23,7 @@ TagManager:
   - HealthBox
   - GUI
   - GUITEXT
+  - SceneSwitch
   layers:
   - Default
   - TransparentFX
