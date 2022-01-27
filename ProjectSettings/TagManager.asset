@@ -21,6 +21,9 @@ TagManager:
   - PlayerCamera
   - AmmoBox
   - HealthBox
+  - GUI
+  - GUITEXT
+  - SceneSwitch
   layers:
   - Default
   - TransparentFX

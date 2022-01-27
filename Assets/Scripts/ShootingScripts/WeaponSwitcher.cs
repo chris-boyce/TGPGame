@@ -141,7 +141,7 @@ public class WeaponSwitcher : MonoBehaviour
             ak.objAK.SetActive(false);
         }
         // M16
-        if (selectedWeapon == 5 && canSwitchWeaponToM16 == true)
+        if (selectedWeapon == 5)
         {
             m16.objM16.SetActive(true);
         }
