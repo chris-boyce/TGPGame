@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    private int selectedWeapon;
+    public int selectedWeapon;
 
     public bool canSwitchWeaponToSniper;
     public bool canSwitchWeaponToMachinePistol;
