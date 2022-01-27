@@ -57,6 +57,10 @@ public class Shotgun : MonoBehaviour
             canShoot = false;
             currentAmmoCount = 0;
         }
+        if (currentAmmoCount > 0)
+        {
+            canShoot = true;
+        }
     }
 
     void Shoot()

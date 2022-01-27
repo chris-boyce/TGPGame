@@ -48,6 +48,10 @@ public class MachinePistol : MonoBehaviour
         {
             canShoot = false;
         }
+        if (currentAmmoCount > 0)
+        {
+            canShoot = true;
+        }
     }
 
     void Shoot()
