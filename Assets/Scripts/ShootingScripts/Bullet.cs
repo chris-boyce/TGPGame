@@ -57,6 +57,11 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<Health>().Damage(bulletDamage);
             Debug.Log("Object was hit");
             Destroy(bulletObject);
+        }    
+        if(other.CompareTag("Object"))
+        {
+            Debug.Log("Object was hit");
+            Destroy(bulletObject);
         }
 
     }
