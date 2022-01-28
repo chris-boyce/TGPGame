@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
+
+/// <summary>
+/// HANDLES LEVEL WAVE AND ENEMY TEXT
+/// </summary>
 public class WaveEnemyCounter : MonoBehaviour
 {
     public Spawn _SpawnScriptReference;
