@@ -6,13 +6,14 @@ using Random = UnityEngine.Random;
 
 public class Pickup : MonoBehaviour
 {
-    public GameObject pickupObject;
+    public GameObject thisObject;
     public GameObject Player;
     
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -23,33 +24,20 @@ public class Pickup : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pickup"))
-        {
-
-            int randomNumber = Random.Range(0, 101);
-
-            if (randomNumber <= 50)
-            {
-                HealthUP();
-            }
-            if (randomNumber >50)
-            {
-                AmmoUP();
-            }
-            Destroy(other.gameObject);
-            Console.WriteLine(randomNumber);
+        if (other.CompareTag("Player"))
+        { 
+            AmmoUP();        
         }
     }
-
-    private void HealthUP()
-    {
-        Player.transform.Find("PlayerObject").GetComponent<Health>().currentHealth += 25;
-    }
-
     private void AmmoUP()
     {
-        Player.transform.Find("PlayerSniper").GetComponent<Sniper>().currentAmmoCount += 20;
-        Player.transform.Find("PlayerMachinePistol").GetComponent<MachinePistol>().currentAmmoCount += 20;
-        Destroy(pickupObject);
+        Player.transform.Find("sniper_rifle").GetComponent<Sniper>().currentAmmoCount += 5;
+        Player.transform.Find("machine_pistol_gun").GetComponent<MachinePistol>().currentAmmoCount += 50;
+        Player.transform.Find("submachine_gun").GetComponent<Submachinegun>().currentAmmoCount += 150;
+        Player.transform.Find("ak_machine_gun").GetComponent<AK>().currentAmmoCount += 100;
+        Player.transform.Find("m16_machine_gun").GetComponent<M16>().currentAmmoCount += 75;
+        Player.transform.Find("pump_action_shotgun").GetComponent<Shotgun>().currentAmmoCount += 5;
+        Destroy(thisObject);
     }
+
 }

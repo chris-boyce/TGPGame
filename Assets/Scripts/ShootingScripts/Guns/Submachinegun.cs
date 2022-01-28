@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 
 public class Submachinegun : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class Submachinegun : MonoBehaviour
     public bool canShoot;
 
     private float nextTimeToFire = 0f;
+
+    public AudioSource gunsound;
+
     void Start()
     {
         objSub.SetActive(false);
@@ -36,12 +40,17 @@ public class Submachinegun : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
+            gunsound.Play();
             Shoot();
         }
 
         if (currentAmmoCount == 0)
         {
             canShoot = false;
+        }
+        if(currentAmmoCount > 0)
+        {
+            canShoot = true;
         }
     }
 

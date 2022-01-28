@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CrateDestroy : MonoBehaviour
 {
-
-    public Health health;
     public GameObject thisObject;
+    public GameObject pickUpToInstantiate; 
+    public GameObject pickUpToInstantiateLocation; 
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,15 @@ public class CrateDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(thisObject.transform.GetComponent<Health>().currentHealth <= 0)
+     
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("pickup deployed");
+            Instantiate(pickUpToInstantiate, pickUpToInstantiateLocation.transform.position, pickUpToInstantiateLocation.transform.rotation);
         }
     }
+
 }

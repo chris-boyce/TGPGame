@@ -67,10 +67,14 @@ public class IKFeet : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
+		if (!root) {
+			Destroy(this);
+			return;
+		}
 		if(calcVelocity)	velocity = (root.position - oldRootPos);
 
 		float magnitude;
-		magnitude = calcVelocity ? velocity.sqrMagnitude : rb.velocity.sqrMagnitude;
+		magnitude = calcVelocity ? velocity.sqrMagnitude : rb.velocity.magnitude;
 
 
 		transform.position = currentPos;

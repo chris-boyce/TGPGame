@@ -5,17 +5,17 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public Wave[] waves;
-    public EnemyHealth Enemy;
-    public Transform[] spawnPostion;
+    public GameObject Enemy; // Jon EDIT: Changes datatype to the regular health script.
+	public Transform[] spawnPostion;
     private Vector3 spawnArea;
     private int spawnLocationNumber;
     private int waveMultiplier = 3;
 
     Wave currentWave;
-    int currentWaveNumber;
+    public int currentWaveNumber;
 
     private int enemyLeftToSpawn;
-    private int enemyLeftAlive;
+    public int enemyLeftAlive;
     private float nextSpawnTime;
 
     [System.Serializable]
@@ -39,8 +39,8 @@ public class Spawn : MonoBehaviour
             spawnLocationNumber = Random.Range(0,spawnPostion.Length); //Selects which spawner to spawn the zombie at
             spawnArea = new Vector3(spawnPostion[spawnLocationNumber].position.x + Random.Range(-5f, 5f), spawnPostion[spawnLocationNumber].position.y+ 0, spawnPostion[spawnLocationNumber].position.z +  Random.Range(-5f, 5f)); //Set Location of the spawn of the zombie relative to the spawn Transform
 
-            EnemyHealth spawnedEnemy = Instantiate(Enemy, spawnArea, Quaternion.identity); // Spawns Zombie
-            spawnedEnemy.OnDeath += OnEnemyDeath; //Event system for when the zombie dies
+            GameObject spawnedEnemy = Instantiate(Enemy, spawnArea, Quaternion.identity); // Spawns Zombie // Jon EDIT: Changes datatype to the regular health script.
+            spawnedEnemy.GetComponentInChildren<Health>().OnDeath += OnEnemyDeath; //Event system for when the zombie dies
         }
 
     }

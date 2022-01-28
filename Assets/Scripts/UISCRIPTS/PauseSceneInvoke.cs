@@ -4,43 +4,46 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseSceneInvoke : MonoBehaviour
 {
-
     public SceneSwitcher _SceneSwitcher;
     public GameObject _Canvas;
 
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(8));
+
         Time.timeScale = 0;
+        _Canvas.SetActive(true);
     }
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(7))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(8))
         {
-
             ActivateCanvas(_Canvas);
-        }
-        else
-        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.UnloadScene(8);
+                GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
+         
 
-            _Canvas.SetActive(false);
-        }    
+                Time.timeScale = 1;
+            }
+        
+        }
+      
     }
 
     public void Resume()
 {
-    //Make GameObject "PauseMenu" invisible to player
+        //Make GameObject "PauseMenu" invisible to player
 
-    //Set False By Default (doesnt show) - As intended
-    _SceneSwitcher.UnloadScene(7);
-
-    //Continues Regular Operation 
-    Time.timeScale = 1f;
+        SceneManager.UnloadScene(8);
+        GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
+        Time.timeScale = 1;
 
 
-
-}
+    }
     public void ActivateCanvas(GameObject canvas)
     {
 

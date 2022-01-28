@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 public class M16 : MonoBehaviour
 {
     public GameObject bullet;
@@ -25,6 +26,11 @@ public class M16 : MonoBehaviour
         canBurst = true;
     }
 
+    private void OnEnable()
+    {
+        canBurst = true;
+    }
+
     private void FixedUpdate()
     {
 
@@ -44,16 +50,19 @@ public class M16 : MonoBehaviour
         {
             canShoot = false;
         }
+        if(currentAmmoCount >= 0)
+        {
+            canShoot = true;
+        }
     }
 
     void Shoot()
     {
 
-       
-            currentAmmoCount -= 1;
+            canBurst = false;
             muzzle.Play();
             nextTimeToFire = Time.time + 1f / fireRate;
-            canBurst = false;
+            currentAmmoCount -= 1;
             Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
             StartCoroutine(BurstFire());
     }
@@ -61,11 +70,13 @@ public class M16 : MonoBehaviour
     IEnumerator BurstFire()
     {
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         muzzle.Play();
+        currentAmmoCount -= 1;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         muzzle.Play();
+        currentAmmoCount -= 1;
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
         yield return new WaitForSeconds(0.8f);
         canBurst = true;

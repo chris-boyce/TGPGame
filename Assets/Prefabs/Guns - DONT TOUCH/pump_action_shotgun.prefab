@@ -5147,7 +5147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f52439eb621b04e853df0ca2229605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 67331387076397572, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
   objShotgun: {fileID: 5924386643253470802}
   fireRate: 1
   muzzle: {fileID: 5923471016467094276}
@@ -5156,6 +5156,7 @@ MonoBehaviour:
   currentAmmoCount: 0
   canShoot: 0
   pelletCount: 80
-  spreadAngle: 60
-  pellet: {fileID: 6027053385324360213, guid: 6ac7e62ca0d00a24781d90c02a01f671, type: 3}
+  spreadAngle: 10
+  pellet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
   barrelPos: {fileID: 5923471014809794377}
+  gunsound: {fileID: 0}

@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneSetActive : MonoBehaviour
 {
-    public int _SceneIndex;
-    private void Start()
+ 
+    public void SetActiveScene(int scene_index)
     {
-        SetActiveScene(_SceneIndex);
-    }
-    public void SetActiveScene(int scene_name)
-    {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(_SceneIndex));
-
+      
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(scene_index));
+        Debug.Log("Scene" + scene_index + "Is Set Active");
     }
 }
+
+
