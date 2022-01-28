@@ -47886,6 +47886,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 4044706851975016211, guid: 6250808ed0f0fed459efdcac9df22eaa, type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044706851975016211, guid: 6250808ed0f0fed459efdcac9df22eaa, type: 3}
+      propertyPath: maxDistance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4044706851975016214, guid: 6250808ed0f0fed459efdcac9df22eaa, type: 3}
       propertyPath: m_Mesh
       value: 
