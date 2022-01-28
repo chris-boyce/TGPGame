@@ -400,28 +400,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &7157343125749902231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101247434330419926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d751718be2d5294685e95ca81c0f2cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objMachinePistol: {fileID: 101247434330419926}
-  bulletPos: {fileID: 7747064784741514975}
-  fireRate: 8
-  muzzle: {fileID: 7747064784806502795}
-  Text: {fileID: 2104843363669383924}
-  ammoCount: 150
-  currentAmmoCount: 0
-  canShoot: 0
-  gunsound: {fileID: 651951144}
 --- !u!82 &651951144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -433,7 +411,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 35f7439660d857f4fac9512a7ea2eb2b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -518,6 +496,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7157343125749902231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101247434330419926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d751718be2d5294685e95ca81c0f2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
+  objMachinePistol: {fileID: 101247434330419926}
+  bulletPos: {fileID: 7747064784741514975}
+  fireRate: 8
+  muzzle: {fileID: 7747064784806502795}
+  Text: {fileID: 2104843363669383924}
+  ammoCount: 150
+  currentAmmoCount: 0
+  canShoot: 0
+  gunsound: {fileID: 651951144}
 --- !u!1 &280279944340348318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   canSwitchWeaponToM16: 0
   canSwitchWeaponToShotgun: 0
   pistol: {fileID: 6976260642801079421}
-  sniper: {fileID: 8755838152809148215}
+  sniper: {fileID: 218273904}
   machinePistol: {fileID: 7157343125749902231}
   sub: {fileID: 8370000367245338897}
   ak: {fileID: 2966107300562970848}
@@ -1263,28 +1263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weight: 1
   m_Effectors: []
---- !u!114 &8370000367245338897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668435277636707779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac8bbee385fdf740ab76a2e082c0b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objSub: {fileID: 1668435277636707779}
-  bulletPos: {fileID: 1666798088917486292}
-  fireRate: 15
-  muzzle: {fileID: 1666798088484254217}
-  Text: {fileID: 2104843363669383924}
-  ammoCount: 300
-  currentAmmoCount: 0
-  canShoot: 0
-  gunsound: {fileID: 63549112}
 --- !u!82 &63549112
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1296,7 +1274,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c9695f0b5cfbd6d4586c8ae4a73cc611, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1381,6 +1359,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8370000367245338897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668435277636707779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac8bbee385fdf740ab76a2e082c0b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
+  objSub: {fileID: 1668435277636707779}
+  bulletPos: {fileID: 1666798088917486292}
+  fireRate: 15
+  muzzle: {fileID: 1666798088484254217}
+  Text: {fileID: 2104843363669383924}
+  ammoCount: 300
+  currentAmmoCount: 0
+  canShoot: 0
+  gunsound: {fileID: 63549112}
 --- !u!1 &1709836806922986358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,28 +1640,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8755838152809148215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3191903225998167028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc26d71acd6cd44683f1138458cd7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objSniper: {fileID: 3191903225998167028}
-  bulletPos: {fileID: 3192862580529570907}
-  fireRate: 1
-  muzzle: {fileID: 3192862581379113534}
-  Text: {fileID: 2104843363669383924}
-  ammoCount: 50
-  currentAmmoCount: 10
-  canShoot: 0
-  gunsound: {fileID: 1145395740}
 --- !u!114 &218273904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1684,6 +1662,28 @@ MonoBehaviour:
   currentAmmoCount: 0
   canShoot: 0
   gunsound: {fileID: 0}
+--- !u!114 &8755838152809148215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191903225998167028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc26d71acd6cd44683f1138458cd7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
+  objSniper: {fileID: 3191903225998167028}
+  bulletPos: {fileID: 3192862580529570907}
+  fireRate: 1
+  muzzle: {fileID: 3192862581379113534}
+  Text: {fileID: 2104843363669383924}
+  ammoCount: 50
+  currentAmmoCount: 10
+  canShoot: 0
+  gunsound: {fileID: 1145395740}
 --- !u!1 &3404054308472763691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,28 +2938,6 @@ Transform:
   m_Father: {fileID: 69495498310505025}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2966107300562970848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8370599188520050449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f256477b6adc604d8d28e1cf3dcef7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objAK: {fileID: 8370599188520050449}
-  bulletPos: {fileID: 8372178117516330828}
-  fireRate: 10
-  muzzle: {fileID: 8372178116749823673}
-  Text: {fileID: 2104843363669383924}
-  ammoCount: 300
-  currentAmmoCount: 0
-  canShoot: 0
-  gunsound: {fileID: 337193448}
 --- !u!82 &337193448
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2971,7 +2949,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d0e34dfb57326b04c85b28cf0a29dfad, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3056,6 +3034,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2966107300562970848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370599188520050449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f256477b6adc604d8d28e1cf3dcef7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
+  objAK: {fileID: 8370599188520050449}
+  bulletPos: {fileID: 8372178117516330828}
+  fireRate: 10
+  muzzle: {fileID: 8372178116749823673}
+  Text: {fileID: 2104843363669383924}
+  ammoCount: 300
+  currentAmmoCount: 0
+  canShoot: 0
+  gunsound: {fileID: 337193448}
 --- !u!1 &8444651786301316572
 GameObject:
   m_ObjectHideFlags: 0
