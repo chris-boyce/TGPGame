@@ -19,6 +19,8 @@ public class WeaponHud : MonoBehaviour
     {
        
         //DONT OPEN ITS UGLY
+
+        //FOR EACH WEAPON SELECTION - EACH CASE WILL DISABLE ALL OTHER WEAPONS AS SELECTED CHOICE , MAKE THE GUN BOUND TO INT (KEY BOARD INPUT) SELECT IMAGE ACTIVE
         switch(_WeaponSwitchReference.selectedWeapon)
         {
 
