@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        Text.text = "Ammo:\u221E"; // Infinite Symbol
+		if (Text)   Text.text = "Ammo:\u221E"; // Infinite Symbol
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
