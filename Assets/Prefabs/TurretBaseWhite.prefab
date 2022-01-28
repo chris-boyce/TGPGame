@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875839422616908}
-  m_LocalRotation: {x: 0.99017394, y: -0, z: -0, w: 0.13984174}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.4023267, y: 0.4023267, z: 0.4023267}
+  m_LocalRotation: {x: 0.7990417, y: -0, z: -0, w: -0.60127574}
+  m_LocalPosition: {x: 0, y: 0, z: 0.22197099}
+  m_LocalScale: {x: 1.6090838, y: 1.5910496, z: 1.4158714}
   m_Children: []
-  m_Father: {fileID: 248904498112284878}
-  m_RootOrder: 3
+  m_Father: {fileID: 7616626974144596557}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 163.923, y: 0, z: 0}
 --- !u!108 &6096405699038122683
 Light:
@@ -126,7 +126,6 @@ Transform:
   - {fileID: 259159740717083936}
   - {fileID: 7616626974144596557}
   - {fileID: 2082377537843019862}
-  - {fileID: 6576993650826862210}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47980,6 +47979,7 @@ GameObject:
   - component: {fileID: 7616626974144596557}
   - component: {fileID: 1444591543969082185}
   - component: {fileID: 4806310466322487166}
+  - component: {fileID: 4804213689588417614}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -47997,7 +47997,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0.44449955, z: 0}
   m_LocalScale: {x: 0.25003466, y: 0.28698903, z: 0.25003466}
-  m_Children: []
+  m_Children:
+  - {fileID: 6576993650826862210}
   m_Father: {fileID: 248904498112284878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48051,3 +48052,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4804213689588417614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690421835105852169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b95db06a56318b4e8d78f913bf67339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  target: {fileID: 0}
+  offset: {x: 180, y: 0, z: 0}
+  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
+  gun: {fileID: 2705300728077372920, guid: 06abf1b0e1c124a4ea2719e37cdf5ca7, type: 3}
+  bulletPosition: {fileID: 7616626974144596557}
+  muzzle: {fileID: 2656309661710677456, guid: 6e1e90be26629bf499b7730d54ed1a90, type: 3}
+  fire: {fileID: 0}
+  fireRate: 10
+  maxDistance: 10

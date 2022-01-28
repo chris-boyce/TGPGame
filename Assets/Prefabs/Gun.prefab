@@ -150,6 +150,7 @@ MonoBehaviour:
   ammoCount: 1
   currentAmmoCount: 0
   canShoot: 0
+  gunsound: {fileID: 0}
 --- !u!1001 &3016856632195484594
 PrefabInstance:
   m_ObjectHideFlags: 0
