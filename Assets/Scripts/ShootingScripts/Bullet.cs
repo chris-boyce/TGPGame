@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 
     IEnumerator DestroyBullet()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(bulletObject);
     }
 
@@ -41,14 +41,25 @@ public class Bullet : MonoBehaviour
 
         if(other.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            other.gameObject.GetComponent<Health>().Damage(bulletDamage); // Jon EDIT: Changed EnemyHealth to Health.
 
             Debug.Log("Object was hit");
             Destroy(bulletObject);
         }
-        if(other.CompareTag("Crate"))
+        if(other.CompareTag("AmmoBox"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
+            other.gameObject.GetComponent<Health>().Damage(bulletDamage);
+            Debug.Log("Object was hit");
+            Destroy(bulletObject);
+        }  
+        if(other.CompareTag("HealthBox"))
+        {
+            other.gameObject.GetComponent<Health>().Damage(bulletDamage);
+            Debug.Log("Object was hit");
+            Destroy(bulletObject);
+        }    
+        if(other.CompareTag("Object"))
+        {
             Debug.Log("Object was hit");
             Destroy(bulletObject);
         }

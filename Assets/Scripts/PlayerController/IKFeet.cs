@@ -34,9 +34,11 @@ public class IKFeet : MonoBehaviour {
 	[SerializeField]
 	private Vector3 rotationOffset; // Applies a permanent offset to the rotation of the foot.
 
-
+	[SerializeField]
 	private Transform root; // player position
 	private Rigidbody rb; // rigidbody of the player.
+	[SerializeField]
+	bool calcVelocity = false; // Used if no rigidbody is present to create a velocity.
 
 	private Vector3 currentPos; // Current position of the foot.
 	private Vector3 oldPos; // old position before the new position will overwrite it.
@@ -51,18 +53,29 @@ public class IKFeet : MonoBehaviour {
 	public bool movingFoot = false;
 	public bool finishedMoving = true;
 
+	[SerializeField]
+	Vector3 velocity; // velocity of the player. Used only when calcVelocity is true.
+	Vector3 oldRootPos; // position of the root on the last frame.
 
 	// Start is called before the first frame update
-    void Start()
+	void Start()
     {
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		root = player.transform;
-		rb = player.GetComponent<Rigidbody>();
+		rb = root.GetComponent<Rigidbody>();
+		if (rb == null) calcVelocity = true;
 		currentPos = root.position + (-root.up * 0.8f);
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
+		if (!root) {
+			Destroy(this);
+			return;
+		}
+		if(calcVelocity)	velocity = (root.position - oldRootPos);
+
+		float magnitude;
+		magnitude = calcVelocity ? velocity.sqrMagnitude : rb.velocity.magnitude;
+
 
 		transform.position = currentPos;
 
@@ -70,13 +83,18 @@ public class IKFeet : MonoBehaviour {
 		rot *= Quaternion.Euler(rotationOffset);
 		transform.rotation = rot;
 
-
 		// root position is the player.
 		// player gets given an offset for the feet on the right and left.
 		// gets an offset based on the location of the foot and velocity of the player.
+		Vector3 pointSpeed = calcVelocity ? velocity.normalized : rb.GetRelativePointVelocity(root.position);
 
-		Vector3 pointSpeed = rb.GetRelativePointVelocity(root.transform.position);
-		Vector3 rootTrans = root.position + (root.right * footDistance) + (root.forward * (invertFoot ? forwardOffset : -forwardOffset)) + (new Vector3(pointSpeed.x, 0, pointSpeed.z) / forwardDistanceDivider);
+		Debug.DrawLine(root.position, root.position + pointSpeed, Color.blue);
+
+		var distDivide = calcVelocity ? 1 : forwardDistanceDivider;
+
+		Vector3 rootTrans = root.position + (root.right * footDistance) + (root.forward * (invertFoot ? forwardOffset : -forwardOffset)) + (new Vector3(pointSpeed.x, 0, pointSpeed.z) / distDivide);
+
+		Debug.DrawLine(root.position, rootTrans, Color.green);
 
 		// fire a ray down to the floor.
 		// if the distance of newPos and the ray is larger than 0.3
@@ -109,27 +127,26 @@ public class IKFeet : MonoBehaviour {
 		//
 		// if lerp is more than 1, set the oldPos to newPos.
 		if (lerp < 1) {
-			float magnitude = rb.velocity.magnitude;
+			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp);
+
 			if (magnitude < 0) { // if the magnitude is ever negative, set it to positive.
 				magnitude = -magnitude;
 			}
 
-			Vector3 footPos = Vector3.Lerp(oldPos, newPos, lerp + magnitude);
 			footPos.y += Mathf.Sin((lerp + magnitude) * Mathf.PI) * stepHeight;
 
-			Debug.DrawRay(footPos, Vector3.up, Color.yellow);
 			
 			currentPos = footPos;
 			movingFoot = true;
 			lerp += speed * Time.deltaTime;
 			
 		} else {
-			Debug.DrawRay(newPos, Vector3.up, Color.magenta);
-			Debug.DrawRay(oldPos, Vector3.up, Color.black);
 			oldPos = newPos;
 			invertFoot = !invertFoot;
 			finishedMoving = true;
 			movingFoot = false;
 		}
+
+		oldRootPos = root.position;
 	}
 }

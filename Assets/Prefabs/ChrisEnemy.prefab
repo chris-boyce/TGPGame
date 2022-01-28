@@ -13,7 +13,10 @@ GameObject:
   - component: {fileID: 5434976651430585185}
   - component: {fileID: 3041706547046651103}
   - component: {fileID: 838088498496242674}
-  - component: {fileID: -8216658815150049312}
+  - component: {fileID: 4962863043680178936}
+  - component: {fileID: 7247168355959754377}
+  - component: {fileID: 8292316855872970805}
+  - component: {fileID: 5328689342964564915}
   m_Layer: 0
   m_Name: ChrisEnemy
   m_TagString: Enemy
@@ -121,7 +124,33 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-8216658815150049312
+--- !u!114 &4962863043680178936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613735231533307613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cbd9a0df9e15034c89182aaf3b2ea55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7247168355959754377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613735231533307613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  currentHealth: 0
+--- !u!114 &8292316855872970805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,5 +160,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34dc38fa2f9579842a49b009aa818b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5328689342964564915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613735231533307613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4411f5270e1c3684ab7cb5d0a3d22de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

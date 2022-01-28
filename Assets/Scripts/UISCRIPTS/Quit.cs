@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Quit : MonoBehaviour
 {
-    public bool _Quitting = false;
-    // Start is called before the first frame update
-    void Start()
+   
+    public void ApplicationQuit()
     {
-
-        if(_Quitting == true)
-        {
+       
             Application.Quit();
-            Debug.Log("Application : Quit");
-        }
-     
+        
+
     }
 
- 
 }

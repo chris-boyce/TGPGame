@@ -11,19 +11,20 @@ public class Healthbar : MonoBehaviour
     public Slider Slider;
     public GameObject canvas;
     public GameObject SliderPos;
-    private Health health;
     public GameObject thisObject;
 
 
-    void Start()
-    {
+   public void Start()
+   {
+        canvas = GameObject.FindWithTag("Canvas");
         Slider = Instantiate(Slider, SliderPos.transform.position, SliderPos.transform.rotation);
         Slider.transform.parent = canvas.transform;
-    }
+   }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+
         Vector3 healthPos = Camera.main.WorldToScreenPoint(SliderPos.transform.position);
         Slider.transform.position = healthPos;  
     }

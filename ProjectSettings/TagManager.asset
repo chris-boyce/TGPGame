@@ -8,8 +8,23 @@ TagManager:
   - Bullet
   - Enemy
   - SniperObject
-  - Crate
   - Pickup
+  - Canvas
+  - MachinePistol
+  - Shotgun
+  - AK
+  - Sub
+  - M16
+  - LeftHand
+  - RightHand
+  - Floor
+  - PlayerCamera
+  - AmmoBox
+  - HealthBox
+  - GUI
+  - GUITEXT
+  - SceneSwitch
+  - Object
   layers:
   - Default
   - TransparentFX

@@ -9,23 +9,27 @@ public class LevelSelect : MonoBehaviour
 
     public Sprite[] _Sprite_Array;
 
-    //Store Scene Reference
-    public string[] _Scene_Array;
+    /// <summary>
+    /// Stores Scenes as Int array - Int Element passed is build Index reference of scene
+    /// </summary>
+    public int[] _Scene_Array;
+
+
+    //
+    public Animator _Animator;
 
     //IMG Used To Identify Scene Change Option
 
     public GameObject _LevelSelect;
     private int _LevelSelected = 0;
     private int _LevelNum = 0;
-   
     //OnClick Reference , When clicked with show next "Sprite" Level Identifying Image
     public void NextLevel()
     {
         //Element Access stops at 4 (0 - 4 / 5 Levels)
-
-        if (_LevelNum >= 4)
+        if (_LevelNum >= 0)
         {
-            _LevelNum = 4;
+            _LevelNum = 0;
 
             _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
         }
@@ -65,8 +69,18 @@ public class LevelSelect : MonoBehaviour
     //OnClick Reference , When clicked will Load chosen scene
     public void StartLevel()
     {
+
+
+        StartCoroutine(LoadLevel());
+
+    }
+    IEnumerator LoadLevel()
+    {
+        _Animator.SetTrigger("StartTransition");
+
+        yield return new WaitForSeconds(1);
         //Elements 0 - 4 in both arrays are ordered the same , e.g level 1 = 0 (for both arrays) ect...
         SceneManager.LoadScene(_Scene_Array[_LevelSelected]);
-        
+
     }
 }
