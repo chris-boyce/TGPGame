@@ -24,6 +24,7 @@ TagManager:
   - GUI
   - GUITEXT
   - SceneSwitch
+  - Object
   layers:
   - Default
   - TransparentFX
