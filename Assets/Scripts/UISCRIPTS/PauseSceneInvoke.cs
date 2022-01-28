@@ -2,10 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
+
+/// <summary>
+/// HANDLER FOR THE PAUSE MENU SYSTEM
+/// </summary>
 public class PauseSceneInvoke : MonoBehaviour
 {
     public SceneSwitcher _SceneSwitcher;
     public GameObject _Canvas;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +30,14 @@ public class PauseSceneInvoke : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(8))
         {
             ActivateCanvas(_Canvas);
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.UnloadScene(8);
+
                 GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
-         
+                GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;
+                GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = true;
 
                 Time.timeScale = 1;
             }
@@ -39,7 +51,11 @@ public class PauseSceneInvoke : MonoBehaviour
         //Make GameObject "PauseMenu" invisible to player
 
         SceneManager.UnloadScene(8);
+        
         GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
+        GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;
+        GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = true;
+
         Time.timeScale = 1;
 
 
