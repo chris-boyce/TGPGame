@@ -7,30 +7,33 @@ public class Settings : MonoBehaviour
 
 
     private int _SettingMenuSelect = 0;
-
-    public GameObject _SettingScreen1;
-    public GameObject _SettingScreen2;
+    public GameObject[] _SettingScreen;
 
     public void NextSettingScene()
     {
        
         //Element Access stops at 4 (0 - 4 / 5 Levels)
+       
+        //Check Method - Prevent going past indexed elements
         if (_SettingMenuSelect >= 2)
             {
-                _SettingMenuSelect = 2;
+             _SettingMenuSelect = 2;
+            _SettingScreen[_SettingMenuSelect].SetActive(true);
 
-           
-            }
+
+
+
+        }
         else
         {
+            //Makes Previous Setting Option Inactive
+            _SettingScreen[_SettingMenuSelect].SetActive(false);
+
+            //Makes Previous Setting Option Active
             _SettingMenuSelect++;
+            _SettingScreen[_SettingMenuSelect].SetActive(true);
 
-            if(_SettingMenuSelect >= 2)
-            {
-                _SettingScreen1.SetActive(false);
-                _SettingScreen2.SetActive(true);
-
-            }
+           
 
         }
 
@@ -39,22 +42,19 @@ public class Settings : MonoBehaviour
     {
       
         //Element Access stops at 4 (0 - 4 / 5 Levels)
-        if (_SettingMenuSelect <= 1)
+        if (_SettingMenuSelect <= 0)
         {
-            _SettingMenuSelect = 1;
-
+            _SettingMenuSelect = 0;
+            _SettingScreen[_SettingMenuSelect].SetActive(true);
 
         }
         else
         {
+            _SettingScreen[_SettingMenuSelect].SetActive(false);
+
             _SettingMenuSelect--;
+            _SettingScreen[_SettingMenuSelect].SetActive(true);
 
-            if (_SettingMenuSelect <= 1)
-            {
-                _SettingScreen1.SetActive(true);
-                _SettingScreen2.SetActive(false);
-
-            }
 
         }
 
