@@ -18,6 +18,9 @@ public class M16 : MonoBehaviour
     public bool canBurst;
 
     private float nextTimeToFire = 0f;
+    public AudioSource gunsound;
+
+
     void Start()
     {
         objM16.SetActive(false);
@@ -61,6 +64,7 @@ public class M16 : MonoBehaviour
 
             canBurst = false;
             muzzle.Play();
+            gunsound.Play();
             nextTimeToFire = Time.time + 1f / fireRate;
             currentAmmoCount -= 1;
             Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
@@ -73,10 +77,12 @@ public class M16 : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         muzzle.Play();
         currentAmmoCount -= 1;
+        gunsound.Play();
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
         yield return new WaitForSeconds(0.15f);
         muzzle.Play();
         currentAmmoCount -= 1;
+        gunsound.Play();
         Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
         yield return new WaitForSeconds(0.8f);
         canBurst = true;
