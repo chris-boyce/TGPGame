@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6056559731563665397}
   - component: {fileID: 6077878350300642553}
   - component: {fileID: 6077878350300642558}
+  - component: {fileID: 6839949716087546351}
   m_Layer: 0
   m_Name: submachine_gun_object
   m_TagString: Sub
@@ -109,6 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 6077878350300642559}
   amplitude: 0.2
   frequency: 1
+--- !u!114 &6839949716087546351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077878350300642559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c53fb39890cf0d4c98b91bd6ff78285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpObject: 5

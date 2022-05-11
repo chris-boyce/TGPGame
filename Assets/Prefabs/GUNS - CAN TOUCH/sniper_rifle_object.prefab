@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2719188336028931519}
   - component: {fileID: 2732293515374664463}
   - component: {fileID: 2732293515374664456}
+  - component: {fileID: 5082891041666145319}
   m_Layer: 0
   m_Name: sniper_rifle_object
   m_TagString: SniperObject
@@ -97,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 2732293515374664457}
   amplitude: 0.2
   frequency: 1
 --- !u!65 &2732293515374664456
@@ -113,6 +113,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21696305, y: 0.5535967, z: 4.319199}
   m_Center: {x: -0.024771336, y: -0.10490328, z: 0.9808965}
+--- !u!114 &5082891041666145319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732293515374664457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c53fb39890cf0d4c98b91bd6ff78285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpObject: 6
 --- !u!1001 &6589389893954695354
 PrefabInstance:
   m_ObjectHideFlags: 0

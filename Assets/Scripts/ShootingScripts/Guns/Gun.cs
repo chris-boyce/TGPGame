@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
     {
         muzzle.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
-        Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
+        Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation, transform.parent);
     }
 
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8432929514718744950}
   - component: {fileID: 8453444089564868570}
   - component: {fileID: 8453444089564868569}
+  - component: {fileID: 3292025570655380848}
   m_Layer: 0
   m_Name: shotgun_object
   m_TagString: Shotgun
@@ -109,6 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 8453444089564868568}
   amplitude: 0.2
   frequency: 1
+--- !u!114 &3292025570655380848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453444089564868568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c53fb39890cf0d4c98b91bd6ff78285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpObject: 4

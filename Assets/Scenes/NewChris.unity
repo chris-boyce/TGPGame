@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d5787c010f01f814585955b21eed8d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29dce6a4f2501ad4a96c03fefd97233f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GunsGO: []
 --- !u!1 &202481452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2732293515374664457, guid: 6841c33e36177f1479e205670e0841f3, type: 3}
@@ -784,6 +785,14 @@ PrefabInstance:
     - target: {fileID: 1629956658092360523, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058311822139906800, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865603820988410671, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.275
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1035175880147550370, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}

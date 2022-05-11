@@ -2,43 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-
+/// <summary>
+/// Weapon Selector Script 
+/// This code is used on the Player and unlocks weapons when picked up
+/// If adding to Equipable objects you will need to add it to the ENUM PickupType
+/// And then Add A Key to the Update Function
+/// Afterwards head to WeaponEquip.cs and add functionality there
+/// </summary>
 public class WeaponSelector : MonoBehaviour
 {
     public IPickupable testInterface;
     private PickupType UnlockWeapon;
     public PickupType CurrentWeapon;
-    private bool BoolValue;
-    private bool ReturnValue;
+    public IGun CurrentIGUN;
     public Dictionary<PickupType, bool> WeaponPool = new Dictionary<PickupType, bool>();
+
     private void Start()
     {
+        //Adds Each Element of ENUM PickupTypes and sets the Value To false (Player Hasnt Unlocked Weapon)
        foreach(PickupType UnlockWeapon in Enum.GetValues(typeof(PickupType) ))
        {
             WeaponPool.Add(UnlockWeapon, false);
-            Debug.Log(WeaponPool);
-            Debug.Log(UnlockWeapon);
        }
+       //Unlocks the Pistol and sets it as Start Weapon
         WeaponPool[PickupType.Pistol] = true;
+        CurrentWeapon = PickupType.Pistol;
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Is Pick up");
-        
-
+        //If Player Collides with an object and it has the interface Ipickuapble
         IPickupable testInterface = other.gameObject.GetComponent<IPickupable>();
-
         if (testInterface != null)
         {
+            //Sets the Unlock Weapon to changes the Players Weapon Pool to True (Player Unlocks the Item) and Destories Itself
             UnlockWeapon = testInterface.ReturnType();
             testInterface.OnDestory();
             WeaponPool[UnlockWeapon] = true;
-            Debug.Log("True" + UnlockWeapon);
         }
 
     }
     private void Update()
     {
+        //Checks if Has Unlocked Weapon and Key is Pressed
         if (Input.GetKeyDown(KeyCode.Alpha1) && (WeaponPool[PickupType.Pistol] == true))
         {
             CurrentWeapon = PickupType.Pistol;

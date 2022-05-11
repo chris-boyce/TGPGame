@@ -5061,7 +5061,7 @@ GameObject:
   - component: {fileID: 6470755538117936312}
   - component: {fileID: 6478459846396077148}
   - component: {fileID: 2843033580795506199}
-  - component: {fileID: 4505497473086058307}
+  - component: {fileID: 2416681751064880312}
   m_Layer: 0
   m_Name: submachine_gun
   m_TagString: Sub
@@ -5077,7 +5077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6466555756818501462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: 0.025, z: 0.285}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6465765260766912577}
@@ -5149,7 +5149,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.18653974, y: 0.48973826, z: 1.5068321}
   m_Center: {x: 0.0020439662, y: 0.038870946, z: 0.21879786}
---- !u!114 &4505497473086058307
+--- !u!114 &2416681751064880312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5158,15 +5158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6466555756818501462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac8bbee385fdf740ab76a2e082c0b13, type: 3}
+  m_Script: {fileID: 11500000, guid: f5166ab37b0724142bd09c8874f4a295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  objSub: {fileID: 6466555756818501462}
-  bulletPos: {fileID: 6465765260766912577}
-  fireRate: 15
-  muzzle: {fileID: 6465765260401825948}
-  Text: {fileID: 0}
-  ammoCount: 100
-  currentAmmoCount: 0
-  canShoot: 0
+  Projectile: {fileID: 0}
