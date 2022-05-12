@@ -13400,7 +13400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4dcfd293217e448bea9e46f26a0fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WeaponSwitchReference: {fileID: 0}
   WeaponSelector: {fileID: 518248244}
   _PistolImage: {fileID: 1449620851}
   _SniperImage: {fileID: 1598127330}
@@ -26389,7 +26388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103197668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 328d17216ed109449b3b6af0a3199a20, type: 3}
   m_Name: 

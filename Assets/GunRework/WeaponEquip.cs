@@ -61,6 +61,7 @@ public class WeaponEquip : MonoBehaviour
             {
                 case PickupType.AK:             //If AK Selected
                     CurrentIGUN = AK47 as IGun; //Sets IGun to the one be fired
+                    CurrentGunObject = AK47.GunObject; //Sets Gameobject
                     GunsGO[2].SetActive(true);  //Activates that gun so it can be seen
                     break;
                 case PickupType.AutoPistol:
