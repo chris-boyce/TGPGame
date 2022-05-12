@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AWP : BaseGunClass, IGun
 {
+    
     public AWP() : base()
     {
+        Timer = 2f;
         GunName = "Sniper";
         GunCurrentAmmo = 5;
         GunMagSize = 5;
@@ -13,19 +15,27 @@ public class AWP : BaseGunClass, IGun
         GunReserveAmmo = 100;
         GunFireRate = 0.5f;
         GunDamage = 100f;
+        FireRatePerSec = 1 / GunFireRate;
     }
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("sniper_rifle");
+        PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
     public override void Fire()
     {
-        Debug.Log("Sniper Firing");
+        if (Timer > FireRatePerSec)
+        {
+            Debug.Log("Shoot");
+            PC.FireGun(GunDamage);
+
+            Timer = 0f;
+        }
+        else
+        {
+            Timer = Timer += Time.deltaTime;
+        }
     }
 
-    public override void Reload()
-    {
-
-    }
 }

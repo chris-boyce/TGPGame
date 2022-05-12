@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 5477314578571787968}
   - component: {fileID: 5486889521749788500}
   - component: {fileID: 2117973586782038466}
+  - component: {fileID: 4382384836684917050}
   m_Layer: 0
   m_Name: sniper_rifle
   m_TagString: SniperObject
@@ -160,6 +161,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21696305, y: 0.5535967, z: 4.319199}
   m_Center: {x: -0.024777059, y: -0.10490146, z: 0.9808965}
+--- !u!114 &4382384836684917050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508511373485984226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5166ab37b0724142bd09c8874f4a295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &5509751050800047692
 GameObject:
   m_ObjectHideFlags: 0

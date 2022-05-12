@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponHud : MonoBehaviour
 {
-    public WeaponSwitcher _WeaponSwitchReference;
+    //public WeaponSwitcher _WeaponSwitchReference;
+    public WeaponSelector WeaponSelector;
     public GameObject _PistolImage;
     public GameObject _SniperImage;
     public GameObject _MachinePistol;
@@ -13,14 +14,17 @@ public class WeaponHud : MonoBehaviour
     public GameObject _M16Image;
     public GameObject _ShotgunImage;
    
+    /// <summary>
+    /// Chris has noticed you could use a function here. Talk to me in class
+    /// </summary>
 
-    // Update is called once per frame
     void Update()
     {
-       
+
         //DONT OPEN ITS UGLY
 
         //FOR EACH WEAPON SELECTION - EACH CASE WILL DISABLE ALL OTHER WEAPONS AS SELECTED CHOICE , MAKE THE GUN BOUND TO INT (KEY BOARD INPUT) SELECT IMAGE ACTIVE
+        /*
         switch(_WeaponSwitchReference.selectedWeapon)
         {
 
@@ -106,10 +110,52 @@ public class WeaponHud : MonoBehaviour
 
 
         }
+        */
+        switch(WeaponSelector.CurrentWeapon)
+        {
+            case PickupType.AK:
+                ResetHUD();
+                _AKImage.SetActive(true);
+                break;
+            case PickupType.AutoPistol:
+                ResetHUD();
+                _MachinePistol.SetActive(true);
+                break;
+            case PickupType.Empty:
+                //Hand Empty
+                break;
+            case PickupType.M16:
+                ResetHUD();
+                _M16Image.SetActive(true);
+                break;
+            case PickupType.P90:
+                ResetHUD();
+                _P90Image.SetActive(true);
+                break;
+            case PickupType.Pistol:
+                ResetHUD();
+                _PistolImage.SetActive(true);
+                break;
+            case PickupType.Shotgun:
+                ResetHUD();
+                _ShotgunImage.SetActive(true);
+                break;
+            case PickupType.Sniper:
+                ResetHUD();
+                _SniperImage.SetActive(true);
+                break;
+        }
+        
 
-     
-
-     
-     
+    }
+    void ResetHUD()
+    {
+        _PistolImage.SetActive(false);
+        _SniperImage.SetActive(false);
+        _MachinePistol.SetActive(false);
+        _P90Image.SetActive(false);
+        _AKImage.SetActive(false);
+        _M16Image.SetActive(false);
+        _ShotgunImage.SetActive(false);
     }
 }

@@ -5,26 +5,36 @@ using UnityEngine;
 public class ProjectileCreate : MonoBehaviour
 {
     [SerializeField] private GameObject Projectile;
-    private GameObject bullet;
     private Bullet bulletSC;
+    private GameObject Bullet;
     public GameObject Player;
-
-    private void Awake()
-    {
-    }
+    Quaternion ShotgunRot;
 
     public void FireGun(float Damage)
     {
         Player = GameObject.Find("PlayerObject");
         Projectile = Resources.Load<GameObject>("Bullet");
         Debug.Log(this.name);
-        Instantiate(Projectile,Player.transform.position,Player.transform.rotation);
-        
-        /*
-        bulletSC = bullet.GetComponent<Bullet>();
+        Bullet = Instantiate(Projectile,Player.transform.position,Player.transform.rotation);
+        bulletSC = Bullet.GetComponent<Bullet>();
         bulletSC.bulletDamage = Damage;
-        */
 
 
+    }
+    public void SpreadGun(float Damage)
+    {
+        Debug.Log("Shotgun Shot");
+        Player = GameObject.Find("PlayerObject");
+        Projectile = Resources.Load<GameObject>("Bullet");
+
+        for (int i = 0; i < 5; i++)
+        {
+            ShotgunRot = Player.transform.rotation * Quaternion.Euler(0, Random.Range(-15, 15), 0);
+            Bullet = Instantiate(Projectile, Player.transform.position, ShotgunRot);
+            bulletSC = Bullet.GetComponent<Bullet>();
+            bulletSC.bulletDamage = Damage;
+        }
+
+            
     }
 }

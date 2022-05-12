@@ -18,15 +18,14 @@ public class Pistol : BaseGunClass, IGun
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("pistol");
+        PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
     public override void Fire()
     {
-        Debug.Log("Pistol Firing");
+
+            PC.FireGun(GunDamage);
+        
     }
 
-    public override void Reload()
-    {
-
-    }
 }

@@ -13,20 +13,27 @@ public class SuperShotgun : BaseGunClass, IGun
         GunReserveAmmo = 80;
         GunFireRate = 1f;
         GunDamage = 10f;
+        FireRatePerSec = 1 / GunFireRate;
     }
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("pump_action_shotgun");
+        PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
     public override void Fire()
     {
-        Debug.Log("Shotgun Firing");
+        if (Timer > FireRatePerSec)
+        {
+            PC.SpreadGun(GunDamage);
+
+            Timer = 0f;
+        }
+        else
+        {
+            Timer = Timer += Time.deltaTime;
+        }
     }
 
-    public override void Reload()
-    {
-
-    }
 }
 

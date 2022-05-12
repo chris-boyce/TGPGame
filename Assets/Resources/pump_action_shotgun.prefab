@@ -5060,6 +5060,7 @@ GameObject:
   - component: {fileID: 5925060443741153928}
   - component: {fileID: 5927621114374894610}
   - component: {fileID: 5935960267826747644}
+  - component: {fileID: 9016092402675559917}
   m_Layer: 0
   m_Name: pump_action_shotgun
   m_TagString: Shotgun
@@ -5134,3 +5135,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9016092402675559917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5924386643253470802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5166ab37b0724142bd09c8874f4a295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 0}
+  Player: {fileID: 0}

@@ -56,7 +56,6 @@ public class WeaponEquip : MonoBehaviour
     {
         if(weaponSelector.CurrentWeapon != cachedType) //Effiency : Only Run Switch Once after weapon swap
         {
-            Debug.Log("Switched Weapon");
             DisableGuns();
             switch (weaponSelector.CurrentWeapon)
             {
@@ -95,6 +94,7 @@ public class WeaponEquip : MonoBehaviour
                 case PickupType.Sniper:
                     CurrentIGUN = AWP as IGun;
                     CurrentGunObject = AWP.GunObject;
+                    AWP.Timer = 2f;
                     GunsGO[0].SetActive(true);
                     break;
 
@@ -103,7 +103,11 @@ public class WeaponEquip : MonoBehaviour
         }
         cachedType = weaponSelector.CurrentWeapon;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && CurrentIGUN != Pistol)
+        {
+            CurrentIGUN.Fire();
+        }
+        if(Input.GetMouseButtonDown(0) && CurrentIGUN == Pistol)
         {
             CurrentIGUN.Fire();
         }

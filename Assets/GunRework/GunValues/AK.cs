@@ -13,20 +13,27 @@ public class AK47 : BaseGunClass, IGun
         GunReserveAmmo = 300;
         GunFireRate = 5f;
         GunDamage = 25f;
+        FireRatePerSec = 1 / GunFireRate;
     }
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("ak_machine_gun");
+        PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
     public override void Fire()
     {
-        Debug.Log("AK47 Firing");
+        if (Timer > FireRatePerSec)
+        {
+            PC.FireGun(GunDamage);
+
+            Timer = 0f;
+        }
+        else
+        {
+            Timer = Timer += Time.deltaTime;
+        }
     }
 
-    public override void Reload()
-    {
-
-    }
 }
 

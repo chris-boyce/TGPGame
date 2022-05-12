@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class SMG : BaseGunClass , IGun 
 {
-    private float FireRatePerSec;
-    private float Timer;
-    ProjectileCreate PC;
 
     public SMG() : base()
     {
+        Timer = 2f;
         GunName = "SMG";
         GunCurrentAmmo = 50;
         GunMagSize = 50;
@@ -41,8 +39,4 @@ public class SMG : BaseGunClass , IGun
 
     }
 
-    public override void Reload()
-    {
-
-    }
 }

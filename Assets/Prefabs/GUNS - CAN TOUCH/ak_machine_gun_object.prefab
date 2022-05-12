@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8691356649920494614}
   - component: {fileID: 8691356649920494615}
   - component: {fileID: 5191933176030913297}
+  - component: {fileID: 807513096}
   m_Layer: 0
   m_Name: ak_machine_gun_object
   m_TagString: AK
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8691356649920494608}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.8021, y: 0.061446, z: -2.4201}
   m_LocalScale: {x: 0.63927, y: 0.63927, z: 0.63927}
   m_Children: []
@@ -113,6 +114,19 @@ MonoBehaviour:
   amplitude: 0.2
   frequency: 1
 --- !u!114 &5191933176030913297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691356649920494608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c53fb39890cf0d4c98b91bd6ff78285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpObject: 1
+--- !u!114 &807513096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
