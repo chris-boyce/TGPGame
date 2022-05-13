@@ -58,6 +58,6 @@ public class AK : MonoBehaviour
         currentAmmoCount -= 1;
         muzzle.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
-        Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
+        //Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);  
     }
 }

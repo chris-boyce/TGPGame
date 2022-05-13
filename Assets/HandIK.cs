@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandIK : MonoBehaviour
 {
     [SerializeField]
-    private WeaponSwitcher weaponSwitcher;
+    private WeaponEquip weaponSwitcher;
 
     Transform target;
 
@@ -34,6 +34,7 @@ public class HandIK : MonoBehaviour
     }
 
     public void UpdateHeldItem() {
+        
         GameObject item = weaponSwitcher.GetCurrentWeapon();
 
         Transform newTarget = null;
@@ -50,5 +51,6 @@ public class HandIK : MonoBehaviour
 		}
 
         target = newTarget;
+        
     }
 }

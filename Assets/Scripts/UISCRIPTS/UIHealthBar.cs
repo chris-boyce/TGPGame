@@ -7,6 +7,10 @@ public class UIHealthBar : MonoBehaviour
     public Slider _HealthSlider;
     public Health _HealthScriptReference;
 
+    /// <summary>
+    /// HANDLES HEALTH SLIDER
+    /// </summary>
+
     // Update is called once per frame
     void Update()
     {
