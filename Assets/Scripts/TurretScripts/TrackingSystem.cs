@@ -6,6 +6,7 @@ public class TrackingSystem : MonoBehaviour
 {
     public float speed = 5.0f;
     public Transform target;
+    public Vector3 offset;
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
     RaycastHit hit;
@@ -34,7 +35,7 @@ public class TrackingSystem : MonoBehaviour
         {            
             if (lastPosition != target.transform.position) // last known position doesn't equal the position of the target
             {
-                lookRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+                lookRotation = Quaternion.LookRotation(target.transform.position - transform.position + offset);
             }
 
             if (transform.rotation != lookRotation) // rotation doesn't equal the rotation needed to get the target

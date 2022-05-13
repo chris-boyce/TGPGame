@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+	[Header("Ragdoll settings (Only used if ragdoll prefab is used)")]
 	[SerializeField]
 	GameObject ragdollPrefab; // Jon ADD: Adds in dead ragdolls.
 	[SerializeField]
@@ -19,11 +20,13 @@ public class Health : MonoBehaviour
 
 
 	// Droppable items on death.
+	[Header("Droppable Items (Only used if tag is Enemy)")]
 	[SerializeField]
 	GameObject[] spawnDropablePrefab;
 	[SerializeField]
 	float spawnDropablePercentage = 0.05f;
 
+	[Header("Health Values")]
 	public float health = 100f;
 	[SerializeField]
 	public float currentHealth;
@@ -77,7 +80,7 @@ public class Health : MonoBehaviour
 		if (OnDeath != null) {
 			if (gameObject.CompareTag("Enemy")) {
 				if (Random.value < spawnDropablePercentage) {
-					Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length - 1)], transform.position, transform.rotation, transform.parent.parent);
+					Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
 				}
 
 				OnDeath();
@@ -97,5 +100,4 @@ public class Health : MonoBehaviour
 		}
 	}
 
-	
 }

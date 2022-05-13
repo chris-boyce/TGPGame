@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        Text.text = "Ammo:\u221E"; // Infinite Symbol
+		if (Text)   Text.text = "Ammo:\u221E"; // Infinite Symbol
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && canShoot == true)
         {
@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
     {
         muzzle.Play();
         nextTimeToFire = Time.time + 1f / fireRate;
-        Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation);
+        Instantiate(bullet, bulletPos.transform.position, bulletPos.transform.rotation, transform.parent);
     }
 
 }
