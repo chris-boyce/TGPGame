@@ -20,4 +20,13 @@ public class BaseGunClass : IGun
 
     virtual public void Fire() { }
 
+    virtual public int returnAmmo()
+    {
+        return GunCurrentAmmo;
+    }
+
+    virtual public int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
 }

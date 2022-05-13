@@ -6,4 +6,6 @@ public interface IGun
 {
     
     void Fire();
+    public int returnAmmo();
+    public int returnMaxAmmo();
 }

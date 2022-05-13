@@ -23,10 +23,11 @@ public class SuperShotgun : BaseGunClass, IGun
 
     public override void Fire()
     {
-        if (Timer > FireRatePerSec)
+        if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
             PC.SpreadGun(GunDamage);
-
+            GunReserveAmmo--;
+            Debug.Log(GunReserveAmmo);
             Timer = 0f;
         }
         else
@@ -34,6 +35,15 @@ public class SuperShotgun : BaseGunClass, IGun
             Timer = Timer += Time.deltaTime;
         }
     }
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
+
 
 }
 

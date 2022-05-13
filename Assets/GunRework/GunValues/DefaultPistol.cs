@@ -25,7 +25,17 @@ public class Pistol : BaseGunClass, IGun
     {
 
             PC.FireGun(GunDamage);
-        
+        GunReserveAmmo--;
+
     }
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
+
 
 }
