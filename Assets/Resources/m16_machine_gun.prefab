@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3784896458133371051}
   - component: {fileID: 6736038139406229334}
   - component: {fileID: 6973861475523272298}
+  - component: {fileID: 5049537595792690115}
   m_Layer: 0
   m_Name: m16_machine_gun
   m_TagString: M16
@@ -129,6 +130,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23123145, y: 0.9982482, z: 3.1722825}
   m_Center: {x: 0.000000115484, y: 0.08164723, z: 0.4889108}
+--- !u!114 &5049537595792690115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341737097428929108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5166ab37b0724142bd09c8874f4a295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &6378925794848797325
 GameObject:
   m_ObjectHideFlags: 0

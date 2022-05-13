@@ -165,6 +165,7 @@ public class WeaponSwitcher : MonoBehaviour
     // Detect Weapon On Floor 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if(other.CompareTag("SniperObject"))
         {
             canSwitchWeaponToSniper = true;
