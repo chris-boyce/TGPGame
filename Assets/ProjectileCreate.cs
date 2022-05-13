@@ -11,6 +11,8 @@ public class ProjectileCreate : MonoBehaviour
     Quaternion ShotgunRot;
     [SerializeField] private int ProjectileCount = 5;
 
+    //Yeet Update
+
     public void FireGun(float Damage)
     {
         Player = GameObject.Find("PlayerObject");
