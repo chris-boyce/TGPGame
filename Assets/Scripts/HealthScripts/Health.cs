@@ -54,11 +54,6 @@ public class Health : MonoBehaviour
 			velManual = (transform.position - oldPos);
 			oldPos = transform.position;
 		}
-
-		if(health > 100f)
-        {
-			health = 100f;
-        }
 	}
 
 	public void Damage(float damage)
@@ -105,5 +100,4 @@ public class Health : MonoBehaviour
 		}
 	}
 
-	
 }
