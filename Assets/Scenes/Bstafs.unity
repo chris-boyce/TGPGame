@@ -701,7 +701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 1530588841}
   amplitude: 0.2
   frequency: 1
 --- !u!65 &1530588843
@@ -1094,10 +1093,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 547381503, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 67331387076397571, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1146,18 +1141,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: turret
-      value: 
-      objectReference: {fileID: 2796623431763811639, guid: 96adf46d6620dc34c8779fbd6f47d888, type: 3}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: holoRedTurret
-      value: 
-      objectReference: {fileID: 1403139967414226816, guid: dd99034909e29834cbe47a28d1be2c6f, type: 3}
-    - target: {fileID: 7247269051609596253, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: holoGreenTurret
-      value: 
-      objectReference: {fileID: 4955156360752726157, guid: 8e0f68683fceb204f9740553506219dc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
 --- !u!1001 &1956184083
@@ -1396,7 +1379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 613888021288420820}
   amplitude: 0.2
   frequency: 1
 --- !u!65 &613888021288420822
@@ -1586,7 +1568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 2732293515722898779}
   amplitude: 0.2
   frequency: 1
 --- !u!33 &2846299272079611299
@@ -1671,7 +1652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 2878478970686872995}
   amplitude: 0.2
   frequency: 1
 --- !u!65 &2878478970686872997
@@ -1916,7 +1896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 5426530312024214698}
   amplitude: 0.2
   frequency: 1
 --- !u!65 &5426530312024214700
@@ -2004,7 +1983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22af32fffce2e540867dcfd6ed08c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRotate: {fileID: 8110805096901337656}
   amplitude: 0.2
   frequency: 1
 --- !u!65 &8110805096901337658
