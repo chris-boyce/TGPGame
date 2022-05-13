@@ -10,6 +10,8 @@ public class ProjectileCreate : MonoBehaviour
     public GameObject Player;
     Quaternion ShotgunRot;
 
+    //Yeet Update
+
     public void FireGun(float Damage)
     {
         Player = GameObject.Find("PlayerObject");
