@@ -17,13 +17,18 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * bulletSpeed;
+        
+
+    }
+    private void Update()
+    {
+
+        StartCoroutine(DestroyBullet());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        StartCoroutine(DestroyBullet()); 
+        rb.velocity = transform.forward  * bulletSpeed;
     }
 
     IEnumerator DestroyBullet()

@@ -21,9 +21,11 @@ public class ProjectileCreate : MonoBehaviour
         Bullet = ObjectPool.SharedInstance.GetPooledObject();
         if(Bullet != null)
         {
+            Bullet.SetActive(true);
             Bullet.transform.position = Player.transform.position;
             Bullet.transform.rotation = Player.transform.rotation;
-            Bullet.SetActive(true);
+            Debug.Log(Player.transform.rotation);
+            Debug.Log(Bullet.transform.rotation);
             bulletSC = Bullet.GetComponent<Bullet>();
             bulletSC.bulletDamage = Damage;
         }
