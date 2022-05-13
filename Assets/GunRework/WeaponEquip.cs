@@ -6,7 +6,7 @@ public class WeaponEquip : MonoBehaviour
 {
     private WeaponSelector weaponSelector;
     private PickupType cachedType;
-    private IGun CurrentIGUN;
+    public IGun CurrentIGUN;
     private GameObject CurrentGunObject;
 
     //Creates Varient of Each Gun

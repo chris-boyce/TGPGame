@@ -52,24 +52,34 @@ public class M16_Burst : BaseGunClass, IGun
         if(BurstTimer > 0.01f && FirstBullet == false)
         {
             PC.FireGun(GunDamage);
+            GunReserveAmmo--;
             FirstBullet = true;
         }
         if(BurstTimer > 0.1f && SecondBullet == false)
         {
             PC.FireGun(GunDamage);
+            GunReserveAmmo--;
             SecondBullet = true;
     
         }
         if(BurstTimer > 0.2f)
         {
             PC.FireGun(GunDamage);
+            GunReserveAmmo--;
             CanBurst = false;
         }
         
 
 
     }
-
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
 
 
 }
