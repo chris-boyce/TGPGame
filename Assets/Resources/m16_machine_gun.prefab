@@ -58,8 +58,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3341737097428929108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: -0.155, z: 0.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.264, y: 0.168, z: 0.056}
+  m_LocalScale: {x: 0.4412684, y: 0.4412684, z: 0.4412684}
   m_Children:
   - {fileID: 7255034381752022590}
   - {fileID: 465611419371170845}
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 0}
   Player: {fileID: 0}
+  ProjectileCount: 5
 --- !u!1 &6378925794848797325
 GameObject:
   m_ObjectHideFlags: 0
