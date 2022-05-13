@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6024526551843648728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.131, z: 0.847}
+  m_LocalPosition: {x: 0.443, y: 0.131, z: 1.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6059078160857225641}
@@ -5077,8 +5077,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6061124499909492519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.508, y: 0.033, z: 0.358}
-  m_LocalScale: {x: 0.6634899, y: 0.6634899, z: 0.6634899}
+  m_LocalPosition: {x: 0.215, y: 0.184, z: 0.241}
+  m_LocalScale: {x: 0.45568532, y: 0.45568532, z: 0.45568532}
   m_Children:
   - {fileID: 6059827089311311738}
   - {fileID: 8627539860653274708}
@@ -5163,3 +5163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 0}
   Player: {fileID: 0}
+  ProjectileCount: 5
