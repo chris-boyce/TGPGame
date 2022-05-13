@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public static ObjectPool sharedInstance;
+    public static ObjectPool SharedInstance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
 
     private void Awake()
     {
-        sharedInstance = this;
+        SharedInstance = this;
     }
     // Start is called before the first frame update
     void Start()

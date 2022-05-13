@@ -796,6 +796,7 @@ GameObject:
   - component: {fileID: 5982338346264578344}
   - component: {fileID: 6679761161225808306}
   - component: {fileID: 188503666}
+  - component: {fileID: 530281723}
   m_Layer: 3
   m_Name: PlayerObject
   m_TagString: Player
@@ -964,6 +965,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunsGO: []
+--- !u!114 &530281723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629956658092360524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8f6751229a19949ac7dece6fd5c7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
+  amountToPool: 50
 --- !u!1 &1656034462045260265
 GameObject:
   m_ObjectHideFlags: 0

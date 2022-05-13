@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody rb;
     private GameObject Player;
     public GameObject bulletObject;
+    public GameObject tempObj;
     public float bulletDamage;
     public float bulletSpeed = 10.0f;
  
@@ -16,7 +17,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        Player = GameObject.Find("PlayerObject");
         rb.velocity = transform.forward * bulletSpeed;
     }
 
@@ -28,13 +29,13 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StartCoroutine(DestroyBullet());
+        StartCoroutine(DestroyBullet());
     }
 
     IEnumerator DestroyBullet()
     {
-        yield return new WaitForSeconds(0.2f);
-        Destroy(bulletObject);
+        yield return new WaitForSeconds(0.8f);
+        bulletObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,26 +46,25 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<Health>().Damage(bulletDamage); // Jon EDIT: Changed EnemyHealth to Health.
 
             Debug.Log("Object was hit");
-            Destroy(bulletObject);
+            bulletObject.SetActive(false);
         }
         if(other.CompareTag("AmmoBox"))
         {
             other.gameObject.GetComponent<Health>().Damage(bulletDamage);
             Debug.Log("Object was hit");
-            Destroy(bulletObject);
+            bulletObject.SetActive(false);
         }  
         if(other.CompareTag("HealthBox"))
         {
             other.gameObject.GetComponent<Health>().Damage(bulletDamage);
             Debug.Log("Object was hit");
-            Destroy(bulletObject);
+            bulletObject.SetActive(false);
         }    
         if(other.CompareTag("Object"))
         {
             Debug.Log("Object was hit");
-            Destroy(bulletObject);
+            bulletObject.SetActive(false);
         }
 
     }
-
 }
