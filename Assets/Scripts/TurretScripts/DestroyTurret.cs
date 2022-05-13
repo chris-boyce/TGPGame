@@ -5,24 +5,29 @@ using UnityEngine;
 public class DestroyTurret : MonoBehaviour
 {
     public float turretHealth = 100.0f;
+    public GameObject turret;
 
-    void OnTriggerEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            turretHealth = turretHealth - 10.0f;
+            takeDamage(10.0f);
 
             if (turretHealth == 0.0f)
             {
-                Destroy(gameObject);
+                Destroy(turret);
             }
         }
     }
 
+    void takeDamage(float health)
+    {
+        turretHealth = turretHealth - health;
+    }
 
     void Start()
     {
-        
+        InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
     }
 
 
