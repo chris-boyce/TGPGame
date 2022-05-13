@@ -10,7 +10,6 @@ public class TrackingSystem : MonoBehaviour
     Vector3 lastPosition = Vector3.zero;
     Quaternion lookRotation;
     RaycastHit hit;
-    private float turretHealth = 100.0f;
     public GameObject bullet;
     public GameObject gun;
     public Transform bulletPosition;
