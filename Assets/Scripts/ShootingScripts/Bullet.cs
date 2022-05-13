@@ -17,23 +17,18 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Player = GameObject.Find("PlayerObject");
         rb.velocity = transform.forward * bulletSpeed;
-    }
-
-    private void FixedUpdate()
-    {
-        //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(DestroyBullet());
+        StartCoroutine(DestroyBullet()); 
     }
 
     IEnumerator DestroyBullet()
     {
+
         yield return new WaitForSeconds(0.8f);
         bulletObject.SetActive(false);
     }

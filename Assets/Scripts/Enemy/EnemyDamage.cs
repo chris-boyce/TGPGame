@@ -40,7 +40,8 @@ public class EnemyDamage : MonoBehaviour
         canAttack = false;
         GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<Health>().Damage(enemyMeleeDamage);
         enemyNav.enemyState = EnemyNav.EnemyState.AttackingPlayer;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
+        enemyNav.enemyState = EnemyNav.EnemyState.ChasingPlayer;
         canAttack = true;
     }
 }
