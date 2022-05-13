@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7469739843804559376}
   m_Layer: 0
   m_Name: pistol
-  m_TagString: Untagged
+  m_TagString: BulletLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 0}
   Player: {fileID: 0}
+  gunPos: {fileID: 6130794540041963366}
+  ProjectileCount: 5
 --- !u!1 &5224207418085483578
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +144,7 @@ GameObject:
   - component: {fileID: 6130794538884761833}
   m_Layer: 0
   m_Name: MuzzleFlash
-  m_TagString: Untagged
+  m_TagString: BulletLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

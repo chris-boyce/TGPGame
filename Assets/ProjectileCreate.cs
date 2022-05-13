@@ -9,6 +9,7 @@ public class ProjectileCreate : MonoBehaviour
     private GameObject Bullet;
     public GameObject Player;
     Quaternion ShotgunRot;
+    [SerializeField] private int ProjectileCount = 5;
 
     //Yeet Update
 
@@ -17,11 +18,15 @@ public class ProjectileCreate : MonoBehaviour
         Player = GameObject.Find("PlayerObject");
         Projectile = Resources.Load<GameObject>("Bullet");
         Debug.Log(this.name);
-        Bullet = Instantiate(Projectile,Player.transform.position,Player.transform.rotation);
-        bulletSC = Bullet.GetComponent<Bullet>();
-        bulletSC.bulletDamage = Damage;
-
-
+        Bullet = ObjectPool.SharedInstance.GetPooledObject();
+        if(Bullet != null)
+        {
+            Bullet.transform.position = Player.transform.position;
+            Bullet.transform.rotation = Player.transform.rotation;
+            Bullet.SetActive(true);
+            bulletSC = Bullet.GetComponent<Bullet>();
+            bulletSC.bulletDamage = Damage;
+        }
     }
     public void SpreadGun(float Damage)
     {
@@ -29,14 +34,12 @@ public class ProjectileCreate : MonoBehaviour
         Player = GameObject.Find("PlayerObject");
         Projectile = Resources.Load<GameObject>("Bullet");
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < ProjectileCount; i++)
         {
             ShotgunRot = Player.transform.rotation * Quaternion.Euler(0, Random.Range(-15, 15), 0);
             Bullet = Instantiate(Projectile, Player.transform.position, ShotgunRot);
             bulletSC = Bullet.GetComponent<Bullet>();
             bulletSC.bulletDamage = Damage;
         }
-
-            
     }
 }
