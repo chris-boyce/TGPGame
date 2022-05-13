@@ -20,6 +20,11 @@ public class WeaponEquip : MonoBehaviour
 
     public GameObject[] GunsGO;
 
+    [SerializeField]
+    HandIK handL;
+    [SerializeField]
+    HandIK handR;
+
     private void Start()
     {
         //Looks Up to The selector script
@@ -112,5 +117,44 @@ public class WeaponEquip : MonoBehaviour
         {
             CurrentIGUN.Fire();
         }
+
+        UpdateHands();
+    }
+
+    public GameObject GetCurrentWeapon()
+    {
+        GameObject weaponHeld = CurrentGunObject;
+        switch (weaponSelector.CurrentWeapon)
+        {
+            case PickupType.Pistol:
+                weaponHeld = GunsGO[3];
+                break;
+            case PickupType.Sniper:
+                weaponHeld = GunsGO[0];
+                break;
+            case PickupType.AutoPistol:
+                weaponHeld = GunsGO[5];
+                break;
+            case PickupType.P90:
+                weaponHeld = GunsGO[1];
+                break;
+            case PickupType.AK:
+                weaponHeld = GunsGO[2];
+                break;
+            case PickupType.M16:
+                weaponHeld = GunsGO[4];
+                break;
+            case PickupType.Shotgun:
+                weaponHeld = GunsGO[6];
+                break;
+
+        }
+        return weaponHeld;
+    }
+
+    private void UpdateHands()
+    {
+        handL.UpdateHeldItem();
+        handR.UpdateHeldItem();
     }
 }

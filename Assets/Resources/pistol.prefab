@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3120770457373537995}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48642516, y: 0.054000378, z: 0.2668972}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.48642516, y: 0.047786, z: 0.32641}
+  m_LocalScale: {x: 0.63363916, y: 0.63363916, z: 0.63363916}
   m_Children:
   - {fileID: 6130794540041963365}
   - {fileID: 9105002936349222684}
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 0}
   Player: {fileID: 0}
-  gunPos: {fileID: 6130794540041963366}
   ProjectileCount: 5
 --- !u!1 &5224207418085483578
 GameObject:
