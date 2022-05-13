@@ -26,7 +26,7 @@ public class AK47 : BaseGunClass, IGun
         if (Timer > FireRatePerSec)
         {
             PC.FireGun(GunDamage);
-
+            GunReserveAmmo--;
             Timer = 0f;
         }
         else
@@ -34,6 +34,15 @@ public class AK47 : BaseGunClass, IGun
             Timer = Timer += Time.deltaTime;
         }
     }
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
+
 
 }
 
