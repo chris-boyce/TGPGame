@@ -965,6 +965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunsGO: []
+  handL: {fileID: 1736138436}
+  handR: {fileID: 508985713}
 --- !u!114 &530281723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   objectToPool: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
-  amountToPool: 50
+  amountToPool: 10
 --- !u!1 &1656034462045260265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,9 +1489,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8685602830507565452}
+  - component: {fileID: 508985713}
   m_Layer: 3
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: RightHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1508,6 +1511,21 @@ Transform:
   m_Father: {fileID: 6842043506648324428}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508985713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4579155673297968302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e764eeae8f8d31469f9ec2965167198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSwitcher: {fileID: 188503666}
+  targetTag: RightHand
+  defaultPos: {fileID: 8685602830507565452}
 --- !u!1 &4744844273111971014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,9 +2041,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4955755402359586917}
+  - component: {fileID: 1736138436}
   m_Layer: 3
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2044,6 +2063,21 @@ Transform:
   m_Father: {fileID: 6842043506648324428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736138436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905930631740873423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e764eeae8f8d31469f9ec2965167198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSwitcher: {fileID: 188503666}
+  targetTag: LeftHand
+  defaultPos: {fileID: 4955755402359586917}
 --- !u!1 &7054273375923649071
 GameObject:
   m_ObjectHideFlags: 0

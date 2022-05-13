@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandIK : MonoBehaviour
 {
     [SerializeField]
-    private WeaponSwitcher weaponSwitcher;
+    private WeaponEquip weaponSwitcher;
 
     Transform target;
 
@@ -29,12 +29,12 @@ public class HandIK : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //transform.position = target.transform.position;
-        //transform.rotation = target.transform.rotation;
+        transform.position = target.transform.position;
+        transform.rotation = target.transform.rotation;
     }
 
     public void UpdateHeldItem() {
-        /*
+        
         GameObject item = weaponSwitcher.GetCurrentWeapon();
 
         Transform newTarget = null;
@@ -51,6 +51,6 @@ public class HandIK : MonoBehaviour
 		}
 
         target = newTarget;
-        */
+        
     }
 }
