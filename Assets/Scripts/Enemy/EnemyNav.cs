@@ -35,17 +35,10 @@ public class EnemyNav : MonoBehaviour
                 break;
             case EnemyState.AttackingPlayer:
                 agent.SetDestination(transform.position);
-                StartCoroutine(DamageTimer());
                 //If in range of player hit them ? Stop movement and swing?
                 break;
         }
     }
-    IEnumerator DamageTimer()
-    {
-        yield return new WaitForSeconds(0.5f);
-        enemyState = EnemyState.ChasingPlayer;
-    }
-        
 }
 
 
