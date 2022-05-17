@@ -23,6 +23,7 @@ public class M16_Burst : BaseGunClass, IGun
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("m16_machine_gun");
+        GunSound = Resources.Load<AudioClip>("M16GunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
@@ -51,12 +52,14 @@ public class M16_Burst : BaseGunClass, IGun
         //PC.FireGun(GunDamage);
         if(BurstTimer > 0.01f && FirstBullet == false)
         {
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             FirstBullet = true;
         }
         if(BurstTimer > 0.1f && SecondBullet == false)
         {
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             SecondBullet = true;
@@ -64,6 +67,7 @@ public class M16_Burst : BaseGunClass, IGun
         }
         if(BurstTimer > 0.2f)
         {
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             CanBurst = false;
