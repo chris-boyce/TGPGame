@@ -13,11 +13,13 @@ public class Pistol : BaseGunClass, IGun
         GunReserveAmmo = 144;
         GunFireRate = 5f;
         GunDamage = 10f;
+        
     }
 
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("pistol");
+        
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
