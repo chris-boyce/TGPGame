@@ -16,6 +16,7 @@ public class AWP : BaseGunClass, IGun
         GunFireRate = 0.5f;
         GunDamage = 100f;
         FireRatePerSec = 1 / GunFireRate;
+        
     }
     public override void GetGun()
     {

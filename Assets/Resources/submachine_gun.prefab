@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6463920895942001174}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4840035958820406002
 GameObject:
@@ -58,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6463920895942001174}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6465765259353005726
 GameObject:
@@ -178,12 +178,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6465765260401825945}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.02, y: 0, z: 0.073}
-  m_LocalScale: {x: 4.1672, y: 4.1672, z: 4.1672}
+  m_LocalRotation: {x: -0, y: -0.70335865, z: -0, w: 0.7108352}
+  m_LocalPosition: {x: 0.005234873, y: 0.054000005, z: 1.088481}
+  m_LocalScale: {x: 5.2764244, y: 0.79180974, z: 0.88715506}
   m_Children:
   - {fileID: 6465765259353005727}
-  m_Father: {fileID: 6465765260766912577}
+  m_Father: {fileID: 6463920895942001174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!198 &6465765260401825948
@@ -5044,10 +5044,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.0052867234, z: -0, w: 0.99998605}
   m_LocalPosition: {x: -0, y: 0.054, z: 0.9961}
   m_LocalScale: {x: 0.21288995, y: 0.19001, z: 1.2661796}
-  m_Children:
-  - {fileID: 6465765260401825946}
+  m_Children: []
   m_Father: {fileID: 6463920895942001174}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -269.39398, z: 0}
 --- !u!1 &6466555756818501462
 GameObject:
@@ -5080,6 +5079,7 @@ Transform:
   m_LocalPosition: {x: 0.306, y: 0.19285, z: 0.034}
   m_LocalScale: {x: 0.46351, y: 0.46351, z: 0.46351}
   m_Children:
+  - {fileID: 6465765260401825946}
   - {fileID: 6465765260766912577}
   - {fileID: 1573145522415425175}
   - {fileID: 1865883889324937170}
@@ -5164,3 +5164,7 @@ MonoBehaviour:
   Projectile: {fileID: 0}
   Player: {fileID: 0}
   ProjectileCount: 5
+  CanShoot: 1
+  WeaponWheelToggle: {fileID: 0}
+  GunMuzzle: {fileID: 6465765260766912577}
+  MuzzleFlash: {fileID: 6465765260401825948}
