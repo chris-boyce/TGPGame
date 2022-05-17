@@ -26,6 +26,8 @@ TagManager:
   - SceneSwitch
   - Object
   - BulletLocation
+  - WeaponWheel
+  - Gun
   layers:
   - Default
   - TransparentFX
