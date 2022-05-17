@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrackingSystem : MonoBehaviour
 {
-    public float speed = 5.0f;
+    private float speed = 70.0f;
     public Transform target;
     public Vector3 offset;
     Vector3 lastPosition = Vector3.zero;
