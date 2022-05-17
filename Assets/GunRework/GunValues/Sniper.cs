@@ -16,6 +16,7 @@ public class AWP : BaseGunClass, IGun
         GunFireRate = 0.5f;
         GunDamage = 100f;
         FireRatePerSec = 1 / GunFireRate;
+        
     }
     public override void GetGun()
     {
@@ -28,6 +29,7 @@ public class AWP : BaseGunClass, IGun
         if (Timer > FireRatePerSec)
         {
             Debug.Log("Shoot");
+            GunReserveAmmo--;
             PC.FireGun(GunDamage);
 
             Timer = 0f;
@@ -37,5 +39,14 @@ public class AWP : BaseGunClass, IGun
             Timer = Timer += Time.deltaTime;
         }
     }
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
+
 
 }

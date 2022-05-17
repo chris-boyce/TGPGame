@@ -6,7 +6,7 @@ public class WeaponEquip : MonoBehaviour
 {
     private WeaponSelector weaponSelector;
     private PickupType cachedType;
-    private IGun CurrentIGUN;
+    public IGun CurrentIGUN;
     private GameObject CurrentGunObject;
 
     //Creates Varient of Each Gun
@@ -18,7 +18,18 @@ public class WeaponEquip : MonoBehaviour
     Pistol_Auto Pistol_Auto = new Pistol_Auto();
     SuperShotgun SuperShotgun = new SuperShotgun();
 
-    public GameObject[] GunsGO;
+    public GameObject SniperGO;
+    public GameObject SMGGO;
+    public GameObject AKGO;
+    public GameObject AutoPistolGO;
+    public GameObject PistolGO;
+    public GameObject M16GO;
+    public GameObject ShotgunGO;
+
+    [SerializeField]
+    HandIK handL;
+    [SerializeField]
+    HandIK handR;
 
     private void Start()
     {
@@ -33,25 +44,32 @@ public class WeaponEquip : MonoBehaviour
         Pistol_Auto.GetGun();
         SuperShotgun.GetGun();
 
-        //Makes List of all Objects
-        GunsGO = new GameObject[7];
-        GunsGO[0] = Instantiate(AWP.GunObject, transform , false );
-        GunsGO[1] = Instantiate(SMG.GunObject, transform , false);
-        GunsGO[2] = Instantiate(AK47.GunObject, transform, false);
-        GunsGO[3] = Instantiate(Pistol.GunObject, transform , false);
-        GunsGO[4] = Instantiate(M16_Burst.GunObject, transform , false);
-        GunsGO[5] = Instantiate(Pistol_Auto.GunObject, transform , false);
-        GunsGO[6] = Instantiate(SuperShotgun.GunObject, transform , false);
+
+        //GunsGO[0] = Instantiate(AWP.GunObject, transform, false);
+        //GunsGO[1] = Instantiate(SMG.GunObject, transform , false);
+        //GunsGO[2] = Instantiate(AK47.GunObject, transform, false);
+        //GunsGO[3] = Instantiate(Pistol.GunObject, transform , false);
+        //GunsGO[4] = Instantiate(M16_Burst.GunObject, transform , false);
+        //GunsGO[5] = Instantiate(Pistol_Auto.GunObject, transform , false);
+        //GunsGO[6] = Instantiate(SuperShotgun.GunObject, transform, false);
         //Hides All objects
         DisableGuns();
     }
+
     void DisableGuns()
     {
-        foreach (GameObject i in GunsGO)
-        {
-            i.SetActive(false);
-        }
+        SniperGO.SetActive(false);
+        SMGGO.SetActive(false);
+        AKGO.SetActive(false);
+        AutoPistolGO.SetActive(false);
+        ShotgunGO.SetActive(false);
+        PistolGO.SetActive(false);
+        M16GO.SetActive(false);
+
     }
+
+
+
     private void Update()
     {
         if(weaponSelector.CurrentWeapon != cachedType) //Effiency : Only Run Switch Once after weapon swap
@@ -62,12 +80,12 @@ public class WeaponEquip : MonoBehaviour
                 case PickupType.AK:             //If AK Selected
                     CurrentIGUN = AK47 as IGun; //Sets IGun to the one be fired
                     CurrentGunObject = AK47.GunObject; //Sets Gameobject
-                    GunsGO[2].SetActive(true);  //Activates that gun so it can be seen
+                    AKGO.SetActive(true);  //Activates that gun so it can be seen
                     break;
                 case PickupType.AutoPistol:
                     CurrentIGUN = Pistol_Auto as IGun;
                     CurrentGunObject = Pistol_Auto.GunObject;
-                    GunsGO[5].SetActive(true);
+                    AutoPistolGO.SetActive(true);
                     break;
                 case PickupType.Empty:
                     //Hand Empty
@@ -75,28 +93,29 @@ public class WeaponEquip : MonoBehaviour
                 case PickupType.M16:
                     CurrentIGUN = M16_Burst as IGun;
                     CurrentGunObject = M16_Burst.GunObject;
-                    GunsGO[4].SetActive(true);
+                    M16GO.SetActive(true);
                     break;
                 case PickupType.P90:
                     CurrentIGUN = SMG as IGun;
                     CurrentGunObject = SMG.GunObject;
-                    GunsGO[1].SetActive(true);
+                    SMGGO.SetActive(true);
                     break;
                 case PickupType.Pistol:
                     CurrentIGUN = Pistol as IGun;
                     CurrentGunObject = Pistol.GunObject;
-                    GunsGO[3].SetActive(true);
+                    PistolGO.SetActive(true);
                     break;
                 case PickupType.Shotgun:
                     CurrentIGUN = SuperShotgun as IGun;
                     CurrentGunObject = SuperShotgun.GunObject;
-                    GunsGO[6].SetActive(true);
+                    SuperShotgun.Timer = 1f;
+                    ShotgunGO.SetActive(true);
                     break;
                 case PickupType.Sniper:
                     CurrentIGUN = AWP as IGun;
                     CurrentGunObject = AWP.GunObject;
                     AWP.Timer = 2f;
-                    GunsGO[0].SetActive(true);
+                    SniperGO.SetActive(true);
                     break;
 
             }
@@ -112,5 +131,44 @@ public class WeaponEquip : MonoBehaviour
         {
             CurrentIGUN.Fire();
         }
+
+        UpdateHands();
+    }
+
+    public GameObject GetCurrentWeapon()
+    {
+        GameObject weaponHeld = CurrentGunObject;
+        switch (weaponSelector.CurrentWeapon)
+        {
+            case PickupType.Pistol:
+                weaponHeld = PistolGO;
+                break;
+            case PickupType.Sniper:
+                weaponHeld = SniperGO;
+                break;
+            case PickupType.AutoPistol:
+                weaponHeld = AutoPistolGO;
+                break;
+            case PickupType.P90:
+                weaponHeld = SMGGO;
+                break;
+            case PickupType.AK:
+                weaponHeld = AKGO;
+                break;
+            case PickupType.M16:
+                weaponHeld = M16GO;
+                break;
+            case PickupType.Shotgun:
+                weaponHeld = ShotgunGO;
+                break;
+
+        }
+        return weaponHeld;
+    }
+
+    private void UpdateHands()
+    {
+        handL.UpdateHeldItem();
+        handR.UpdateHeldItem();
     }
 }

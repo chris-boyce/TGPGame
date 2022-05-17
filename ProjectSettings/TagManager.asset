@@ -25,6 +25,9 @@ TagManager:
   - GUITEXT
   - SceneSwitch
   - Object
+  - BulletLocation
+  - WeaponWheel
+  - Gun
   layers:
   - Default
   - TransparentFX

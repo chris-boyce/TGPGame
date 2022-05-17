@@ -118,12 +118,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2309747108453308265}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.02, y: 0, z: 0.073}
-  m_LocalScale: {x: 4.1672, y: 4.1672, z: 4.1672}
+  m_LocalRotation: {x: -0, y: -0.70335865, z: -0, w: 0.7108352}
+  m_LocalPosition: {x: 0.006534832, y: 0.21039997, z: 0.8421809}
+  m_LocalScale: {x: 5.276425, y: 0.7918097, z: 0.8871552}
   m_Children:
   - {fileID: 2309747108359909423}
-  m_Father: {fileID: 2309747108522526782}
+  m_Father: {fileID: 8985289802269455908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!198 &2309747108453308266
@@ -4984,10 +4984,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.0052867234, z: -0, w: 0.99998605}
   m_LocalPosition: {x: 0.0013, y: 0.2104, z: 0.7498}
   m_LocalScale: {x: 0.21288998, y: 0.19001, z: 1.2661798}
-  m_Children:
-  - {fileID: 2309747108453308264}
+  m_Children: []
   m_Father: {fileID: 8985289802269455908}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -269.39398, z: 0}
 --- !u!1 &2715175436897231692
 GameObject:
@@ -5017,7 +5016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8985289802269455908}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5397969465099093047
 GameObject:
@@ -5038,7 +5037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8985289802269455908
 Transform:
   m_ObjectHideFlags: 0
@@ -5047,9 +5046,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397969465099093047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49342513, y: -0.007999897, z: 0.21989822}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.266, y: 0.357, z: 0.32641}
+  m_LocalScale: {x: 0.43414, y: 0.43414, z: 0.43414}
   m_Children:
+  - {fileID: 2309747108453308264}
   - {fileID: 2309747108522526782}
   - {fileID: 9166214799022722124}
   m_Father: {fileID: 0}
@@ -5130,5 +5130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5166ab37b0724142bd09c8874f4a295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 0}
+  Projectile: {fileID: 3551342326360303430, guid: bccb481d238b2ec48b02a51f51aa4399, type: 3}
   Player: {fileID: 0}
+  ProjectileCount: 5
+  CanShoot: 1
+  WeaponWheelToggle: {fileID: 0}
+  GunMuzzle: {fileID: 2309747108522526782}
+  MuzzleFlash: {fileID: 2309747108453308266}

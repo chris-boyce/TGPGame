@@ -15,9 +15,19 @@ public class BaseGunClass : IGun
     public ProjectileCreate PC;
     public float Timer = 2f;
     public float FireRatePerSec;
+    public ParticleSystem MuzzleFlash;
 
     public virtual void GetGun() { }
 
     virtual public void Fire() { }
 
+    virtual public int returnAmmo()
+    {
+        return GunCurrentAmmo;
+    }
+
+    virtual public int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
 }

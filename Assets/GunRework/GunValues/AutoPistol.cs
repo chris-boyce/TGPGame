@@ -27,7 +27,7 @@ public class Pistol_Auto : BaseGunClass, IGun
         if (Timer > FireRatePerSec)
         {
             PC.FireGun(GunDamage);
-
+            GunReserveAmmo--;
             Timer = 0f;
         }
         else
@@ -35,5 +35,14 @@ public class Pistol_Auto : BaseGunClass, IGun
             Timer = Timer += Time.deltaTime;
         }
     }
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
+
 
 }

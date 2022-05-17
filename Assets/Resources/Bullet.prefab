@@ -127,5 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 3551342326360303430}
+  tempObj: {fileID: 1285014277344889140, guid: 8fbfbbedf5fabf548888db0b3f524930, type: 3}
   bulletDamage: 25
   bulletSpeed: 50

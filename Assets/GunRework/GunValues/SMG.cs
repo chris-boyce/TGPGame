@@ -29,7 +29,8 @@ public class SMG : BaseGunClass , IGun
         if (Timer > FireRatePerSec)
         {
             PC.FireGun(GunDamage);
-            
+            GunReserveAmmo--;
+
             Timer = 0f;
         }
         else
@@ -38,5 +39,14 @@ public class SMG : BaseGunClass , IGun
         }
 
     }
+    public override int returnAmmo()
+    {
+        return GunReserveAmmo;
+    }
+    public override int returnMaxAmmo()
+    {
+        return GunMaxAmmo;
+    }
+
 
 }
