@@ -40,7 +40,7 @@ public class Spawn : MonoBehaviour
             spawnArea = new Vector3(spawnPostion[spawnLocationNumber].position.x + Random.Range(-5f, 5f), spawnPostion[spawnLocationNumber].position.y+ 0, spawnPostion[spawnLocationNumber].position.z +  Random.Range(-5f, 5f)); //Set Location of the spawn of the zombie relative to the spawn Transform
 
             GameObject spawnedEnemy = Instantiate(Enemy, spawnArea, Quaternion.identity); // Spawns Zombie // Jon EDIT: Changes datatype to the regular health script.
-            spawnedEnemy.GetComponentInChildren<Health>().OnDeath += OnEnemyDeath; //Event system for when the zombie dies
+            spawnedEnemy.GetComponentInChildren<Health>().OnDeath += OnEnemyDeath; //Adds the Spawned Zombie to run the OnEnemyDeath When Run
         }
 
     }

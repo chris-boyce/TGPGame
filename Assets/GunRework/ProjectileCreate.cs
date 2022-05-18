@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class ProjectileCreate : MonoBehaviour
 {
-    [SerializeField] private GameObject Projectile;
+    [Header("Players Pos")]
     private Bullet bulletSC;
     private GameObject Bullet;
     public GameObject Player;
     Quaternion ShotgunRot;
+    [Header("Shotgun Variables")]
     [SerializeField] private int ProjectileCount = 10;
+    [Header("Weapon Wheel Varibles")]
     public bool CanShoot = true;
     public WeaponWheelToggle WeaponWheelToggle;
+    [Header("This Guns Assests")]
+    [SerializeField] private GameObject Projectile;
     public Transform GunMuzzle;
     public GameObject MuzzleFlash;
 

@@ -27,10 +27,10 @@ public class Health : MonoBehaviour
 	float spawnDropablePercentage = 0.05f;
 
 	[Header("Health Values")]
-	public float health = 100f;
+	public float health;
 	[SerializeField]
 	public float currentHealth;
-	//public Slider healthBarSlider;
+	//public Slider healthBarSlider
 	//public GameObject slider;
 	//public GameObject healthbarObject;
 
@@ -77,14 +77,13 @@ public class Health : MonoBehaviour
 
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
-		if (OnDeath != null) {
-			if (gameObject.CompareTag("Enemy")) {
-				if (Random.value < spawnDropablePercentage) {
-					Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
-				}
-
-				OnDeath();
+		if (OnDeath != null && (gameObject.CompareTag("Enemy"))) {
+			if (Random.value < spawnDropablePercentage)
+			{
+				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
 			}
+			OnDeath();
+
 		}
 
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);

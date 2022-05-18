@@ -11,6 +11,7 @@ using UnityEngine;
 /// </summary>
 public class WeaponSelector : MonoBehaviour
 {
+    [Header("Weapons Selected / Current Weapon")]
     public IPickupable testInterface;
     private PickupType UnlockWeapon;
     public PickupType WeaponWheelSelected;
