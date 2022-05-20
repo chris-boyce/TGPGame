@@ -27,10 +27,13 @@ public class BaseZombie : AIBaseClass
         m_NavMeshAgent = gameObject.AddComponent<NavMeshAgent>();
         m_NavMeshAgent.baseOffset = 0f;
         m_NavMeshAgent.speed = EnemySpeed;
+        Anim.SetBool("IsWalking", true);
         base.Start();
     }
     public override void Update()
     {
+        float velocity = m_NavMeshAgent.velocity.magnitude / m_NavMeshAgent.speed;
+        Debug.Log(velocity);
         EnemyStateChange();
     }
     public override void FixedUpdate()
@@ -42,8 +45,10 @@ public class BaseZombie : AIBaseClass
         switch (m_EnemyState)
         {
             case EnemyState.ChasingPlayer:
-                Anim.SetBool("IsRunning", true);
                 m_NavMeshAgent.SetDestination(Player.transform.position);
+                Anim.SetBool("IsWalking", true);
+
+
                 break;
             case EnemyState.ChasingTurret:
                 //TODO Add Turret Attack
@@ -63,12 +68,12 @@ public class BaseZombie : AIBaseClass
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 ZombieAttack();
+                Anim.SetTrigger("AttackTrigger");
             }
         }
     }
    public override void ZombieAttack()
    {
-        Anim.SetBool("IsAttacking", true);
         if (canAttack == true)
         {
             StartCoroutine(DamageTimer());
@@ -76,13 +81,14 @@ public class BaseZombie : AIBaseClass
    }
     IEnumerator DamageTimer()
     {
+        
         Debug.Log("Attaking Prefab");
         canAttack = false;
         Player.GetComponent<Health>().Damage(enemyMeleeDamage);
         m_EnemyState = EnemyState.AttackingPlayer;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.333f);
+        Anim.SetBool("IsIdle", true);
         m_EnemyState = EnemyState.ChasingPlayer;
-        Anim.SetBool("IsAttacking", false);
         canAttack = true;
     }
 
