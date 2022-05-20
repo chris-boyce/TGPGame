@@ -8,22 +8,24 @@ public class BaseZombie : AIBaseClass
     private Health HealthScript;
     private bool canAttack = true;
     public GameObject rayPosition;
+    public Animator Anim;
     
     [Header("Values For this Type Of Zombie")]
     public float EnemyOverideHealth = 50f;
     public float EnemySpeed = 0.5f;
-    public float hitRange = 1f;
+    public float hitRange = 5f;
     public float enemyMeleeDamage = 10.0f;
 
 
     public override void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         HealthScript = GetComponent<Health>();
         HealthScript.health = EnemyOverideHealth;
         HealthScript.currentHealth = EnemyOverideHealth;
         m_EnemyState = EnemyState.ChasingPlayer;
         m_NavMeshAgent = gameObject.AddComponent<NavMeshAgent>();
-        m_NavMeshAgent.baseOffset = 1f;
+        m_NavMeshAgent.baseOffset = 0f;
         m_NavMeshAgent.speed = EnemySpeed;
         base.Start();
     }
@@ -40,6 +42,7 @@ public class BaseZombie : AIBaseClass
         switch (m_EnemyState)
         {
             case EnemyState.ChasingPlayer:
+                Anim.SetBool("IsRunning", true);
                 m_NavMeshAgent.SetDestination(Player.transform.position);
                 break;
             case EnemyState.ChasingTurret:
@@ -65,6 +68,7 @@ public class BaseZombie : AIBaseClass
     }
    public override void ZombieAttack()
    {
+        Anim.SetBool("IsAttacking", true);
         if (canAttack == true)
         {
             StartCoroutine(DamageTimer());
@@ -78,6 +82,7 @@ public class BaseZombie : AIBaseClass
         m_EnemyState = EnemyState.AttackingPlayer;
         yield return new WaitForSeconds(1f);
         m_EnemyState = EnemyState.ChasingPlayer;
+        Anim.SetBool("IsAttacking", false);
         canAttack = true;
     }
 

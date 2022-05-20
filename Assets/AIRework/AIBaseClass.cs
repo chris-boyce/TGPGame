@@ -14,11 +14,11 @@ public class AIBaseClass : MonoBehaviour
     public EnemyState m_EnemyState;
     public int EnemyValueScore;
     public NavMeshAgent m_NavMeshAgent;
-    protected GameObject Player;
+    public GameObject Player;
 
     public virtual void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+       // Player = GameObject.FindGameObjectWithTag("Player");
     }
     public virtual void EnemyStateChange() { }
 
