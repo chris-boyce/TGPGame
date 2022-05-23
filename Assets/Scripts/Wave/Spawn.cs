@@ -23,7 +23,6 @@ public class Spawn : MonoBehaviour
     {
         public int enemyCount;
         public float timeBetweenSpawn;
-
     }
 
     private void Start()
@@ -58,8 +57,6 @@ public class Spawn : MonoBehaviour
         currentWaveNumber++;
         waves[currentWaveNumber - 1].enemyCount = currentWaveNumber * waveMultiplier;
         waves[currentWaveNumber -1 ].timeBetweenSpawn = 5 / currentWaveNumber;
-            
-        
 
         currentWave = waves[currentWaveNumber - 1]; //Set Wave number
         enemyLeftToSpawn = currentWave.enemyCount; //Set amount of spawn

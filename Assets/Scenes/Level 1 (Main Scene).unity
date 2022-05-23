@@ -15761,7 +15761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689602f51e9440443b133c876f31754d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SpawnScriptReference: {fileID: 1802982511}
+  SpawnScript: {fileID: 1802982513}
   _WaveText: {fileID: 314115923}
   _EnemyCountText: {fileID: 382372650}
 --- !u!1001 &1048197018
@@ -25591,6 +25591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1802982512}
   - component: {fileID: 1802982511}
+  - component: {fileID: 1802982513}
   m_Layer: 0
   m_Name: SpawnerController
   m_TagString: Untagged
@@ -25605,7 +25606,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802982510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ec5736b8f6407241b91f48419c424ff, type: 3}
   m_Name: 
@@ -26146,6 +26147,292 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1802982513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802982510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f897226c94fca234f813ddd9900cc009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wave:
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  - LevelScore: 0
+  CurrentWave:
+    LevelScore: 0
+  BaseEnemy: {fileID: 7359222228567576303, guid: 3ffad605c0d88c94dbd537eb4c825ce6, type: 3}
+  FastEnemy: {fileID: 1404117516784150426, guid: e427cc6bb0d1cc54a8b22ceda92e20cd, type: 3}
+  SlowEnemy: {fileID: 7431003038036222343, guid: 51cc85676d79b59499ee9664109a3f34, type: 3}
+  SpawnPoints:
+  - {fileID: 427011131}
+  - {fileID: 582484763}
+  - {fileID: 375016488}
+  - {fileID: 1907805769}
+  - {fileID: 376580731}
+  WaveMultipler: 3
+  ZombiesCounter: 0
+  ZombiesLeftAlive: 0
+  CurrentWaveNumber: 0
+  SpeedOfSpawn: 10
+  TimeBetweenWaves: 10
+  SpawnTimer: 0
 --- !u!4 &1806004089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 466372, guid: bcd44f8d0f766b340b72d555a8df8a72, type: 3}

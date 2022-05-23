@@ -67,17 +67,11 @@ public class Health : MonoBehaviour
 	}
 	void Die()
 	{
-		// Jon EDIT: Changes the way player dies to apply a ragdoll afterwards.
+		Debug.Log("Die Has Run");
+		
 
-		//Debug.Log("Dead"); 
-		//currentHealth = health;
-		//Destroy(gameObject);
-		//Destroy(healthbarObject);
-		//Destroy(slider);
-
-		if (!ragdollPrefab) { Destroy(gameObject); return; }
-
-		if (OnDeath != null && (gameObject.CompareTag("Enemy"))) {
+		if (gameObject.CompareTag("Enemy"))
+		{
 			if (Random.value < spawnDropablePercentage)
 			{
 				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
@@ -85,6 +79,7 @@ public class Health : MonoBehaviour
 			OnDeath();
 
 		}
+		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
 		CopyModelPos ragdollScript = ragdoll.GetComponent<CopyModelPos>();
