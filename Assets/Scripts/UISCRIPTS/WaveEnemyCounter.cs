@@ -9,7 +9,7 @@ using TMPro;
 /// </summary>
 public class WaveEnemyCounter : MonoBehaviour
 {
-    public Spawn _SpawnScriptReference;
+    public NewSpawnSystem SpawnScript;
     public TextMeshProUGUI _WaveText;
     public TextMeshProUGUI _EnemyCountText;
 
@@ -17,8 +17,8 @@ public class WaveEnemyCounter : MonoBehaviour
     void Update()
     {
 
-        _WaveText.text = "WAVE:" + _SpawnScriptReference.currentWaveNumber;
-        _EnemyCountText.text = "ENEMIES REMAINING:" + _SpawnScriptReference.enemyLeftAlive;
+        _WaveText.text = "WAVE:" + SpawnScript.CurrentWaveNumber;
+        _EnemyCountText.text = "ENEMIES REMAINING:" + SpawnScript.ZombiesCounter;
 
     }
 }

@@ -18,6 +18,7 @@ public class AK47 : BaseGunClass, IGun
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("ak_machine_gun");
+        GunSound = Resources.Load<AudioClip>("AKGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
@@ -25,6 +26,7 @@ public class AK47 : BaseGunClass, IGun
     {
         if (Timer > FireRatePerSec)
         {
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             Timer = 0f;

@@ -16,6 +16,7 @@ public class BaseGunClass : IGun
     public float Timer = 2f;
     public float FireRatePerSec;
     public ParticleSystem MuzzleFlash;
+    public AudioClip GunSound;
 
     public virtual void GetGun() { }
 

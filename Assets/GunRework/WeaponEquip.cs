@@ -18,6 +18,7 @@ public class WeaponEquip : MonoBehaviour
     Pistol_Auto Pistol_Auto = new Pistol_Auto();
     SuperShotgun SuperShotgun = new SuperShotgun();
 
+    [Header("Gun Gameobjects Currently On the Player")]
     public GameObject SniperGO;
     public GameObject SMGGO;
     public GameObject AKGO;
@@ -26,6 +27,7 @@ public class WeaponEquip : MonoBehaviour
     public GameObject M16GO;
     public GameObject ShotgunGO;
 
+    [Header("Player Left Right Hand")]
     [SerializeField]
     HandIK handL;
     [SerializeField]
@@ -164,6 +166,16 @@ public class WeaponEquip : MonoBehaviour
 
         }
         return weaponHeld;
+    }
+    public void WeaponMaxAmmo()
+    {
+        AWP.GunReserveAmmo = AWP.GunMaxAmmo;
+        SMG.GunReserveAmmo = SMG.GunMaxAmmo;
+        AK47.GunReserveAmmo = AK47.GunMaxAmmo;
+        Pistol.GunReserveAmmo = Pistol.GunMaxAmmo;
+        M16_Burst.GunReserveAmmo = M16_Burst.GunMaxAmmo;
+        Pistol_Auto.GunReserveAmmo = Pistol_Auto.GunMaxAmmo;
+        SuperShotgun.GunReserveAmmo = SuperShotgun.GunMaxAmmo;
     }
 
     private void UpdateHands()

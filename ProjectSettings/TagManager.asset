@@ -28,6 +28,7 @@ TagManager:
   - BulletLocation
   - WeaponWheel
   - Gun
+  - AmmoText
   layers:
   - Default
   - TransparentFX

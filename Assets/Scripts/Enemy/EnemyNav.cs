@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyNav : MonoBehaviour
 {
+    /// <summary>
+    /// This is the Old Enemy Script
+    /// </summary>
     private NavMeshAgent agent;
     public EnemyState enemyState;
     private GameObject player;

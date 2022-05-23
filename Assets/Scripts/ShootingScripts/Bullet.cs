@@ -17,12 +17,9 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
-
     }
     private void Update()
     {
-
         StartCoroutine(DestroyBullet());
     }
 
@@ -33,7 +30,6 @@ public class Bullet : MonoBehaviour
 
     IEnumerator DestroyBullet()
     {
-
         yield return new WaitForSeconds(0.8f);
         bulletObject.SetActive(false);
     }
@@ -50,13 +46,11 @@ public class Bullet : MonoBehaviour
         }
         if(other.CompareTag("AmmoBox"))
         {
-            other.gameObject.GetComponent<Health>().Damage(bulletDamage);
             Debug.Log("Object was hit");
             bulletObject.SetActive(false);
         }  
         if(other.CompareTag("HealthBox"))
         {
-            other.gameObject.GetComponent<Health>().Damage(bulletDamage);
             Debug.Log("Object was hit");
             bulletObject.SetActive(false);
         }    

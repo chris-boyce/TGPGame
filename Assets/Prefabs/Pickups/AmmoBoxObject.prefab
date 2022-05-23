@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5058828292883404971}
   - component: {fileID: 6449349095595233291}
   - component: {fileID: 7995193774413999670}
-  - component: {fileID: -5429820123423529029}
   m_Layer: 0
   m_Name: AmmoBoxObject
   m_TagString: AmmoBox
@@ -64,20 +63,6 @@ MonoBehaviour:
   thisObject: {fileID: 5058828292883500191}
   pickUpToInstantiate: {fileID: 7910625479097318137, guid: 426fc8c405f0704448d52af348e33b1e, type: 3}
   pickUpToInstantiateLocation: {fileID: 9117085206692697059}
---- !u!114 &-5429820123423529029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5058828292883500191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 25
-  currentHealth: 0
 --- !u!1 &5058828292883502425
 GameObject:
   m_ObjectHideFlags: 0

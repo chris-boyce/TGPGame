@@ -27,10 +27,10 @@ public class Health : MonoBehaviour
 	float spawnDropablePercentage = 0.05f;
 
 	[Header("Health Values")]
-	public float health = 100f;
+	public float health;
 	[SerializeField]
 	public float currentHealth;
-	//public Slider healthBarSlider;
+	//public Slider healthBarSlider
 	//public GameObject slider;
 	//public GameObject healthbarObject;
 
@@ -67,25 +67,19 @@ public class Health : MonoBehaviour
 	}
 	void Die()
 	{
-		// Jon EDIT: Changes the way player dies to apply a ragdoll afterwards.
+		Debug.Log("Die Has Run");
+		
 
-		//Debug.Log("Dead"); 
-		//currentHealth = health;
-		//Destroy(gameObject);
-		//Destroy(healthbarObject);
-		//Destroy(slider);
-
-		if (!ragdollPrefab) { Destroy(gameObject); return; }
-
-		if (OnDeath != null) {
-			if (gameObject.CompareTag("Enemy")) {
-				if (Random.value < spawnDropablePercentage) {
-					Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
-				}
-
-				OnDeath();
+		if (gameObject.CompareTag("Enemy"))
+		{
+			if (Random.value < spawnDropablePercentage)
+			{
+				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
 			}
+			OnDeath();
+
 		}
+		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
 		CopyModelPos ragdollScript = ragdoll.GetComponent<CopyModelPos>();

@@ -8,10 +8,11 @@ public class GunAmmoHud : MonoBehaviour
     WeaponEquip weaponEquip;
     private int CurrentAmmo;
     private int MaxAmmo;
-    public TextMeshProUGUI AmmoText;
+    private TextMeshProUGUI AmmoText;
     private void Start()
     {
         weaponEquip = GetComponent<WeaponEquip>();
+        AmmoText = GameObject.FindGameObjectWithTag("AmmoText").GetComponent<TextMeshProUGUI>();
     }
     private void Update()
     {

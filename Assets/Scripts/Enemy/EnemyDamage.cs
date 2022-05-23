@@ -24,9 +24,10 @@ public class EnemyDamage : MonoBehaviour
         if(Physics.Raycast(rayPosition.transform.position, rayPosition.transform.TransformDirection(Vector3.forward), out hit, hitRange))
         {
             Debug.DrawRay(rayPosition.transform.position, rayPosition.transform.TransformDirection(Vector3.forward) * hitRange, Color.yellow);
-            Debug.Log(hit);
+
             if (hit.collider.gameObject.CompareTag("Player"))
             {
+                Debug.Log("Attakcing");
                 if (canAttack == true)
                 {
                     StartCoroutine(DamageTimer());

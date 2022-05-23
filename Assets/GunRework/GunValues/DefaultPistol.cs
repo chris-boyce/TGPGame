@@ -13,20 +13,19 @@ public class Pistol : BaseGunClass, IGun
         GunReserveAmmo = 144;
         GunFireRate = 5f;
         GunDamage = 10f;
-        
     }
 
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("pistol");
-        
+        GunSound = Resources.Load<AudioClip>("PistolGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
     public override void Fire()
     {
-
-            PC.FireGun(GunDamage);
+        AudioSoundManager.PlaySoundEffect(GunSound);
+        PC.FireGun(GunDamage);
         GunReserveAmmo--;
 
     }
