@@ -19,6 +19,7 @@ public class Pistol_Auto : BaseGunClass, IGun
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("machine_pistol_gun");
+        GunSound = Resources.Load<AudioClip>("AutoPistolGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
@@ -26,6 +27,7 @@ public class Pistol_Auto : BaseGunClass, IGun
     {
         if (Timer > FireRatePerSec)
         {
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             Timer = 0f;

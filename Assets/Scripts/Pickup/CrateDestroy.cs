@@ -25,6 +25,7 @@ public class CrateDestroy : MonoBehaviour
         if(other.gameObject.CompareTag("Bullet"))
         {
             Instantiate(pickUpToInstantiate, pickUpToInstantiateLocation.transform.position, pickUpToInstantiateLocation.transform.rotation);
+            Destroy(this.gameObject);
         }
     }
 

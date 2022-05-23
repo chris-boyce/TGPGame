@@ -18,6 +18,7 @@ public class SuperShotgun : BaseGunClass, IGun
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("pump_action_shotgun");
+        GunSound = Resources.Load<AudioClip>("ShotgunGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
@@ -25,6 +26,7 @@ public class SuperShotgun : BaseGunClass, IGun
     {
         if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.SpreadGun(GunDamage);
             GunReserveAmmo--;
             Debug.Log(GunReserveAmmo);

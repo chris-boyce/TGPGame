@@ -205,7 +205,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1959865581905186941}
   - component: {fileID: 1959865581905490110}
-  - component: {fileID: 7287601627667095568}
   - component: {fileID: 6847299962321169583}
   m_Layer: 0
   m_Name: MedBoxObject
@@ -244,20 +243,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.59543514, y: 2.4794443, z: 1.0725012}
   m_Center: {x: -0.00515604, y: 1.283868, z: 0.0154595375}
---- !u!114 &7287601627667095568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959865581905490109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 25
-  currentHealth: 0
 --- !u!114 &6847299962321169583
 MonoBehaviour:
   m_ObjectHideFlags: 0

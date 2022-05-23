@@ -7,9 +7,10 @@ public class HealthBox : MonoBehaviour
 {
     public GameObject thisObject;
     public GameObject Player;
+    public Health Health;
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -21,8 +22,12 @@ public class HealthBox : MonoBehaviour
     }
     private void HealthUp()
     {
-        Player.GetComponent<Health>().currentHealth += 50; 
-        Destroy(thisObject);
+        if(Health.currentHealth < 100)
+        {
+            Health.currentHealth += 50;
+            Destroy(thisObject);
+        }
+
     }
 
 }

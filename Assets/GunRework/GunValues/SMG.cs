@@ -21,6 +21,7 @@ public class SMG : BaseGunClass , IGun
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("submachine_gun");
+        GunSound = Resources.Load<AudioClip>("P90GunShot");
         PC =  GunObject.GetComponent<ProjectileCreate>();
     }
 
@@ -29,6 +30,7 @@ public class SMG : BaseGunClass , IGun
         if (Timer > FireRatePerSec)
         {
             PC.FireGun(GunDamage);
+            AudioSoundManager.PlaySoundEffect(GunSound);
             GunReserveAmmo--;
 
             Timer = 0f;
