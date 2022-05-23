@@ -9,9 +9,14 @@ public class BaseZombie : AIBaseClass
     private bool canAttack = true;
     public GameObject rayPosition;
     public Animator Anim;
-    
+
+    private Vector3 previousPosition;
+    private float MoveSpeed;
+    private bool IsAnim;
+
     [Header("Values For this Type Of Zombie")]
     public float EnemyOverideHealth = 50f;
+    public float EnemyAttackSpeed = 1.333f;
     public float EnemySpeed = 0.5f;
     public float hitRange = 5f;
     public float enemyMeleeDamage = 10.0f;
@@ -27,14 +32,15 @@ public class BaseZombie : AIBaseClass
         m_NavMeshAgent = gameObject.AddComponent<NavMeshAgent>();
         m_NavMeshAgent.baseOffset = 0f;
         m_NavMeshAgent.speed = EnemySpeed;
-        Anim.SetBool("IsWalking", true);
+
         base.Start();
     }
     public override void Update()
     {
-        float velocity = m_NavMeshAgent.velocity.magnitude / m_NavMeshAgent.speed;
-        Debug.Log(velocity);
         EnemyStateChange();
+
+        EnemyAnimState();
+
     }
     public override void FixedUpdate()
     {
@@ -46,13 +52,9 @@ public class BaseZombie : AIBaseClass
         {
             case EnemyState.ChasingPlayer:
                 m_NavMeshAgent.SetDestination(Player.transform.position);
-                Anim.SetBool("IsWalking", true);
-
-
                 break;
             case EnemyState.ChasingTurret:
                 //TODO Add Turret Attack
-
                 break;
             case EnemyState.AttackingPlayer:
                 m_NavMeshAgent.SetDestination(transform.position);
@@ -68,7 +70,7 @@ public class BaseZombie : AIBaseClass
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 ZombieAttack();
-                Anim.SetTrigger("AttackTrigger");
+                
             }
         }
     }
@@ -76,20 +78,44 @@ public class BaseZombie : AIBaseClass
    {
         if (canAttack == true)
         {
+
             StartCoroutine(DamageTimer());
         }
    }
     IEnumerator DamageTimer()
     {
-        
-        Debug.Log("Attaking Prefab");
         canAttack = false;
+        Anim.SetTrigger("AttackTrigger"); // Anim Does Attack
         Player.GetComponent<Health>().Damage(enemyMeleeDamage);
         m_EnemyState = EnemyState.AttackingPlayer;
-        yield return new WaitForSeconds(1.333f);
-        Anim.SetBool("IsIdle", true);
+        yield return new WaitForSeconds(EnemyAttackSpeed);
         m_EnemyState = EnemyState.ChasingPlayer;
         canAttack = true;
+    }
+    void EnemyAnimState()
+    {
+        //Calualates the speed the NavMeshAgent is moving
+        Vector3 curMove = transform.position - previousPosition;
+        MoveSpeed = curMove.magnitude / Time.deltaTime;
+        previousPosition = transform.position;
+        if (MoveSpeed > 1f) //Checks if moving
+        {
+            Anim.SetFloat("SpeedOfAnimation", MoveSpeed / 3.14f); //Scales the movement to the speed they are moving (Pi is the closest to feel good in game. Idk why just worked it out)
+            if (IsAnim == false)//Make it Only Run once / Less calls or conflicts
+            {
+                Anim.SetBool("IsWalking", true);
+                IsAnim = true;
+            }
+        }
+        else //If not moving then run the idle state
+        {
+            Anim.SetFloat("SpeedOfAnimation", 1);
+            if (IsAnim == true)
+            {
+                Anim.SetBool("IsWalking", false);
+                IsAnim = false;
+            }
+        }
     }
 
 
