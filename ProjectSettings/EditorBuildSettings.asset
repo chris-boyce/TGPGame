@@ -27,21 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/GameLevels(Hayden)/Level5.unity
     guid: ff82d6c9ca9cfef46b8b91a2886c75c0
   - enabled: 1
-    path: Assets/Scenes/UISCENES/Quit.unity
-    guid: 67ea93f895aba5c4eb010705255bd34f
-  - enabled: 1
     path: Assets/Scenes/UISCENES/Pause.unity
-    guid: e3853cd79619d1643ac0a356fc8bef97
-  - enabled: 1
-    path: Assets/Scenes/UISCENES/Options.unity
-    guid: 32d510c8245df8142a420601aeb7ea43
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    guid: 693853d974f22094bafee3d9c83d6796
   - enabled: 1
     path: Assets/Scenes/UISCENES/GameOver.unity
     guid: ab642ccb6169c7f40a1782f818558ecf
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
