@@ -36,7 +36,6 @@ public class Health : MonoBehaviour
 
 	public event System.Action OnDeath; // Wave Call depends on this script being run due to the Events System *Chris*
 
-
 	void Start()
 	{
 		currentHealth = health;

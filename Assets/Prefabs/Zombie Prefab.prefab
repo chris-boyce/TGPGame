@@ -218,9 +218,11 @@ GameObject:
   m_Component:
   - component: {fileID: 381342697224217674}
   - component: {fileID: 2211021836812187839}
+  - component: {fileID: 1026246629}
+  - component: {fileID: 1026246630}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: EnemyColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,13 +234,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019697946333728146}
-  m_LocalRotation: {x: 0.000000030908623, y: 0.7071068, z: 0.7071067, w: 0.000000030908616}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: -0.17706247, y: -0.10823522, z: -0.3113252}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.005, y: 0.156, z: -0.098}
+  m_LocalScale: {x: -0.021611549, y: -0.013210766, z: -0.06486451}
   m_Children: []
   m_Father: {fileID: 8455797131479850205}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!137 &2211021836812187839
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -259,7 +261,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e6ddf792003a1764e895506ac23bea0c, type: 2}
+  - {fileID: 2100000, guid: 49fd02eeba1537f40a4629d8235c6cee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -314,6 +316,37 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: -0.04972893, z: 0.11237596}
     m_Extent: {x: 0.75692475, y: 0.9659578, z: 0.37722623}
   m_DirtyAABB: 0
+--- !u!136 &1026246629
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019697946333728146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 8.000372
+  m_Height: 135.44594
+  m_Direction: 1
+  m_Center: {x: -0.43969133, y: -11.136814, z: -1.9393117}
+--- !u!114 &1026246630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019697946333728146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c104c6b88b40644a2e83b2df54b4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 2100000, guid: 562e0acebbce58b47972b7c468c4427c, type: 2}
+  originalMat: {fileID: 2100000, guid: 49fd02eeba1537f40a4629d8235c6cee, type: 2}
+  deathMat: {fileID: 2100000, guid: ea0f74947e4c00a4092d72446e581b24, type: 2}
+  Enemy: {fileID: 0}
+  EnemyHealth: {fileID: 0}
 --- !u!1 &1120459930408429151
 GameObject:
   m_ObjectHideFlags: 0

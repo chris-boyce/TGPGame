@@ -8,32 +8,39 @@ public class HitColour : MonoBehaviour
 
     public Material hitMat;
     public Material originalMat;
+    public Material lowhealthMat;
 
     [SerializeField]private GameObject Enemy;
+    [SerializeField]private GameObject EnemyHealth;
     void Start()
     {
         Enemy = GameObject.FindGameObjectWithTag("EnemyColour");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        EnemyHealth = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bullet"))
+        if(other.CompareTag("Bullet") && EnemyHealth.GetComponent<Health>().currentHealth > 40 )
         {
             StartCoroutine(HitTimer());
+        }
+        else if(other.CompareTag("Bullet") && EnemyHealth.GetComponent<Health>().currentHealth < 40)
+        {
+            StartCoroutine(DeathHitTimer());
         }
     }
 
     IEnumerator HitTimer()
     {
-        Enemy.GetComponent<MeshRenderer>().material = hitMat;
-        yield return new WaitForSeconds(2);
-        Enemy.GetComponent<MeshRenderer>().material = originalMat;
+        Enemy.GetComponent<SkinnedMeshRenderer>().material = hitMat;
+        yield return new WaitForSeconds(0.2f);
+        Enemy.GetComponent<SkinnedMeshRenderer>().material = originalMat;
     }
 
+    IEnumerator DeathHitTimer()
+    {
+        Enemy.GetComponent<SkinnedMeshRenderer>().material = lowhealthMat;
+        yield return new WaitForSeconds(0.2f);
+        Enemy.GetComponent<SkinnedMeshRenderer>().material = originalMat;
+    }
 }
