@@ -966,9 +966,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1010851437578105866}
   - component: {fileID: 2618144874130158554}
+  - component: {fileID: 6561216578013535447}
+  - component: {fileID: 5976872211874982474}
   m_Layer: 0
   m_Name: PumpkinHulk
-  m_TagString: Untagged
+  m_TagString: EnemyColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,8 +983,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5105823531188376419}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0000019073, y: -0.84471, z: -0.00055063}
+  m_LocalScale: {x: 0.9590147, y: 1.8278589, z: 0.9590147}
   m_Children: []
   m_Father: {fileID: 7812594477478918973}
   m_RootOrder: 1
@@ -1105,6 +1107,35 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000062584877, y: 0.007499516, z: 0.0032339543}
     m_Extent: {x: 1.4727759, y: 1.0212235, z: 0.359397}
   m_DirtyAABB: 0
+--- !u!114 &6561216578013535447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105823531188376419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c104c6b88b40644a2e83b2df54b4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 2100000, guid: 562e0acebbce58b47972b7c468c4427c, type: 2}
+  originalMat: {fileID: 2100000, guid: ad9b332476e42dc4082ceca21e9be4fd, type: 2}
+  Enemy: {fileID: 5105823531188376419}
+--- !u!136 &5976872211874982474
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105823531188376419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.4727764
+  m_Height: 2.0424483
+  m_Direction: 1
+  m_Center: {x: -0.000006261638, y: 1.0204294, z: -0.013409093}
 --- !u!1 &5682984837192442219
 GameObject:
   m_ObjectHideFlags: 0
