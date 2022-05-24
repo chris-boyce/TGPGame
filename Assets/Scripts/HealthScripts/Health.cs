@@ -73,13 +73,15 @@ public class Health : MonoBehaviour
 		{
 			if (Random.value < spawnDropablePercentage)
 			{
-				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation, transform.parent.parent);
+				Debug.Log("Runnning Drop");
+				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position + new Vector3(0,1,0), transform.rotation);
 			}
 			OnDeath();
 
 		}
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
-
+		Destroy(this.gameObject);
+		Debug.Log("Running This Shit");
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
 		CopyModelPos ragdollScript = ragdoll.GetComponent<CopyModelPos>();
 		ragdollScript.ApplyRagdoll(rootPart.transform, ragdollScript.root);
