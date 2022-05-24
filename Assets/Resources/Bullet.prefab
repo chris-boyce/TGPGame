@@ -126,7 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dd178f3abe0784eb72715d0aaa9d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 0}
   bulletObject: {fileID: 3551342326360303430}
   tempObj: {fileID: 1285014277344889140, guid: 8fbfbbedf5fabf548888db0b3f524930, type: 3}
   bulletDamage: 25
   bulletSpeed: 50
+  hitMat: {fileID: 2100000, guid: ea0f74947e4c00a4092d72446e581b24, type: 2}
+  originalMat: {fileID: 2100000, guid: 49fd02eeba1537f40a4629d8235c6cee, type: 2}

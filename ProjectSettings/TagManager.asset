@@ -26,6 +26,7 @@ TagManager:
   - SceneSwitch
   - Object
   - BulletLocation
+  - EnemyColour
   - WeaponWheel
   - Gun
   - AmmoText
