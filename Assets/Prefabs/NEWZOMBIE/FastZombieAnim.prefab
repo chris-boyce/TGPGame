@@ -548,12 +548,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6045c2d7ff2f68646bb720f7230f786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdollPrefab: {fileID: 0}
+  ragdollPrefab: {fileID: 1854094589272833571, guid: 33895a09aa4ae544caf0f420e9d23149, type: 3}
   rootPart: {fileID: 0}
   disableList:
   - {fileID: 1404117516784150426}
   usePlayerController: 0
-  spawnDropablePrefab: []
+  spawnDropablePrefab:
+  - {fileID: 7910625479097318137, guid: 426fc8c405f0704448d52af348e33b1e, type: 3}
+  - {fileID: 135129308646156222, guid: 31da7d5b2c74239449a9024417bbd249, type: 3}
   spawnDropablePercentage: 0.05
   health: 0
   currentHealth: 0
@@ -578,7 +580,7 @@ MonoBehaviour:
   EnemyOverideHealth: 50
   EnemyAttackSpeed: 1.333
   EnemySpeed: 5
-  hitRange: 1
+  hitRange: 1.25
   enemyMeleeDamage: 5
 --- !u!1 &1503748234498358184
 GameObject:

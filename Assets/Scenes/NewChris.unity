@@ -1960,17 +1960,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1562790003 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7594056309613829333, guid: 7e5c7e7f512c4c549bcfd292036b7d08, type: 3}
-  m_PrefabInstance: {fileID: 225802709}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1708664326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,6 +2092,8 @@ MonoBehaviour:
   - LevelScore: 0
   CurrentWave:
     LevelScore: 0
+  NormalRoundEnd: {fileID: 0}
+  SupplyDropRoundEnd: {fileID: 0}
   BaseEnemy: {fileID: 7359222228567576303, guid: 3ffad605c0d88c94dbd537eb4c825ce6, type: 3}
   FastEnemy: {fileID: 1404117516784150426, guid: e427cc6bb0d1cc54a8b22ceda92e20cd, type: 3}
   SlowEnemy: {fileID: 7431003038036222343, guid: 51cc85676d79b59499ee9664109a3f34, type: 3}
@@ -2115,6 +2106,7 @@ MonoBehaviour:
   SpeedOfSpawn: 5
   TimeBetweenWaves: 10
   SpawnTimer: 0
+  SupplyCreate: {fileID: 0}
 --- !u!4 &1708664328
 Transform:
   m_ObjectHideFlags: 0
@@ -2398,10 +2390,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 379320891, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
-      propertyPath: AmmoText
-      value: 
-      objectReference: {fileID: 1562790003}
     - target: {fileID: 67331387076397571, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
       propertyPath: m_RootOrder
       value: 8
