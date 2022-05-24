@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 379320894}
   - component: {fileID: 379320891}
   - component: {fileID: 379320893}
+  - component: {fileID: 772176629}
   m_Layer: 3
   m_Name: PlayerObject
   m_TagString: Player
@@ -972,7 +973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4bf8e8d4215ca4fbed9ac336a70fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoText: {fileID: 0}
 --- !u!114 &379320893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,6 +985,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded7d01c7dc303542be901b736e9541f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &772176629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629956658092360524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50bda947beddbf40ab46e48cd941e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwForce: 13
+  grenadePrefab: {fileID: 7877079768760141092, guid: 31be9b710d685f74fb5032f917db8615, type: 3}
 --- !u!1 &1656034462045260265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,9 +2595,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7469739843804559376, guid: 6fc7d1dd23299314fa45b9438b286d3e, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469739843804559376, guid: 6fc7d1dd23299314fa45b9438b286d3e, type: 3}
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 6130794538759646801}
+    - target: {fileID: 7469739843804559376, guid: 6fc7d1dd23299314fa45b9438b286d3e, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fc7d1dd23299314fa45b9438b286d3e, type: 3}
 --- !u!1 &3120770457247518833 stripped

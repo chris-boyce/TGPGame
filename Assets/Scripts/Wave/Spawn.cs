@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Spawn : MonoBehaviour
 {
     public Wave[] waves;
@@ -13,6 +13,9 @@ public class Spawn : MonoBehaviour
 
     Wave currentWave;
     public int currentWaveNumber;
+
+    public TextMeshProUGUI _ScoreText;
+    private int _ScoreInt = 0;
 
     private int enemyLeftToSpawn;
     public int enemyLeftAlive;
@@ -46,8 +49,11 @@ public class Spawn : MonoBehaviour
     void OnEnemyDeath()
     {
         enemyLeftAlive--; //When Zombie Dies
-        if(enemyLeftAlive == 0) //If no zombie alive
+        _ScoreInt += 10;
+        _ScoreText.text = "SCORE:" + _ScoreInt;
+        if (enemyLeftAlive == 0) //If no zombie alive
         {
+
             StartCoroutine(BetweenWaveTimer()); // Timer to start the Next Wave
         }
     }

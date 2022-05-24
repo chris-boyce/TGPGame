@@ -1120,9 +1120,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8490084449018768680}
   - component: {fileID: 7148427953570602361}
+  - component: {fileID: 454475182031355884}
+  - component: {fileID: 6320172803387513534}
   m_Layer: 0
   m_Name: GirlScout
-  m_TagString: Untagged
+  m_TagString: EnemyColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1135,8 +1137,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3497028597005734468}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00002878, y: -0.82379, z: 0}
+  m_LocalScale: {x: 1.3304, y: 1.8261672, z: 1}
   m_Children: []
   m_Father: {fileID: 1745072140339838240}
   m_RootOrder: 0
@@ -1259,6 +1261,35 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00008589029, y: -0.025615513, z: -0.029860169}
     m_Extent: {x: 0.89650667, y: 1.007138, z: 0.2928598}
   m_DirtyAABB: 0
+--- !u!114 &454475182031355884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3497028597005734468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c104c6b88b40644a2e83b2df54b4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 2100000, guid: 562e0acebbce58b47972b7c468c4427c, type: 2}
+  originalMat: {fileID: 2100000, guid: d7145311b79f3644695d4a49a6b9877f, type: 2}
+  Enemy: {fileID: 3497028597005734468}
+--- !u!136 &6320172803387513534
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3497028597005734468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.8965082
+  m_Height: 2.014279
+  m_Direction: 1
+  m_Center: {x: 0.00008593199, y: 0.9970133, z: -0.030054718}
 --- !u!1 &3545723523261768731
 GameObject:
   m_ObjectHideFlags: 0
