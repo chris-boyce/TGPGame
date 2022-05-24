@@ -7,6 +7,7 @@ public class SupplyDrop : MonoBehaviour
     public GameObject SupplyDropUI;
     private void Start()
     {
+        this.gameObject.SetActive(false);
         SupplyDropUI.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
@@ -25,11 +26,9 @@ public class SupplyDrop : MonoBehaviour
     }
     public void CloseMenu()
     {
-        Destroy(this.gameObject);
-    }
-    private void OnDestroy()
-    {
+        this.gameObject.SetActive(false);
         SupplyDropUI.SetActive(false);
     }
+
 
 }

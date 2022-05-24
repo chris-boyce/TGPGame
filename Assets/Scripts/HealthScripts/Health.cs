@@ -93,4 +93,10 @@ public class Health : MonoBehaviour
 		}
 	}
 
+	public void GainHealth()
+    {
+		health = health + 50;
+		currentHealth = health;
+    }
+
 }

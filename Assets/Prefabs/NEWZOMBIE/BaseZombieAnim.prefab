@@ -1693,7 +1693,7 @@ MonoBehaviour:
   EnemyOverideHealth: 50
   EnemyAttackSpeed: 1.333
   EnemySpeed: 2.5
-  hitRange: 1
+  hitRange: 1.25
   enemyMeleeDamage: 10
 --- !u!114 &7701257005903704901
 MonoBehaviour:

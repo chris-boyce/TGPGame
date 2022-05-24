@@ -578,7 +578,7 @@ MonoBehaviour:
   EnemyOverideHealth: 50
   EnemyAttackSpeed: 1.333
   EnemySpeed: 5
-  hitRange: 1
+  hitRange: 1.25
   enemyMeleeDamage: 5
 --- !u!1 &1503748234498358184
 GameObject:
