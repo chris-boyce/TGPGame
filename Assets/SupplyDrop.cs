@@ -5,6 +5,10 @@ using UnityEngine;
 public class SupplyDrop : MonoBehaviour
 {
     public GameObject SupplyDropUI;
+    private void Start()
+    {
+        SupplyDropUI.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -18,6 +22,14 @@ public class SupplyDrop : MonoBehaviour
         {
             SupplyDropUI.SetActive(false);
         }
+    }
+    public void CloseMenu()
+    {
+        Destroy(this.gameObject);
+    }
+    private void OnDestroy()
+    {
+        SupplyDropUI.SetActive(false);
     }
 
 }
