@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Spawn : MonoBehaviour
 {
     public Wave[] waves;
@@ -14,6 +14,9 @@ public class Spawn : MonoBehaviour
     Wave currentWave;
     public int currentWaveNumber;
 
+    public TextMeshProUGUI _ScoreText;
+    private int _ScoreInt = 0;
+
     private int enemyLeftToSpawn;
     public int enemyLeftAlive;
     private float nextSpawnTime;
@@ -23,7 +26,6 @@ public class Spawn : MonoBehaviour
     {
         public int enemyCount;
         public float timeBetweenSpawn;
-
     }
 
     private void Start()
@@ -40,15 +42,18 @@ public class Spawn : MonoBehaviour
             spawnArea = new Vector3(spawnPostion[spawnLocationNumber].position.x + Random.Range(-5f, 5f), spawnPostion[spawnLocationNumber].position.y+ 0, spawnPostion[spawnLocationNumber].position.z +  Random.Range(-5f, 5f)); //Set Location of the spawn of the zombie relative to the spawn Transform
 
             GameObject spawnedEnemy = Instantiate(Enemy, spawnArea, Quaternion.identity); // Spawns Zombie // Jon EDIT: Changes datatype to the regular health script.
-            spawnedEnemy.GetComponentInChildren<Health>().OnDeath += OnEnemyDeath; //Event system for when the zombie dies
+            spawnedEnemy.GetComponentInChildren<Health>().OnDeath += OnEnemyDeath; //Adds the Spawned Zombie to run the OnEnemyDeath When Run
         }
 
     }
     void OnEnemyDeath()
     {
         enemyLeftAlive--; //When Zombie Dies
-        if(enemyLeftAlive == 0) //If no zombie alive
+        _ScoreInt += 10;
+        _ScoreText.text = "SCORE:" + _ScoreInt;
+        if (enemyLeftAlive == 0) //If no zombie alive
         {
+
             StartCoroutine(BetweenWaveTimer()); // Timer to start the Next Wave
         }
     }
@@ -58,8 +63,6 @@ public class Spawn : MonoBehaviour
         currentWaveNumber++;
         waves[currentWaveNumber - 1].enemyCount = currentWaveNumber * waveMultiplier;
         waves[currentWaveNumber -1 ].timeBetweenSpawn = 5 / currentWaveNumber;
-            
-        
 
         currentWave = waves[currentWaveNumber - 1]; //Set Wave number
         enemyLeftToSpawn = currentWave.enemyCount; //Set amount of spawn

@@ -27,6 +27,9 @@ TagManager:
   - Object
   - BulletLocation
   - EnemyColour
+  - WeaponWheel
+  - Gun
+  - AmmoText
   layers:
   - Default
   - TransparentFX

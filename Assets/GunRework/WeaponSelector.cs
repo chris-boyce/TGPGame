@@ -11,8 +11,10 @@ using UnityEngine;
 /// </summary>
 public class WeaponSelector : MonoBehaviour
 {
+    [Header("Weapons Selected / Current Weapon")]
     public IPickupable testInterface;
     private PickupType UnlockWeapon;
+    public PickupType WeaponWheelSelected;
     public PickupType CurrentWeapon;
     public IGun CurrentIGUN;
     public Dictionary<PickupType, bool> WeaponPool = new Dictionary<PickupType, bool>();
@@ -41,34 +43,41 @@ public class WeaponSelector : MonoBehaviour
         }
 
     }
+    public void WeaponWheelInput(PickupType InputedWeapon)
+    {
+        Debug.Log(InputedWeapon);
+        WeaponWheelSelected = InputedWeapon;
+    }
+
     private void Update()
     {
         //Checks if Has Unlocked Weapon and Key is Pressed
-        if (Input.GetKeyDown(KeyCode.Alpha1) && (WeaponPool[PickupType.Pistol] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && (WeaponPool[PickupType.Pistol] == true) || WeaponWheelSelected == PickupType.Pistol) 
         {
             CurrentWeapon = PickupType.Pistol;
+            WeaponWheelSelected = PickupType.Empty;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && (WeaponPool[PickupType.Sniper] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && (WeaponPool[PickupType.Sniper] == true) || WeaponWheelSelected == PickupType.Sniper)
         {
             CurrentWeapon = PickupType.Sniper;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && (WeaponPool[PickupType.AutoPistol] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && (WeaponPool[PickupType.AutoPistol] == true) || WeaponWheelSelected == PickupType.AutoPistol)
         {
             CurrentWeapon = PickupType.AutoPistol;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && (WeaponPool[PickupType.P90] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha4) && (WeaponPool[PickupType.P90] == true) || WeaponWheelSelected == PickupType.P90)
         {
             CurrentWeapon = PickupType.P90;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && (WeaponPool[PickupType.AK] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha5) && (WeaponPool[PickupType.AK] == true) || WeaponWheelSelected == PickupType.AK)
         {
             CurrentWeapon = PickupType.AK;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6) && (WeaponPool[PickupType.M16] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha6) && (WeaponPool[PickupType.M16] == true) || WeaponWheelSelected == PickupType.M16)
         {
             CurrentWeapon = PickupType.M16;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha7) && (WeaponPool[PickupType.Shotgun] == true))
+        if (Input.GetKeyDown(KeyCode.Alpha7) && (WeaponPool[PickupType.Shotgun] == true) || WeaponWheelSelected == PickupType.Shotgun)
         {
             CurrentWeapon = PickupType.Shotgun;
         }

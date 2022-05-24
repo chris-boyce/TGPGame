@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    int _PauseScreen = 8;
+    int _PauseScreen = 7;
 
     public GameObject _PlayerCamera;
     public SceneSwitcher _SceneSwitcher;
@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+  
 
     }
 
@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
 
-        if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(8)))
+        if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(7)))
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {

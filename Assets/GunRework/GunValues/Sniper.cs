@@ -16,10 +16,12 @@ public class AWP : BaseGunClass, IGun
         GunFireRate = 0.5f;
         GunDamage = 100f;
         FireRatePerSec = 1 / GunFireRate;
+        
     }
     public override void GetGun()
     {
         GunObject = Resources.Load<GameObject>("sniper_rifle");
+        GunSound = Resources.Load<AudioClip>("SniperGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
     }
 
@@ -29,6 +31,7 @@ public class AWP : BaseGunClass, IGun
         {
             Debug.Log("Shoot");
             GunReserveAmmo--;
+            AudioSoundManager.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
 
             Timer = 0f;

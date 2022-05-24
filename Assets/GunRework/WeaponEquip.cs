@@ -18,8 +18,16 @@ public class WeaponEquip : MonoBehaviour
     Pistol_Auto Pistol_Auto = new Pistol_Auto();
     SuperShotgun SuperShotgun = new SuperShotgun();
 
-    public GameObject[] GunsGO;
+    [Header("Gun Gameobjects Currently On the Player")]
+    public GameObject SniperGO;
+    public GameObject SMGGO;
+    public GameObject AKGO;
+    public GameObject AutoPistolGO;
+    public GameObject PistolGO;
+    public GameObject M16GO;
+    public GameObject ShotgunGO;
 
+    [Header("Player Left Right Hand")]
     [SerializeField]
     HandIK handL;
     [SerializeField]
@@ -38,25 +46,32 @@ public class WeaponEquip : MonoBehaviour
         Pistol_Auto.GetGun();
         SuperShotgun.GetGun();
 
-        //Makes List of all Objects
-        GunsGO = new GameObject[7];
-        GunsGO[0] = Instantiate(AWP.GunObject, transform , false );
-        GunsGO[1] = Instantiate(SMG.GunObject, transform , false);
-        GunsGO[2] = Instantiate(AK47.GunObject, transform, false);
-        GunsGO[3] = Instantiate(Pistol.GunObject, transform , false);
-        GunsGO[4] = Instantiate(M16_Burst.GunObject, transform , false);
-        GunsGO[5] = Instantiate(Pistol_Auto.GunObject, transform , false);
-        GunsGO[6] = Instantiate(SuperShotgun.GunObject, transform , false);
+
+        //GunsGO[0] = Instantiate(AWP.GunObject, transform, false);
+        //GunsGO[1] = Instantiate(SMG.GunObject, transform , false);
+        //GunsGO[2] = Instantiate(AK47.GunObject, transform, false);
+        //GunsGO[3] = Instantiate(Pistol.GunObject, transform , false);
+        //GunsGO[4] = Instantiate(M16_Burst.GunObject, transform , false);
+        //GunsGO[5] = Instantiate(Pistol_Auto.GunObject, transform , false);
+        //GunsGO[6] = Instantiate(SuperShotgun.GunObject, transform, false);
         //Hides All objects
         DisableGuns();
     }
+
     void DisableGuns()
     {
-        foreach (GameObject i in GunsGO)
-        {
-            i.SetActive(false);
-        }
+        SniperGO.SetActive(false);
+        SMGGO.SetActive(false);
+        AKGO.SetActive(false);
+        AutoPistolGO.SetActive(false);
+        ShotgunGO.SetActive(false);
+        PistolGO.SetActive(false);
+        M16GO.SetActive(false);
+
     }
+
+
+
     private void Update()
     {
         if(weaponSelector.CurrentWeapon != cachedType) //Effiency : Only Run Switch Once after weapon swap
@@ -67,12 +82,12 @@ public class WeaponEquip : MonoBehaviour
                 case PickupType.AK:             //If AK Selected
                     CurrentIGUN = AK47 as IGun; //Sets IGun to the one be fired
                     CurrentGunObject = AK47.GunObject; //Sets Gameobject
-                    GunsGO[2].SetActive(true);  //Activates that gun so it can be seen
+                    AKGO.SetActive(true);  //Activates that gun so it can be seen
                     break;
                 case PickupType.AutoPistol:
                     CurrentIGUN = Pistol_Auto as IGun;
                     CurrentGunObject = Pistol_Auto.GunObject;
-                    GunsGO[5].SetActive(true);
+                    AutoPistolGO.SetActive(true);
                     break;
                 case PickupType.Empty:
                     //Hand Empty
@@ -80,28 +95,29 @@ public class WeaponEquip : MonoBehaviour
                 case PickupType.M16:
                     CurrentIGUN = M16_Burst as IGun;
                     CurrentGunObject = M16_Burst.GunObject;
-                    GunsGO[4].SetActive(true);
+                    M16GO.SetActive(true);
                     break;
                 case PickupType.P90:
                     CurrentIGUN = SMG as IGun;
                     CurrentGunObject = SMG.GunObject;
-                    GunsGO[1].SetActive(true);
+                    SMGGO.SetActive(true);
                     break;
                 case PickupType.Pistol:
                     CurrentIGUN = Pistol as IGun;
                     CurrentGunObject = Pistol.GunObject;
-                    GunsGO[3].SetActive(true);
+                    PistolGO.SetActive(true);
                     break;
                 case PickupType.Shotgun:
                     CurrentIGUN = SuperShotgun as IGun;
                     CurrentGunObject = SuperShotgun.GunObject;
-                    GunsGO[6].SetActive(true);
+                    SuperShotgun.Timer = 1f;
+                    ShotgunGO.SetActive(true);
                     break;
                 case PickupType.Sniper:
                     CurrentIGUN = AWP as IGun;
                     CurrentGunObject = AWP.GunObject;
                     AWP.Timer = 2f;
-                    GunsGO[0].SetActive(true);
+                    SniperGO.SetActive(true);
                     break;
 
             }
@@ -127,29 +143,39 @@ public class WeaponEquip : MonoBehaviour
         switch (weaponSelector.CurrentWeapon)
         {
             case PickupType.Pistol:
-                weaponHeld = GunsGO[3];
+                weaponHeld = PistolGO;
                 break;
             case PickupType.Sniper:
-                weaponHeld = GunsGO[0];
+                weaponHeld = SniperGO;
                 break;
             case PickupType.AutoPistol:
-                weaponHeld = GunsGO[5];
+                weaponHeld = AutoPistolGO;
                 break;
             case PickupType.P90:
-                weaponHeld = GunsGO[1];
+                weaponHeld = SMGGO;
                 break;
             case PickupType.AK:
-                weaponHeld = GunsGO[2];
+                weaponHeld = AKGO;
                 break;
             case PickupType.M16:
-                weaponHeld = GunsGO[4];
+                weaponHeld = M16GO;
                 break;
             case PickupType.Shotgun:
-                weaponHeld = GunsGO[6];
+                weaponHeld = ShotgunGO;
                 break;
 
         }
         return weaponHeld;
+    }
+    public void WeaponMaxAmmo()
+    {
+        AWP.GunReserveAmmo = AWP.GunMaxAmmo;
+        SMG.GunReserveAmmo = SMG.GunMaxAmmo;
+        AK47.GunReserveAmmo = AK47.GunMaxAmmo;
+        Pistol.GunReserveAmmo = Pistol.GunMaxAmmo;
+        M16_Burst.GunReserveAmmo = M16_Burst.GunMaxAmmo;
+        Pistol_Auto.GunReserveAmmo = Pistol_Auto.GunMaxAmmo;
+        SuperShotgun.GunReserveAmmo = SuperShotgun.GunMaxAmmo;
     }
 
     private void UpdateHands()
