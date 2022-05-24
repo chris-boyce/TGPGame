@@ -176,11 +176,10 @@ GameObject:
   - component: {fileID: 7877079768759982340}
   - component: {fileID: 7877079768761276712}
   - component: {fileID: 7877079768762407912}
-  - component: {fileID: 7877079768978991777}
   - component: {fileID: 7877079768978991782}
-  - component: {fileID: 7877079768978991783}
+  - component: {fileID: -7744871305397593780}
   m_Layer: 0
-  m_Name: MK2
+  m_Name: MK2_Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7877079768760141092}
   m_LocalRotation: {x: -0.6912406, y: 0.14895143, z: -0.14895144, w: 0.6912405}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.214, y: 1.015, z: 0.594}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 7877079768759982336}
@@ -254,22 +253,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &7877079768978991777
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7877079768760141092}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &7877079768978991782
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -277,14 +260,14 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7877079768760141092}
-  m_Material: {fileID: 13400000, guid: c42f05c93f109d4488cdf5247890bda5, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.016
-  m_Height: 0.06
+  m_Radius: 0.082932316
+  m_Height: 0.16586463
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.005}
---- !u!114 &7877079768978991783
+  m_Center: {x: 0.00032788506, y: 1.1609839e-16, z: 0.005000001}
+--- !u!114 &-7744871305397593780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,13 +276,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7877079768760141092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20123a80b36d48d4cba71122d553517e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c53fb39890cf0d4c98b91bd6ff78285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 3
-  radius: 5
-  force: 200
-  explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  PickUpObject: 8
 --- !u!1 &7877079768760141100
 GameObject:
   m_ObjectHideFlags: 0

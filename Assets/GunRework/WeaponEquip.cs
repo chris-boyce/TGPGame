@@ -134,6 +134,7 @@ public class WeaponEquip : MonoBehaviour
             CurrentIGUN.Fire();
         }
 
+
         UpdateHands();
     }
 

@@ -22,12 +22,12 @@ public class Grenade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countdown -= Time.deltaTime;
-        if(countdown <= 0f && !hasExploded)
-        {
-            Explode();
-            hasExploded = true;
-        }
+            countdown -= Time.deltaTime;
+            if (countdown <= 0f && !hasExploded)
+            {
+                Explode();
+                hasExploded = true;
+            }
     }
 
     void Explode()
@@ -37,18 +37,26 @@ public class Grenade : MonoBehaviour
         //Returns array of all colliders overlapping sphere
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
+
         //Loop through each
         foreach (Collider nearbyObject in colliders)
         {
             //Search for rigidbody on each object
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            Health health = nearbyObject.GetComponent<Health>();
+
+            if (health != null)
+            {
+                health.currentHealth -= 50.0f;
+            }
+
             //If has rigidbody, add force from grenade
             if (rb != null)
             {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
         }
-
         Destroy(gameObject);
     }
+  
 }

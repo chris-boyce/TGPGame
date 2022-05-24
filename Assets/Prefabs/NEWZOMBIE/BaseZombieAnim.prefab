@@ -566,9 +566,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2272136620028581028}
   - component: {fileID: 437725353115596265}
+  - component: {fileID: 1285844419470658703}
+  - component: {fileID: 5626582840183290799}
   m_Layer: 0
   m_Name: ZombieGirl_Body
-  m_TagString: Untagged
+  m_TagString: EnemyColour
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,8 +583,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3763740298685382990}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0017109, y: -0.37361, z: 0}
+  m_LocalScale: {x: 1.0758755, y: 1.3717, z: 1}
   m_Children: []
   m_Father: {fileID: 7884365941098517589}
   m_RootOrder: 1
@@ -701,6 +703,35 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.022535414, y: -0.070666075, z: 0.015175439}
     m_Extent: {x: 0.9986702, y: 1.032883, z: 0.19180453}
   m_DirtyAABB: 0
+--- !u!114 &1285844419470658703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763740298685382990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c104c6b88b40644a2e83b2df54b4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 2100000, guid: 562e0acebbce58b47972b7c468c4427c, type: 2}
+  originalMat: {fileID: 2100000, guid: 4612049646bcc12419a32875b7db6377, type: 2}
+  Enemy: {fileID: 3763740298685382990}
+--- !u!136 &5626582840183290799
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763740298685382990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.99867034
+  m_Height: 2.0657663
+  m_Direction: 1
+  m_Center: {x: 0.022535421, y: 1.0051892, z: 0.012246706}
 --- !u!1 &3771309663249435596
 GameObject:
   m_ObjectHideFlags: 0
