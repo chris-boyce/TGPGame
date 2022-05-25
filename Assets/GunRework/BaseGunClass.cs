@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class BaseGunClass : IGun
 {
     public string GunName = "BaseGun";

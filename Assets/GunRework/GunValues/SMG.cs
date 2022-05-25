@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SMG : BaseGunClass , IGun 
 {
@@ -23,6 +24,8 @@ public class SMG : BaseGunClass , IGun
         GunObject = Resources.Load<GameObject>("submachine_gun");
         GunSound = Resources.Load<AudioClip>("P90GunShot");
         PC =  GunObject.GetComponent<ProjectileCreate>();
+        AudioMixer _MasterMixer = Resources.Load("SoundEffects") as AudioMixer;
+
     }
 
     public override void Fire()
@@ -30,7 +33,7 @@ public class SMG : BaseGunClass , IGun
         if (Timer > FireRatePerSec)
         {
             PC.FireGun(GunDamage);
-            AudioSoundManager.PlaySoundEffect(GunSound);
+            AudioSystem.PlaySoundEffect(GunSound);
             GunReserveAmmo--;
 
             Timer = 0f;

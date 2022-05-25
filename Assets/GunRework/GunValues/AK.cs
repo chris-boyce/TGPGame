@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AK47 : BaseGunClass, IGun
 {
@@ -20,13 +21,15 @@ public class AK47 : BaseGunClass, IGun
         GunObject = Resources.Load<GameObject>("ak_machine_gun");
         GunSound = Resources.Load<AudioClip>("AKGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
+        AudioMixer _MasterMixer = Resources.Load("SoundEffects") as AudioMixer;
+
     }
 
     public override void Fire()
     {
         if (Timer > FireRatePerSec)
         {
-            AudioSoundManager.PlaySoundEffect(GunSound);
+            AudioSystem.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             Timer = 0f;

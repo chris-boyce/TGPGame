@@ -94,12 +94,12 @@ public class NewSpawnSystem : MonoBehaviour
             TimeBetweenWaves = 30f;
             SupplyCreate.SetActive(true);
             SupplyCreate.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(5, 10, 0);
-            AudioSoundManager.PlaySoundEffect(SupplyDropRoundEnd);
+            AudioSystem.PlaySoundEffect(SupplyDropRoundEnd);
         }
         else
         {
             TimeBetweenWaves = 5f;
-            AudioSoundManager.PlaySoundEffect(NormalRoundEnd);
+            AudioSystem.PlaySoundEffect(NormalRoundEnd);
         }
         yield return new WaitForSeconds(TimeBetweenWaves);
         NextWave();
