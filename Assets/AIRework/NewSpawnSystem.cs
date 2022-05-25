@@ -8,6 +8,10 @@ public class NewSpawnSystem : MonoBehaviour
     public Waves[] Wave;
     public Waves CurrentWave;
 
+    //AudioClips
+    public AudioClip NormalRoundEnd;
+    public AudioClip SupplyDropRoundEnd;
+
     //EnemyGO
     public GameObject BaseEnemy;
     public GameObject FastEnemy;
@@ -31,6 +35,7 @@ public class NewSpawnSystem : MonoBehaviour
     public float TimeBetweenWaves;
     private bool CanSpawn;
     public float SpawnTimer;
+    public GameObject SupplyCreate;
 
     [System.Serializable]
     public class Waves
@@ -76,7 +81,7 @@ public class NewSpawnSystem : MonoBehaviour
     void WhenEnemyDie() //On the death of an enemy it takes away from the total, when all dead starts the next wave
     {
         ZombiesCounter--;
-        if(ZombiesCounter == 0)
+        if (ZombiesCounter == 0 && CanSpawn == false) 
         {
             StartCoroutine(NextWaveWait());
             Debug.Log("End Of Round");
@@ -87,10 +92,14 @@ public class NewSpawnSystem : MonoBehaviour
         if (CurrentWaveNumber % 5 == 0)
         {
             TimeBetweenWaves = 30f;
+            SupplyCreate.SetActive(true);
+            SupplyCreate.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(5, 10, 0);
+            AudioSystem.PlaySoundEffect(SupplyDropRoundEnd);
         }
         else
         {
-            TimeBetweenWaves = 10f;
+            TimeBetweenWaves = 5f;
+            AudioSystem.PlaySoundEffect(NormalRoundEnd);
         }
         yield return new WaitForSeconds(TimeBetweenWaves);
         NextWave();

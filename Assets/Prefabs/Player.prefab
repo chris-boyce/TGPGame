@@ -2683,6 +2683,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9016092402675559917, guid: fda522f733a89964e980979da581d7be, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016092402675559917, guid: fda522f733a89964e980979da581d7be, type: 3}
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 5923471016524593611}
@@ -2710,6 +2714,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7865603820988410671}
     m_Modifications:
+    - target: {fileID: 940415659676655305, guid: 17568b3bd54c4bf4990de6096862afcd, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 940415659676655305, guid: 17568b3bd54c4bf4990de6096862afcd, type: 3}
       propertyPath: MuzzleFlash
       value: 
@@ -2790,6 +2798,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7865603820988410671}
     m_Modifications:
+    - target: {fileID: 4382384836684917050, guid: 8a9513954032e1d45be450ecb32b6a8e, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4382384836684917050, guid: 8a9513954032e1d45be450ecb32b6a8e, type: 3}
       propertyPath: MuzzleFlash
       value: 
@@ -2950,6 +2962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7865603820988410671}
     m_Modifications:
+    - target: {fileID: 2416681751064880312, guid: 5c49ef8aadc1d544d8b8c1893271e944, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2416681751064880312, guid: 5c49ef8aadc1d544d8b8c1893271e944, type: 3}
       propertyPath: MuzzleFlash
       value: 
