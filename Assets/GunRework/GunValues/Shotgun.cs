@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SuperShotgun : BaseGunClass, IGun
 {
@@ -20,13 +21,15 @@ public class SuperShotgun : BaseGunClass, IGun
         GunObject = Resources.Load<GameObject>("pump_action_shotgun");
         GunSound = Resources.Load<AudioClip>("ShotgunGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
+        AudioMixer _MasterMixer = Resources.Load("SoundEffects") as AudioMixer;
+
     }
 
     public override void Fire()
     {
         if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
-            AudioSoundManager.PlaySoundEffect(GunSound);
+            AudioSystem.PlaySoundEffect(GunSound);
             PC.SpreadGun(GunDamage);
             GunReserveAmmo--;
             Debug.Log(GunReserveAmmo);

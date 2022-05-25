@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Pistol_Auto : BaseGunClass, IGun
 {
@@ -21,13 +22,15 @@ public class Pistol_Auto : BaseGunClass, IGun
         GunObject = Resources.Load<GameObject>("machine_pistol_gun");
         GunSound = Resources.Load<AudioClip>("AutoPistolGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
+        AudioMixer _MasterMixer = Resources.Load("SoundEffects") as AudioMixer;
+
     }
 
     public override void Fire()
     {
         if (Timer > FireRatePerSec)
         {
-            AudioSoundManager.PlaySoundEffect(GunSound);
+            AudioSystem.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);
             GunReserveAmmo--;
             Timer = 0f;

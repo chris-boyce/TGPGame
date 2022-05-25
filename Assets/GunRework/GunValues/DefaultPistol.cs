@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Pistol : BaseGunClass, IGun
 {
-    public Pistol() : base()
+
+   public Pistol() : base()
     {
         GunName = "Pistol";
         GunCurrentAmmo = 12;
@@ -13,6 +15,7 @@ public class Pistol : BaseGunClass, IGun
         GunReserveAmmo = 144;
         GunFireRate = 5f;
         GunDamage = 10f;
+
     }
 
     public override void GetGun()
@@ -20,14 +23,15 @@ public class Pistol : BaseGunClass, IGun
         GunObject = Resources.Load<GameObject>("pistol");
         GunSound = Resources.Load<AudioClip>("PistolGunShot");
         PC = GunObject.GetComponent<ProjectileCreate>();
+        
     }
 
     public override void Fire()
     {
-        AudioSoundManager.PlaySoundEffect(GunSound);
+        AudioSystem.PlaySoundEffect(GunSound);
+        AudioSource s = new AudioSource();
         PC.FireGun(GunDamage);
         GunReserveAmmo--;
-
     }
     public override int returnAmmo()
     {
