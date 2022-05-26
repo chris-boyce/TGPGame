@@ -28,10 +28,14 @@ public class Pistol : BaseGunClass, IGun
 
     public override void Fire()
     {
-        AudioSystem.PlaySoundEffect(GunSound);
-        AudioSource s = new AudioSource();
-        PC.FireGun(GunDamage);
-        GunReserveAmmo--;
+        if(GunReserveAmmo > 0)
+        {
+            AudioSystem.PlaySoundEffect(GunSound);
+            AudioSource s = new AudioSource();
+            PC.FireGun(GunDamage);
+            GunReserveAmmo--;
+        }
+
     }
     public override int returnAmmo()
     {

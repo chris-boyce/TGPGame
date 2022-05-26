@@ -19,7 +19,7 @@ public class PauseSceneInvoke : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(7));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
 
         Time.timeScale = 0;
         _Canvas.SetActive(true);
@@ -33,7 +33,7 @@ public class PauseSceneInvoke : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.UnloadScene(7);
+                SceneManager.UnloadScene(2);
 
                 GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
                 GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;
@@ -50,7 +50,7 @@ public class PauseSceneInvoke : MonoBehaviour
 {
         //Make GameObject "PauseMenu" invisible to player
 
-        SceneManager.UnloadScene(7);
+        SceneManager.UnloadScene(2);
         
         GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
         GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;

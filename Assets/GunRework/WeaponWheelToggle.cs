@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WeaponWheelToggle : MonoBehaviour
 {
     public GameObject WeaponWheel;
+    public WeaponEquip WeaponEquip;
     public bool IsWheelActive;
 
     void Start()
@@ -18,11 +19,13 @@ public class WeaponWheelToggle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            WeaponEquip.CanShoot = false;
             WeaponWheel.SetActive(true);
             IsWheelActive = true;
         }
         if (Input.GetKeyUp(KeyCode.Q))
         {
+            WeaponEquip.CanShoot = true;
             WeaponWheel.SetActive(false);
             IsWheelActive = false; 
         }

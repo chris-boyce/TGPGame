@@ -47,7 +47,8 @@ public class Grenade : MonoBehaviour
 
             if (health != null)
             {
-                health.currentHealth -= 50.0f;
+                health.Damage(50f);
+
             }
 
             //If has rigidbody, add force from grenade

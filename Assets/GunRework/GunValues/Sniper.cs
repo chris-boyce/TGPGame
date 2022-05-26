@@ -30,7 +30,7 @@ public class AWP : BaseGunClass, IGun
 
     public override void Fire()
     {
-        if (Timer > FireRatePerSec)
+        if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
             Debug.Log("Shoot");
             GunReserveAmmo--;

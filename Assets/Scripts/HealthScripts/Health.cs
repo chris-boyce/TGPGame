@@ -40,7 +40,8 @@ public class Health : MonoBehaviour
 	{
 		currentHealth = health;
 
-		if (usePlayerController) {
+		if (usePlayerController)
+		{
 			playerController = gameObject.GetComponent<PlayerController>();
 		}
 	}
@@ -49,7 +50,8 @@ public class Health : MonoBehaviour
 	{
 		//healthBarSlider.value = currentHealth;
 
-		if (!usePlayerController) {
+		if (!usePlayerController)
+		{
 			velManual = (transform.position - oldPos);
 			oldPos = transform.position;
 		}
@@ -67,22 +69,24 @@ public class Health : MonoBehaviour
 	void Die()
 	{
 		Debug.Log("Die Has Run");
-		
+
 
 		if (gameObject.CompareTag("Enemy"))
 		{
 			if (Random.value < spawnDropablePercentage)
 			{
-				Debug.Log("Runnning Drop");
-				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position + new Vector3(0,1,0), transform.rotation);
+				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation);
 			}
-			OnDeath();
+			OnDeath?.Invoke();
 
 		}
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
+
 		Destroy(this.gameObject);
-		Debug.Log("Running This Shit");
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
+
+		Destroy(ragdoll, 5f);
+
 		CopyModelPos ragdollScript = ragdoll.GetComponent<CopyModelPos>();
 		ragdollScript.ApplyRagdoll(rootPart.transform, ragdollScript.root);
 		ragdollScript.vel = usePlayerController ? playerController.GetVelocity() : velManual;
@@ -90,15 +94,10 @@ public class Health : MonoBehaviour
 		ragdoll.SetActive(true);
 		ragdollScript.StartTimer(5, usePlayerController);
 
-		foreach (var obj in disableList) {
+		foreach (var obj in disableList)
+		{
 			obj.SetActive(false); // Disable the model.
 		}
 	}
-
-	public void GainHealth()
-    {
-		health = health + 50;
-		currentHealth = health;
-    }
 
 }
