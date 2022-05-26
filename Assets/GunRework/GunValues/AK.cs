@@ -27,7 +27,7 @@ public class AK47 : BaseGunClass, IGun
 
     public override void Fire()
     {
-        if (Timer > FireRatePerSec)
+        if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
             AudioSystem.PlaySoundEffect(GunSound);
             PC.FireGun(GunDamage);

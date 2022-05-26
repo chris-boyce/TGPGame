@@ -51,7 +51,10 @@ public class BaseZombie : AIBaseClass
         switch (m_EnemyState)
         {
             case EnemyState.ChasingPlayer:
-                m_NavMeshAgent.SetDestination(Player.transform.position);
+                if(Player != null)
+                {
+                    m_NavMeshAgent.SetDestination(Player.transform.position);
+                }
                 break;
             case EnemyState.ChasingTurret:
                 //TODO Add Turret Attack

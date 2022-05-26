@@ -17,6 +17,9 @@ public class NewSpawnSystem : MonoBehaviour
     public GameObject FastEnemy;
     public GameObject SlowEnemy;
 
+    //SupplyDrop Rate
+    public int SupplyDropRate = 2;
+
     //Location Spawned
     public Transform[] SpawnPoints;
     private Vector3 SpawnArea;
@@ -89,7 +92,7 @@ public class NewSpawnSystem : MonoBehaviour
     }
     IEnumerator NextWaveWait() //Added 5 Wave Break System TODO UI For Drops
     {
-        if (CurrentWaveNumber % 5 == 0)
+        if (CurrentWaveNumber % SupplyDropRate == 0)
         {
             TimeBetweenWaves = 30f;
             SupplyCreate.SetActive(true);

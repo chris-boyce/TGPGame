@@ -30,7 +30,7 @@ public class SMG : BaseGunClass , IGun
 
     public override void Fire()
     {
-        if (Timer > FireRatePerSec)
+        if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
             PC.FireGun(GunDamage);
             AudioSystem.PlaySoundEffect(GunSound);
