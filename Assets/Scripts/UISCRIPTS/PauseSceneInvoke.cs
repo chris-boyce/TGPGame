@@ -33,7 +33,7 @@ public class PauseSceneInvoke : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.UnloadScene(7);
+                SceneManager.UnloadScene(2);
 
                 GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
                 GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;
@@ -50,7 +50,7 @@ public class PauseSceneInvoke : MonoBehaviour
 {
         //Make GameObject "PauseMenu" invisible to player
 
-        SceneManager.UnloadScene(7);
+        SceneManager.UnloadScene(2);
         
         GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
         GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;

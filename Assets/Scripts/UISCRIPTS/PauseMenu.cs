@@ -11,9 +11,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    int _PauseScreen = 7;
+
     public WeaponEquip weaponEquip;
     private bool CanRun;
+    int _PauseScreen = 2;
     public GameObject _PlayerCamera;
     public SceneSwitcher _SceneSwitcher;
 
@@ -28,7 +29,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
 
-        if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(7)))
+        if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2)))
         {
             if(CanRun == true)
             {
