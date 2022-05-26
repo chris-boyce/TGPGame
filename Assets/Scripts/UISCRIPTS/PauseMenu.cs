@@ -12,7 +12,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     int _PauseScreen = 7;
-
+    public WeaponEquip weaponEquip;
+    private bool CanRun;
     public GameObject _PlayerCamera;
     public SceneSwitcher _SceneSwitcher;
 
@@ -29,15 +30,30 @@ public class PauseMenu : MonoBehaviour
 
         if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(7)))
         {
+            if(CanRun == true)
+            {
+                weaponEquip.CanShoot = true;
+                CanRun = false;
+            }
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                
+
                 _PlayerCamera.GetComponent<Camera>().enabled = false;
                 SceneManager.LoadScene(_PauseScreen, LoadSceneMode.Additive);
                 GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = false;
                 GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = false;
 
             }
+        }
+        else
+        {
+            if(CanRun == false)
+            {
+                CanRun = true;
+                weaponEquip.CanShoot = false;
+            }
+
         }
 
     }

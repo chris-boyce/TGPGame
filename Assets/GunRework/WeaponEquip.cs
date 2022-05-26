@@ -6,6 +6,7 @@ public class WeaponEquip : MonoBehaviour
 {
     private WeaponSelector weaponSelector;
     private PickupType cachedType;
+    public bool CanShoot;
     public IGun CurrentIGUN;
     private GameObject CurrentGunObject;
 
@@ -35,6 +36,7 @@ public class WeaponEquip : MonoBehaviour
 
     private void Start()
     {
+        CanShoot = true;
         //Looks Up to The selector script
         weaponSelector = GetComponent<WeaponSelector>();
         //Makes Sure Gun has Game Object Loaded For "Resources"
@@ -124,15 +126,18 @@ public class WeaponEquip : MonoBehaviour
             
         }
         cachedType = weaponSelector.CurrentWeapon;
+        if(CanShoot == true)
+        {
+            if (Input.GetMouseButton(0) && CurrentIGUN != Pistol)
+            {
+                CurrentIGUN.Fire();
+            }
+            if (Input.GetMouseButtonDown(0) && CurrentIGUN == Pistol)
+            {
+                CurrentIGUN.Fire();
+            }
+        }
 
-        if (Input.GetMouseButton(0) && CurrentIGUN != Pistol)
-        {
-            CurrentIGUN.Fire();
-        }
-        if(Input.GetMouseButtonDown(0) && CurrentIGUN == Pistol)
-        {
-            CurrentIGUN.Fire();
-        }
 
 
         UpdateHands();
