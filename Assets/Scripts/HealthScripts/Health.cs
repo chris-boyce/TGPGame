@@ -83,6 +83,9 @@ public class Health : MonoBehaviour
 		Destroy(this.gameObject);
 		Debug.Log("Running This Shit");
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
+
+		Destroy(ragdoll, 5f);
+
 		CopyModelPos ragdollScript = ragdoll.GetComponent<CopyModelPos>();
 		ragdollScript.ApplyRagdoll(rootPart.transform, ragdollScript.root);
 		ragdollScript.vel = usePlayerController ? playerController.GetVelocity() : velManual;
