@@ -82,6 +82,7 @@ public class Health : MonoBehaviour
 		}
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
+		Destroy(this.gameObject);
 		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
 
 		Destroy(ragdoll, 5f);
