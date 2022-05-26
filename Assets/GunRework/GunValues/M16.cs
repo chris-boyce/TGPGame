@@ -32,7 +32,7 @@ public class M16_Burst : BaseGunClass, IGun
 
     public override void Fire()
     {
-        if (Timer > FireRatePerSec)
+        if (Timer > FireRatePerSec && GunReserveAmmo > 0)
         {
             CanBurst = true;
             FirstBullet = false;
