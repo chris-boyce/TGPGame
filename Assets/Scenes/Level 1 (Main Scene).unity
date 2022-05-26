@@ -1522,6 +1522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmountOfMoney: 0
+  MoneyText: {fileID: 1997074397}
 --- !u!114 &84592196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 188503666, guid: 862a7bea86f311c4794bb46b9831b455, type: 3}
@@ -12921,7 +12922,7 @@ GameObject:
   - component: {fileID: 863861437}
   - component: {fileID: 863861436}
   m_Layer: 5
-  m_Name: ScoreCanvas
+  m_Name: MoneyCavas
   m_TagString: GUITEXT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29460,7 +29461,7 @@ GameObject:
   - component: {fileID: 1997074398}
   - component: {fileID: 1997074397}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: MoneyText
   m_TagString: GUITEXT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29482,7 +29483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.99999, y: -40.000027}
+  m_AnchoredPosition: {x: 83.99999, y: -120}
   m_SizeDelta: {x: 268.6555, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997074397
@@ -29505,7 +29506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SCORE:'
+  m_text: "\xA3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

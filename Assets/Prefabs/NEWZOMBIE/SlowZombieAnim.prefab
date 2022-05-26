@@ -1718,6 +1718,7 @@ MonoBehaviour:
   disableList:
   - {fileID: 7431003038036222343}
   usePlayerController: 0
+  CoinPrefab: {fileID: 7638542537822107356, guid: 6be959014375c3942a9b7360026453f9, type: 3}
   spawnDropablePrefab:
   - {fileID: 7910625479097318137, guid: 426fc8c405f0704448d52af348e33b1e, type: 3}
   - {fileID: 135129308646156222, guid: 31da7d5b2c74239449a9024417bbd249, type: 3}

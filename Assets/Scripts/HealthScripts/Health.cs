@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
 	PlayerController playerController;
 	Vector3 oldPos; // Used only if player controller is not used.
 	Vector3 velManual; // Manually calculated velocity.
-
+	public GameObject CoinPrefab;
 
 	// Droppable items on death.
 	[Header("Droppable Items (Only used if tag is Enemy)")]
@@ -76,6 +76,10 @@ public class Health : MonoBehaviour
 			if (Random.value < spawnDropablePercentage)
 			{
 				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation);
+			}
+			if (Random.value < 0.2)
+			{
+				Instantiate(CoinPrefab, transform.position, transform.rotation);
 			}
 			OnDeath?.Invoke();
 
