@@ -12,21 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UISCENES/GameMenu.unity
     guid: c10183625c4c3b84394e18e8d9940454
   - enabled: 1
-    path: Assets/Scenes/Level 1 (Main Scene).unity
-    guid: e59ab21bad5fb2c409b90e89e9291217
-  - enabled: 1
-    path: Assets/Scenes/GameLevels(Hayden)/Level3.unity
-    guid: d1030bc51cd9fa24281b311ab2ad5150
-  - enabled: 1
-    path: Assets/Scenes/GameLevels(Hayden)/Level2.unity
-    guid: 9f42a3e2951f4cb4e841d79b004b63e4
-  - enabled: 1
-    path: Assets/Scenes/GameLevels(Hayden)/Level4.unity
-    guid: d53b51db4289d0f4ea2d4293ce7b61b6
-  - enabled: 1
-    path: Assets/Scenes/GameLevels(Hayden)/Level5.unity
-    guid: ff82d6c9ca9cfef46b8b91a2886c75c0
-  - enabled: 1
     path: Assets/Scenes/UISCENES/Pause.unity
     guid: 693853d974f22094bafee3d9c83d6796
   - enabled: 1
@@ -35,10 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UISCENES/Options.unity
     guid: 32d510c8245df8142a420601aeb7ea43
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Level 1 (Main Scene).unity
+    guid: a6124cd418b71de4d995100568ae45f6
+  - enabled: 1
+    path: Assets/Scenes/Scene 2.unity
+    guid: d8b23e6bb8e45674c85f2647171dae35
   m_configObjects: {}

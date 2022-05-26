@@ -27,9 +27,9 @@ public class LevelSelect : MonoBehaviour
     public void NextLevel()
     {
         //Element Access stops at 4 (0 - 4 / 5 Levels)
-        if (_LevelNum >= 0)
+        if (_LevelNum >= 1)
         {
-            _LevelNum = 0;
+            _LevelNum = 1;
 
             _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
         }
