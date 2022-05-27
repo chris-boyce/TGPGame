@@ -30,6 +30,8 @@ TagManager:
   - WeaponWheel
   - Gun
   - AmmoText
+  - Wall
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -40,8 +42,8 @@ TagManager:
   - Floor
   - Obstacle
   - Terrain
-  - 
-  - 
+  - Wall
+  - PostProcessing
   - 
   - 
   - 
