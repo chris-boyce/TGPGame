@@ -1738,6 +1738,7 @@ MonoBehaviour:
   zombieGroanOne: {fileID: 8300000, guid: 0c8fca1d9c4e0de46bdcd6807ce483c0, type: 3}
   zombieGroanTwo: {fileID: 8300000, guid: bbecb2bbbc4dbbc4287c22c06f5ad73a, type: 3}
   zombieGroanThree: {fileID: 8300000, guid: 2c73d102381b2a54d86e54a8fdb4c7e3, type: 3}
+  ZombieGroanList: []
   isPlaying: 0
 --- !u!1 &7432675395826849214
 GameObject:
@@ -2467,7 +2468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992499482494970291, guid: 9f35ed924bcbde34c83657cfc30592c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2992499482494970291, guid: 9f35ed924bcbde34c83657cfc30592c2, type: 3}
       propertyPath: m_LocalPosition.z
