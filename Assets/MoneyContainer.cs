@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoneyContainer : MonoBehaviour
 {
     private CoinPickup CP;
+    public AudioClip coinSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class MoneyContainer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioSystem.PlaySoundEffect(coinSound);
             CP.AmountOfMoney = CP.AmountOfMoney + 50;
             Destroy(this.gameObject);
         }

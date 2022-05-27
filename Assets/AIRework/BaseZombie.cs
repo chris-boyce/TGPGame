@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class BaseZombie : AIBaseClass
 {
@@ -21,6 +22,7 @@ public class BaseZombie : AIBaseClass
     public float hitRange = 5f;
     public float enemyMeleeDamage = 10.0f;
 
+    public AudioClip playerDamageSoound;
 
     public override void Start()
     {
@@ -89,6 +91,7 @@ public class BaseZombie : AIBaseClass
     {
         canAttack = false;
         Anim.SetTrigger("AttackTrigger"); // Anim Does Attack
+        AudioSystem.PlaySoundEffect(playerDamageSoound);
         Player.GetComponent<Health>().Damage(enemyMeleeDamage);
         m_EnemyState = EnemyState.AttackingPlayer;
         yield return new WaitForSeconds(EnemyAttackSpeed);
@@ -120,6 +123,4 @@ public class BaseZombie : AIBaseClass
             }
         }
     }
-
-
 }
