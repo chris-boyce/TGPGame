@@ -19,7 +19,7 @@ public class PauseSceneInvoke : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(7));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
 
         Time.timeScale = 0;
         _Canvas.SetActive(true);
@@ -54,7 +54,7 @@ public class PauseSceneInvoke : MonoBehaviour
         
         GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
         GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;
-        GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = true;
+        //GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = true;
 
         Time.timeScale = 1;
 

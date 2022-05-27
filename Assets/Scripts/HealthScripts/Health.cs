@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class Health : MonoBehaviour
 	PlayerController playerController;
 	Vector3 oldPos; // Used only if player controller is not used.
 	Vector3 velManual; // Manually calculated velocity.
+	public GameObject CoinPrefab;
 
+	private bool isDead;
+	private GameObject ragdoll;
 
 	// Droppable items on death.
 	[Header("Droppable Items (Only used if tag is Enemy)")]
@@ -69,20 +73,38 @@ public class Health : MonoBehaviour
 	void Die()
 	{
 		Debug.Log("Die Has Run");
+		if(gameObject.CompareTag("Player"))
+        {
+			SceneManager.LoadScene("GameOver");
+			Debug.Log("PLayer Dead");
+        }
 
 
 		if (gameObject.CompareTag("Enemy"))
 		{
 			if (Random.value < spawnDropablePercentage)
 			{
-				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)], transform.position, transform.rotation);
+				Instantiate(spawnDropablePrefab[Random.Range(0, spawnDropablePrefab.Length)]  , transform.position + new Vector3(0, 1, 0), transform.rotation);
 			}
-			OnDeath?.Invoke();
+			if (Random.value < 0.2)
+			{
+				Instantiate(CoinPrefab, transform.position + new Vector3(0, 1, 0) , transform.rotation);
+			}
+			
+			//OnDeath?.Invoke();
 
 		}
 		if (!ragdollPrefab) { Destroy(gameObject); return; }
 
-		GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
+		Destroy(this.gameObject);
+
+		if(isDead == false)
+        {
+			OnDeath?.Invoke();
+			ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation, transform.parent);
+			isDead = true;
+		}
+		
 
 		Destroy(ragdoll, 5f);
 
@@ -98,5 +120,10 @@ public class Health : MonoBehaviour
 			obj.SetActive(false); // Disable the model.
 		}
 	}
+	public void GainHealth()
+    {
+		health = health + 50;
+		currentHealth = health;
+    }
 
 }

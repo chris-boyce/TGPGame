@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody rb;
     private GameObject Player;
- [SerializeField] private GameObject Enemy;
+    [SerializeField] private GameObject Enemy;
     public GameObject bulletObject;
     public GameObject tempObj;
     public float bulletDamage;

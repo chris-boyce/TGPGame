@@ -21,8 +21,6 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-  
-
     }
 
     // Update is called once per frame
@@ -49,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            if(CanRun == false)
+            if (CanRun == false)
             {
                 CanRun = true;
                 weaponEquip.CanShoot = false;

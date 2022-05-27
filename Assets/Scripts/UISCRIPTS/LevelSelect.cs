@@ -22,21 +22,30 @@ public class LevelSelect : MonoBehaviour
 
     public GameObject _LevelSelect;
     private int _LevelSelected = 0;
-    private int _LevelNum = 0;
+    public int _LevelNum = 0;
     //OnClick Reference , When clicked with show next "Sprite" Level Identifying Image
+    private void Update()
+    {
+        _LevelNum = Mathf.Clamp(_LevelNum, 0, 2);
+    }
     public void NextLevel()
     {
+        _LevelNum++;
         //Element Access stops at 4 (0 - 4 / 5 Levels)
-        if (_LevelNum >= 1)
+        if (_LevelNum == 0)
         {
-            _LevelNum = 1;
-
+           // _LevelNum = 1;
             _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
         }
-        else
+        else if(_LevelNum == 1)
         {
             //Increments to get then show next level
-            _LevelNum++;
+            //_LevelNum = 2;
+            _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
+        }
+        else if(_LevelNum == 2)
+        {
+            //_LevelNum = 3;
             _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
         }
         //Based off input , current image shown is level selected option,  if "StartLevel" is clicked its based from this option to access element correctly.
@@ -48,19 +57,23 @@ public class LevelSelect : MonoBehaviour
 
     public void PreviousLevel()
     {
-
+        _LevelNum--;
         //Element Access Can go below 0
-        if (_LevelNum <= 0)
+        if (_LevelNum == 0)
         {
+            //_LevelNum = 1;
 
-           
-            _LevelNum = 0;
             _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
-
         }
-        else
+        else if (_LevelNum == 1)
         {
-            _LevelNum--;
+            //Increments to get then show next level
+            //_LevelNum = 2;
+            _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
+        }
+        else if (_LevelNum == 2)
+        {
+            //_LevelNum = 3;
             _LevelSelect.GetComponent<Image>().sprite = _Sprite_Array[_LevelNum];
         }
         _LevelSelected = _LevelNum;
