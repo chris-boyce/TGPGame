@@ -30,7 +30,6 @@ TagManager:
   - WeaponWheel
   - Gun
   - AmmoText
-  - Wall
   - Audio
   layers:
   - Default
@@ -44,7 +43,7 @@ TagManager:
   - Terrain
   - Wall
   - PostProcessing
-  - Minimap
+  - 
   - 
   - 
   - 
