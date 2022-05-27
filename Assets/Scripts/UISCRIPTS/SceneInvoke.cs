@@ -11,7 +11,7 @@ public class SceneInvoke : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(_SceneIndex));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(_SceneIndex));
 
     }
 

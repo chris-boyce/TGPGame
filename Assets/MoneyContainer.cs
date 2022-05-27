@@ -15,7 +15,6 @@ public class MoneyContainer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("KILL ME");
             CP.AmountOfMoney = CP.AmountOfMoney + 50;
             Destroy(this.gameObject);
         }

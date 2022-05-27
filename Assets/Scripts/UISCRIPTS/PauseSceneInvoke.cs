@@ -54,7 +54,7 @@ public class PauseSceneInvoke : MonoBehaviour
         
         GameObject.Find("PlayerCam").GetComponent<Camera>().enabled = true;
         GameObject.FindGameObjectWithTag("GUI").GetComponent<Canvas>().enabled = true;
-        GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = true;
+        //GameObject.FindGameObjectWithTag("GUITEXT").GetComponent<Canvas>().enabled = true;
 
         Time.timeScale = 1;
 

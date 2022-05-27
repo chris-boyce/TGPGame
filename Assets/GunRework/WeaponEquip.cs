@@ -146,6 +146,11 @@ public class WeaponEquip : MonoBehaviour
     public GameObject GetCurrentWeapon()
     {
         GameObject weaponHeld = CurrentGunObject;
+        if(weaponSelector == null)
+        {
+            return null;
+        }
+
         switch (weaponSelector.CurrentWeapon)
         {
             case PickupType.Pistol:

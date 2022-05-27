@@ -13,7 +13,7 @@ public class SuperShotgun : BaseGunClass, IGun
         GunMaxAmmo = 80;
         GunReserveAmmo = 80;
         GunFireRate = 1f;
-        GunDamage = 10f;
+        GunDamage = 25f;
         FireRatePerSec = 1 / GunFireRate;
     }
     public override void GetGun()
@@ -32,7 +32,6 @@ public class SuperShotgun : BaseGunClass, IGun
             AudioSystem.PlaySoundEffect(GunSound);
             PC.SpreadGun(GunDamage);
             GunReserveAmmo--;
-            Debug.Log(GunReserveAmmo);
             Timer = 0f;
         }
         else
