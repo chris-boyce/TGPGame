@@ -14,9 +14,11 @@ public class AmmoBox : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Pickup");
             AmmoUP();
         }
     }
+
     private void AmmoUP()
     {
         WeaponEquip.WeaponMaxAmmo();

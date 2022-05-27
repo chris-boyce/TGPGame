@@ -29,8 +29,12 @@ public class HandIK : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = target.transform.position;
-        transform.rotation = target.transform.rotation;
+        if (target != null)
+        {
+            transform.position = target.transform.position;
+            transform.rotation = target.transform.rotation;
+        }
+
     }
 
     public void UpdateHeldItem() {
@@ -45,7 +49,7 @@ public class HandIK : MonoBehaviour
         }
 
 		if(!newTarget) {
-            Debug.Log("HANDIK: Can't find hand position with \"" + tag + "\" tag in " + item + "!");
+            //Debug.Log("HANDIK: Can't find hand position with \"" + tag + "\" tag in " + item + "!");
             target = defaultPos;
             return;
 		}

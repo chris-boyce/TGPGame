@@ -29,7 +29,6 @@ public class PauseMenu : MonoBehaviour
 
         if (!(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2)))
         {
-            Debug.Log("Canshoot");
             if(CanRun == true)
             {
                 weaponEquip.CanShoot = true;
@@ -48,7 +47,6 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log("Cannotshoot");
             if (CanRun == false)
             {
                 CanRun = true;

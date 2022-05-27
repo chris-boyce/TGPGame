@@ -16,10 +16,15 @@ public class GunAmmoHud : MonoBehaviour
     }
     private void Update()
     {
-        CurrentAmmo = weaponEquip.CurrentIGUN.returnAmmo();
-        MaxAmmo = weaponEquip.CurrentIGUN.returnMaxAmmo();
+        if(weaponEquip.CurrentIGUN != null)
+        {
 
-        AmmoText.text = "AMMO : " + CurrentAmmo.ToString() +"/" + MaxAmmo.ToString();
+        
+            CurrentAmmo = weaponEquip.CurrentIGUN.returnAmmo();
+             MaxAmmo = weaponEquip.CurrentIGUN.returnMaxAmmo();
+
+            AmmoText.text = "AMMO : " + CurrentAmmo.ToString() +"/" + MaxAmmo.ToString();
+        }
 
     }
 

@@ -664,7 +664,6 @@ GameObject:
   - component: {fileID: 530281723}
   - component: {fileID: 379320894}
   - component: {fileID: 379320891}
-  - component: {fileID: 379320893}
   - component: {fileID: 772176629}
   m_Layer: 3
   m_Name: PlayerObject
@@ -790,6 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 67331388036336326}
+  CP: {fileID: 0}
   player: {fileID: 7865603820988410671}
   turret: {fileID: 2796623431763811639, guid: 96adf46d6620dc34c8779fbd6f47d888, type: 3}
   holoRedTurret: {fileID: 1403139967414226816, guid: dd99034909e29834cbe47a28d1be2c6f, type: 3}
@@ -811,6 +811,7 @@ MonoBehaviour:
   disableList:
   - {fileID: 1629956658092360524}
   usePlayerController: 1
+  CoinPrefab: {fileID: 0}
   spawnDropablePrefab: []
   spawnDropablePercentage: 0.05
   health: 100
@@ -841,6 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29dce6a4f2501ad4a96c03fefd97233f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanShoot: 0
   SniperGO: {fileID: 5508511373183611902}
   SMGGO: {fileID: 6466555757754630592}
   AKGO: {fileID: 6061124500268339628}
@@ -973,18 +975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4bf8e8d4215ca4fbed9ac336a70fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &379320893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629956658092360524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded7d01c7dc303542be901b736e9541f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &772176629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 13
+  NadeText: {fileID: 0}
+  NumberOfNades: 5
   grenadePrefab: {fileID: 7877079768760141092, guid: 31be9b710d685f74fb5032f917db8615, type: 3}
 --- !u!1 &1656034462045260265
 GameObject:
@@ -2690,6 +2682,10 @@ PrefabInstance:
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 5923471016524593611}
+    - target: {fileID: 9016092402675559917, guid: fda522f733a89964e980979da581d7be, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda522f733a89964e980979da581d7be, type: 3}
 --- !u!1 &5923471016524593611 stripped
@@ -2722,6 +2718,10 @@ PrefabInstance:
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 6059827089940168707}
+    - target: {fileID: 940415659676655305, guid: 17568b3bd54c4bf4990de6096862afcd, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6059078160857225641, guid: 17568b3bd54c4bf4990de6096862afcd, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2806,6 +2806,10 @@ PrefabInstance:
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 5509751052472719921}
+    - target: {fileID: 4382384836684917050, guid: 8a9513954032e1d45be450ecb32b6a8e, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5508511373485984226, guid: 8a9513954032e1d45be450ecb32b6a8e, type: 3}
       propertyPath: m_Name
       value: sniper_rifle
@@ -2883,9 +2887,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 7865603820988410671}
     m_Modifications:
     - target: {fileID: 3051682258929795734, guid: 8bfe14ed323fedb4490c79a735c028ae, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051682258929795734, guid: 8bfe14ed323fedb4490c79a735c028ae, type: 3}
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 2309747107517177790}
+    - target: {fileID: 3051682258929795734, guid: 8bfe14ed323fedb4490c79a735c028ae, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5397969465099093047, guid: 8bfe14ed323fedb4490c79a735c028ae, type: 3}
       propertyPath: m_Name
       value: machine_pistol_gun
@@ -2970,6 +2982,10 @@ PrefabInstance:
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 6465765259458876943}
+    - target: {fileID: 2416681751064880312, guid: 5c49ef8aadc1d544d8b8c1893271e944, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6463920895942001174, guid: 5c49ef8aadc1d544d8b8c1893271e944, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3055,9 +3071,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5049537595792690115, guid: 365d8db51b6887d42aa6ccc5e9cdfa03, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049537595792690115, guid: 365d8db51b6887d42aa6ccc5e9cdfa03, type: 3}
       propertyPath: MuzzleFlash
       value: 
       objectReference: {fileID: 7255034381184157596}
+    - target: {fileID: 5049537595792690115, guid: 365d8db51b6887d42aa6ccc5e9cdfa03, type: 3}
+      propertyPath: WeaponWheelToggle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7192348547274595608, guid: 365d8db51b6887d42aa6ccc5e9cdfa03, type: 3}
       propertyPath: m_RootOrder
       value: 10

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerRot : MonoBehaviour
 {
     public Camera mainCamera;
+    public CoinPickup CP;
     private Vector3 pointToLook;
 
     public Transform player;
@@ -23,6 +24,7 @@ public class PlayerRot : MonoBehaviour
 
     private void Start()
     {
+        CP = GameObject.FindGameObjectWithTag("Player").GetComponent<CoinPickup>();
         offSet = new Vector3(0, 0.5f, 0);
         fallHeight = new Vector3(0, 10f, 0);
     }
@@ -40,7 +42,7 @@ public class PlayerRot : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.E) && isPreview == false)
+        if (Input.GetKeyDown(KeyCode.E) && isPreview == false)
         {
             //Makes a holoturret 
             preview = Instantiate(holoGreenTurret, pointToLook , Quaternion.identity); 
@@ -59,17 +61,27 @@ public class PlayerRot : MonoBehaviour
                 
                 if (Input.GetMouseButtonDown(1))
                 {
-                    
-                    Destroy(preview); //When Click Destroys HoloTurret
-                    Instantiate(turret, pointToLook + fallHeight, Quaternion.identity); // Makes Real Turret
-                    isPreview = false; //Disables The preview mode
+                    if(CP.AmountOfMoney >= 200)
+                    {
+                        Destroy(preview); //When Click Destroys HoloTurret
+                        Instantiate(turret, pointToLook + fallHeight, Quaternion.identity); // Makes Real Turret
+                        isPreview = false; //Disables The preview mode
+                        CP.AmountOfMoney = CP.AmountOfMoney - 200;
+                    }
                 }
             }
             else
             {
                 TurnRedTurret(); //Function To change color of Turret just once :)
             }
-            
+            if (Input.GetKeyUp(KeyCode.E) && isPreview == true) 
+            {
+                Destroy(preview);
+                isPreview = false;
+            }
+
+
+
         }
 
         void TurnGreenTurret() 
