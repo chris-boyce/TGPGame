@@ -1613,6 +1613,7 @@ GameObject:
   - component: {fileID: 7701257005903704898}
   - component: {fileID: 7701257005903704899}
   - component: {fileID: 7701257005903704901}
+  - component: {fileID: 7017302708906739254}
   m_Layer: 0
   m_Name: BaseZombieAnim
   m_TagString: Enemy
@@ -1696,6 +1697,7 @@ MonoBehaviour:
   EnemySpeed: 2.5
   hitRange: 1.25
   enemyMeleeDamage: 10
+  playerDamageSoound: {fileID: 8300000, guid: 6acc6db086e91814d92cf546ac47e8a4, type: 3}
 --- !u!114 &7701257005903704901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1721,6 +1723,22 @@ MonoBehaviour:
   spawnDropablePercentage: 0.05
   health: 0
   currentHealth: 0
+--- !u!114 &7017302708906739254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7359222228567576303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe091d8581b6fb47b9064f5591b9733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieGroanOne: {fileID: 8300000, guid: 0c8fca1d9c4e0de46bdcd6807ce483c0, type: 3}
+  zombieGroanTwo: {fileID: 8300000, guid: bbecb2bbbc4dbbc4287c22c06f5ad73a, type: 3}
+  zombieGroanThree: {fileID: 8300000, guid: 2c73d102381b2a54d86e54a8fdb4c7e3, type: 3}
+  isPlaying: 0
 --- !u!1 &7432675395826849214
 GameObject:
   m_ObjectHideFlags: 0

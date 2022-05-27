@@ -300,6 +300,8 @@ MonoBehaviour:
   radius: 5
   force: 200
   explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  explosionSound: {fileID: 8300000, guid: 6881f2154580c89419bb7b511b4038c3, type: 3}
+  grenadeBounce: {fileID: 8300000, guid: 9823048b0093d9544918ac435e4ee3fd, type: 3}
 --- !u!1 &7877079768760141100
 GameObject:
   m_ObjectHideFlags: 0

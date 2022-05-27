@@ -42,7 +42,8 @@ TagManager:
   - Obstacle
   - Terrain
   - miniMapSprites
-  - 
+  - Wall
+  - PostProcessing
   - 
   - 
   - 

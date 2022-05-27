@@ -131,5 +131,4 @@ MonoBehaviour:
   tempObj: {fileID: 1285014277344889140, guid: 8fbfbbedf5fabf548888db0b3f524930, type: 3}
   bulletDamage: 25
   bulletSpeed: 50
-  hitMat: {fileID: 2100000, guid: ea0f74947e4c00a4092d72446e581b24, type: 2}
-  originalMat: {fileID: 2100000, guid: 49fd02eeba1537f40a4629d8235c6cee, type: 2}
+  zombieHitSound: {fileID: 8300000, guid: 9089a5a5f8d253d4f8abcb8757a4efe2, type: 3}

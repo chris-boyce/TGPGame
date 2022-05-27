@@ -15,6 +15,8 @@ public class Bullet : MonoBehaviour
     public float bulletDamage;
     public float bulletSpeed = 10.0f;
 
+    public AudioClip zombieHitSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class Bullet : MonoBehaviour
 
         if(other.CompareTag("Enemy"))
         {
+            AudioSystem.PlaySoundEffect(zombieHitSound);
             other.gameObject.GetComponent<Health>().Damage(bulletDamage); // Jon EDIT: Changed EnemyHealth to Health.
             Debug.Log("Object was hit");
             bulletObject.SetActive(false);

@@ -10,6 +10,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject rayPosition;
     public float hitRange = 5.0f;
     private bool canAttack;
+    public AudioClip playerDamageSoound;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator DamageTimer()
     {
         canAttack = false;
+        AudioSystem.PlaySoundEffect(playerDamageSoound);
         GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<Health>().Damage(enemyMeleeDamage);
         enemyNav.enemyState = EnemyNav.EnemyState.AttackingPlayer;
         yield return new WaitForSeconds(1f);
