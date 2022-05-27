@@ -13,6 +13,9 @@ public class Grenade : MonoBehaviour
     float countdown;
     bool hasExploded = false;
 
+    public AudioClip explosionSound;
+    public AudioClip grenadeBounce;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,8 @@ public class Grenade : MonoBehaviour
     void Explode()
     {
         Instantiate(explosionEffect, transform.position, transform.rotation);
+
+        AudioSystem.PlaySoundEffect(explosionSound);
 
         //Returns array of all colliders overlapping sphere
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
@@ -59,5 +64,10 @@ public class Grenade : MonoBehaviour
         }
         Destroy(gameObject);
     }
-  
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        AudioSystem.PlaySoundEffect(grenadeBounce);
+    }
+
 }
