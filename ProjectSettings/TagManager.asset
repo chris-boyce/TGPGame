@@ -30,6 +30,7 @@ TagManager:
   - WeaponWheel
   - Gun
   - AmmoText
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Floor
   - Obstacle
   - Terrain
-  - 
+  - miniMapSprites
   - 
   - 
   - 
